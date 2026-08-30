@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +25,6 @@
       color: inherit;
     }
 
-    /* TOP BAR */
     .topbar {
       background: #111827;
       color: white;
@@ -35,7 +35,6 @@
       font-size: 13px;
     }
 
-    /* HEADER */
     header {
       background: #182235;
       color: white;
@@ -89,7 +88,6 @@
       white-space: nowrap;
     }
 
-    /* NAV */
     nav {
       background: #25334a;
       color: white;
@@ -109,7 +107,6 @@
       color: #ffb703;
     }
 
-    /* HERO */
     .hero {
       margin: 22px auto;
       width: 90%;
@@ -156,7 +153,6 @@
       background: #c92820;
     }
 
-    /* SECTION */
     .section {
       width: 90%;
       margin: 28px auto;
@@ -179,7 +175,6 @@
       font-size: 14px;
     }
 
-    /* CATEGORIES */
     .categories {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -208,7 +203,6 @@
       font-size: 14px;
     }
 
-    /* PRODUCTS */
     .products {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -239,6 +233,7 @@
       border-radius: 4px;
       font-size: 11px;
       font-weight: 800;
+      z-index: 2;
     }
 
     .product-img {
@@ -301,7 +296,6 @@
       background: #d9342b;
     }
 
-    /* DEAL BANNER */
     .deal {
       background: #182235;
       color: white;
@@ -330,7 +324,6 @@
       font-weight: 800;
     }
 
-    /* INFO */
     .info-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -359,7 +352,6 @@
       line-height: 1.5;
     }
 
-    /* FOOTER */
     footer {
       margin-top: 45px;
       background: #111827;
@@ -398,7 +390,6 @@
       font-size: 13px;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 900px) {
       .categories {
         grid-template-columns: repeat(3, 1fr);
@@ -510,7 +501,6 @@
 
   <main id="home">
 
-    <!-- HERO -->
     <section class="hero">
 
       <div class="hero-content">
@@ -533,7 +523,6 @@
 
     </section>
 
-    <!-- CATEGORIES -->
     <section class="section" id="categories">
 
       <div class="section-title">
@@ -577,7 +566,6 @@
 
     </section>
 
-    <!-- FEATURED -->
     <section class="section" id="featured">
 
       <div class="section-title">
@@ -604,7 +592,6 @@
             $39 <small>Check price</small>
           </div>
 
-          <!-- REPLACE THIS LINK WITH YOUR AMAZON AFFILIATE LINK -->
           <a
             href="https://amzn.to/46unnJG"
             class="affiliate-btn"
@@ -618,46 +605,33 @@
         <!-- PRODUCT 2 -->
         <div class="product">
 
-          <span class="badge">TRENDING</span>
+          <span class="badge">NEW</span>
 
           <div class="product-img">
-            <div class="placeholder">🎧</div>
+            <img
+              src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/86dabd87-af7b-49c8-bff2-b2ea5ebaa808.png"
+              alt="Caldera + Lab The Eye Serum | Men's Anti-Aging Serum">
           </div>
 
-          <h3>Wireless Headphones</h3>
+          <h3>Caldera + Lab The Eye Serum | Men's Anti-Aging Serum</h3>
 
-          <div class="stars">★★★★★ <small>(4.6)</small></div>
+          <div class="stars">★★★★★ <small>(4.8)</small></div>
 
-         <!-- PRODUCT 2 -->
-<div class="product">
+          <div class="price">
+            $153 <small>Check price</small>
+          </div>
 
-  <span class="badge">NEW</span>
+          <a
+            href="https://amzn.to/45StPtV"
+            class="affiliate-btn"
+            target="_blank"
+            rel="nofollow sponsored noopener">
+            SHOP NOW →
+          </a>
 
-  <div class="product-img">
-    <img
-      src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/86dabd87-af7b-49c8-bff2-b2ea5ebaa808.png"
-      alt="Caldera + Lab The Eye Serum | Men's Anti-Aging Serum">
-  </div>
+        </div>
 
-  <h3>Caldera + Lab The Eye Serum | Men's Anti-Aging Serum</h3>
-
-  <div class="stars">★★★★★ <small>(4.8)</small></div>
-
-  <div class="price">
-    $153 <small>Check price</small>
-  </div>
-
-  <a
-    href="https://amzn.to/45StPtV"
-    class="affiliate-btn"
-    target="_blank"
-    rel="nofollow sponsored noopener">
-    SHOP NOW →
-  </a>
-
-</div>
-
-<!-- PRODUCT 3 -->
+        <!-- PRODUCT 3 -->
         <div class="product">
 
           <span class="badge">BEST SELLER</span>
@@ -674,7 +648,6 @@
             $39.99 <small>Check price</small>
           </div>
 
-          <!-- REPLACE THIS LINK WITH YOUR AMAZON AFFILIATE LINK -->
           <a
             href="YOUR-AMAZON-AFFILIATE-LINK-3"
             class="affiliate-btn"
@@ -702,7 +675,6 @@
             $59.99 <small>Check price</small>
           </div>
 
-          <!-- REPLACE THIS LINK WITH YOUR AMAZON AFFILIATE LINK -->
           <a
             href="YOUR-AMAZON-AFFILIATE-LINK-4"
             class="affiliate-btn"
@@ -717,7 +689,6 @@
 
     </section>
 
-    <!-- DEAL -->
     <section class="section" id="deals">
 
       <div class="deal">
@@ -735,7 +706,6 @@
 
     </section>
 
-    <!-- BEAUTY -->
     <section class="section" id="beauty">
 
       <div class="section-title">
@@ -784,7 +754,7 @@
             class="affiliate-btn"
             target="_blank"
             rel="nofollow sponsored noopener">
-           SHOP NOW →
+            SHOP NOW →
           </a>
 
         </div>
@@ -837,7 +807,6 @@
 
     </section>
 
-    <!-- HOME -->
     <section class="section" id="home-products">
 
       <div class="section-title">
@@ -939,7 +908,6 @@
 
     </section>
 
-    <!-- ELECTRONICS -->
     <section class="section" id="electronics">
 
       <div class="section-title">
@@ -1041,7 +1009,6 @@
 
     </section>
 
-    <!-- WHY ASKTOSHOP -->
     <section class="section">
 
       <div class="section-title">
@@ -1074,7 +1041,6 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer>
 
     <div class="footer-main">
@@ -1116,25 +1082,28 @@
     <div class="footer-bottom">
       © 2026 AskToShop. All rights reserved.
     </div>
-</footer>
+
+  </footer>
+
   <script>
-  function searchProducts(event) {
-    event.preventDefault();
+    function searchProducts(event) {
+      event.preventDefault();
 
-    const input = document.getElementById("searchInput");
-    const search = input.value.trim();
+      const input = document.getElementById("searchInput");
+      const search = input.value.trim();
 
-    if (search === "") {
-      alert("Please enter a product to search.");
-      return;
+      if (search === "") {
+        alert("Please enter a product to search.");
+        return;
+      }
+
+      alert(
+        "Search for: " + search +
+        "\n\nYou can connect this search box to your product catalog later."
+      );
     }
-
-    alert(
-      "Search for: " + search +
-      "\n\nYou can connect this search box to your product catalog later."
-    );
-  }
-</script>
+  </script>
 
 </body>
 </html>
+```
