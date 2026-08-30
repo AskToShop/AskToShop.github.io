@@ -1117,26 +1117,24 @@
       © 2026 AskToShop. All rights reserved.
     </div>
 
-  </footer>
-
   <script>
-    function searchProducts(event) {
-      event.preventDefault();
+  function searchProducts(event) {
+    event.preventDefault();
 
-      const input = document.getElementById("searchInput");
-      const search = input.value.trim();
+    const input = document.getElementById("searchInput");
+    const search = input.value.trim();
 
-      if (search === "") {
-        alert("Please enter a product to search.");
-        return;
-    
-
-      alert(
-        "Search for: " + search +
-        "\\n\\nYou can connect this search box to your product catalog later."
-      );
+    if (search === "") {
+      alert("Please enter a product to search.");
+      return;
     }
-  </script>
+
+    alert(
+      "Search for: " + search +
+      "\n\nYou can connect this search box to your product catalog later."
+    );
+  }
+</script>
 
 </body>
 </html>
