@@ -1,10 +1,11 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AskToShop - Discover useful products, trending deals and smart shopping picks.">
+
+  <meta name="description" content="AskToShop - Discover trending products, smart shopping picks, beauty, fashion, home, kitchen and electronics.">
+
   <title>AskToShop | Smart Shopping Made Easy</title>
 
   <style>
@@ -12,6 +13,10 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -155,7 +160,7 @@
 
     .section {
       width: 90%;
-      margin: 28px auto;
+      margin: 30px auto;
     }
 
     .section-title {
@@ -175,6 +180,8 @@
       font-size: 14px;
     }
 
+    /* CATEGORY CARDS */
+
     .categories {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -183,25 +190,39 @@
 
     .category {
       background: white;
-      border-radius: 9px;
-      padding: 22px 10px;
+      border-radius: 10px;
+      padding: 8px;
       text-align: center;
-      box-shadow: 0 2px 7px rgba(0,0,0,.07);
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
       transition: .2s;
+      overflow: hidden;
     }
 
     .category:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.14);
     }
 
-    .category-icon {
-      font-size: 38px;
-      margin-bottom: 10px;
+    .category-img {
+      width: 100%;
+      height: 145px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #f7f8fa;
+    }
+
+    .category-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .category h3 {
       font-size: 14px;
+      padding: 11px 4px 8px;
     }
+
+    /* PRODUCTS */
 
     .products {
       display: grid;
@@ -211,7 +232,7 @@
 
     .product {
       background: white;
-      border-radius: 9px;
+      border-radius: 10px;
       padding: 16px;
       position: relative;
       box-shadow: 0 2px 8px rgba(0,0,0,.08);
@@ -237,7 +258,7 @@
     }
 
     .product-img {
-      height: 190px;
+      height: 220px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -251,10 +272,6 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-    }
-
-    .placeholder {
-      font-size: 70px;
     }
 
     .product h3 {
@@ -275,12 +292,6 @@
       margin-bottom: 13px;
     }
 
-    .price small {
-      font-size: 12px;
-      color: #687385;
-      font-weight: normal;
-    }
-
     .affiliate-btn {
       display: block;
       text-align: center;
@@ -295,6 +306,8 @@
     .affiliate-btn:hover {
       background: #d9342b;
     }
+
+    /* DEAL */
 
     .deal {
       background: #182235;
@@ -324,6 +337,40 @@
       font-weight: 800;
     }
 
+    /* HOLIDAY */
+
+    .holiday {
+      background: linear-gradient(135deg, #fff, #fff4ed);
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .holiday h2 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .holiday p {
+      color: #5d6675;
+      line-height: 1.5;
+    }
+
+    .holiday-btn {
+      background: #e6392f;
+      color: white;
+      padding: 13px 22px;
+      border-radius: 7px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    /* INFO */
+
     .info-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -351,6 +398,8 @@
       font-size: 14px;
       line-height: 1.5;
     }
+
+    /* FOOTER */
 
     footer {
       margin-top: 45px;
@@ -382,6 +431,10 @@
       font-size: 14px;
     }
 
+    .footer-main a:hover {
+      color: white;
+    }
+
     .footer-bottom {
       border-top: 1px solid #30394a;
       padding: 18px 5%;
@@ -390,7 +443,8 @@
       font-size: 13px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
+
       .categories {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -403,27 +457,34 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+    }
+
+    @media (max-width: 600px) {
+
+      .topbar {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .topbar span:last-child {
+        display: none;
+      }
+
       header {
         flex-wrap: wrap;
       }
 
-      .search {
-        order: 3;
-        flex-basis: 100%;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .topbar {
-        justify-content: center;
+      .logo {
+        font-size: 23px;
       }
 
       .header-link {
         display: none;
       }
 
-      .logo {
-        font-size: 23px;
+      .search {
+        order: 3;
+        flex-basis: 100%;
       }
 
       .hero {
@@ -443,19 +504,29 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .category-img {
+        height: 125px;
+      }
+
       .products {
         grid-template-columns: 1fr;
+      }
+
+      .product-img {
+        height: 250px;
       }
 
       .info-grid {
         grid-template-columns: 1fr;
       }
 
-      .deal {
+      .deal,
+      .holiday {
         display: block;
       }
 
-      .deal-btn {
+      .deal-btn,
+      .holiday-btn {
         display: inline-block;
         margin-top: 18px;
       }
@@ -463,43 +534,67 @@
       .footer-main {
         grid-template-columns: 1fr;
       }
+
     }
   </style>
 </head>
 
 <body>
 
+  <!-- TOP BAR -->
+
   <div class="topbar">
     <span>Welcome to AskToShop 🛍️</span>
     <span>Smart picks. Better shopping.</span>
   </div>
 
+
+  <!-- HEADER -->
+
   <header>
 
-    <a href="#" class="logo">
+    <a href="#home" class="logo">
       AskTo<span>Shop</span>
     </a>
 
     <form class="search" onsubmit="searchProducts(event)">
-      <input id="searchInput" type="search" placeholder="Search products, deals & ideas...">
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search products, deals & ideas..."
+      >
       <button type="submit">🔍</button>
     </form>
 
-    <a href="#deals" class="header-link">🔥 Today's Deals</a>
+    <a href="#deals" class="header-link">
+      🔥 Today's Deals
+    </a>
 
   </header>
 
+
+  <!-- NAVIGATION -->
+
   <nav>
+
     <a href="#home">Home</a>
     <a href="#categories">Categories</a>
     <a href="#featured">Featured</a>
     <a href="#beauty">Beauty</a>
-    <a href="#home-products">Home & Living</a>
+    <a href="#home-products">Home</a>
     <a href="#electronics">Electronics</a>
-    <a href="#deals">Deals</a>
+    <a href="#fashion">Fashion</a>
+    <a href="#kitchen">Kitchen</a>
+    <a href="#trending">Trending</a>
+    <a href="#holiday">Amazon Holiday</a>
+
   </nav>
 
+
   <main id="home">
+
+
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -515,187 +610,319 @@
           selected to help you shop better.
         </p>
 
-        <a href="#featured" class="hero-btn">
-          Explore Products →
+        <a href="#categories" class="hero-btn">
+          Explore Categories →
         </a>
 
       </div>
 
     </section>
+
+
+    <!-- CATEGORIES -->
 
     <section class="section" id="categories">
 
       <div class="section-title">
+
         <h2>Shop by Category</h2>
-        <a href="#featured">See all →</a>
+
+        <a href="#featured">
+          See all →
+        </a>
+
       </div>
+
 
       <div class="categories">
 
+
+        <!-- BEAUTY -->
+
         <a class="category" href="#beauty">
-          <div class="category-icon">💄</div>
-          <h3>Beauty</h3>
+
+          <div class="category-img">
+            <img
+              src="beauty-ordinary.png"
+              alt="Beauty - The Ordinary Niacinamide"
+            >
+          </div>
+
+          <h3>💄 Beauty</h3>
+
         </a>
+
+
+        <!-- HOME -->
 
         <a class="category" href="#home-products">
-          <div class="category-icon">🏠</div>
-          <h3>Home & Living</h3>
+
+          <div class="category-img">
+            <img
+              src="home-hangers.png"
+              alt="Home - Amazon Basics Velvet Hangers"
+            >
+          </div>
+
+          <h3>🏠 Home</h3>
+
         </a>
+
+
+        <!-- ELECTRONICS -->
 
         <a class="category" href="#electronics">
-          <div class="category-icon">📱</div>
-          <h3>Electronics</h3>
+
+          <div class="category-img">
+            <img
+              src="electronics-airpods.png"
+              alt="Electronics - Apple AirPods Pro"
+            >
+          </div>
+
+          <h3>🎧 Electronics</h3>
+
         </a>
 
-        <a class="category" href="#featured">
-          <div class="category-icon">👗</div>
-          <h3>Fashion</h3>
+
+        <!-- FASHION -->
+
+        <a class="category" href="#fashion">
+
+          <div class="category-img">
+            <img
+              src="fashion-new-balance.png"
+              alt="Fashion - New Balance Women's 327"
+            >
+          </div>
+
+          <h3>👟 Fashion</h3>
+
         </a>
 
-        <a class="category" href="#featured">
-          <div class="category-icon">🍳</div>
-          <h3>Kitchen</h3>
+
+        <!-- KITCHEN -->
+
+        <a class="category" href="#kitchen">
+
+          <div class="category-img">
+            <img
+              src="kitchen-stanley.png"
+              alt="Kitchen - Stanley Quencher H2.0"
+            >
+          </div>
+
+          <h3>🍳 Kitchen</h3>
+
         </a>
 
-        <a class="category" href="#featured">
-          <div class="category-icon">✨</div>
-          <h3>Trending</h3>
+
+        <!-- TRENDING -->
+
+        <a class="category" href="#trending">
+
+          <div class="category-img">
+            <img
+              src="trending-owala.png"
+              alt="Trending - Owala FreeSip Water Bottle"
+            >
+          </div>
+
+          <h3>🔥 Trending</h3>
+
         </a>
+
 
       </div>
 
     </section>
 
+
+    <!-- FEATURED -->
+
     <section class="section" id="featured">
 
       <div class="section-title">
+
         <h2>🔥 Featured Picks</h2>
-        <a href="#deals">View all →</a>
+
+        <a href="#deals">
+          View deals →
+        </a>
+
       </div>
+
 
       <div class="products">
 
-        <!-- PRODUCT 1 -->
+
+        <!-- FEATURED 1 -->
+
         <div class="product">
 
           <span class="badge">POPULAR</span>
 
           <div class="product-img">
-            <img src="ISDIN.png" alt="ISDIN Uradin Podos Foot Care">
+            <img
+              src="ISDIN.png"
+              alt="ISDIN Uradin Podos Foot Care"
+            >
           </div>
 
           <h3>ISDIN Uradin Podos Foot Care</h3>
 
-          <div class="stars">★★★★★ <small>(4.7)</small></div>
+          <div class="stars">
+            ★★★★★ <small>(4.7)</small>
+          </div>
 
           <div class="price">
-            $39 <small>Check price</small>
+            $39
           </div>
 
           <a
             href="https://amzn.to/46unnJG"
             class="affiliate-btn"
             target="_blank"
-            rel="nofollow sponsored noopener">
+            rel="nofollow sponsored noopener"
+          >
             SHOP NOW →
           </a>
 
         </div>
 
-        <!-- PRODUCT 2 -->
+
+        <!-- FEATURED 2 -->
+
         <div class="product">
 
           <span class="badge">NEW</span>
 
           <div class="product-img">
             <img
-              src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/86dabd87-af7b-49c8-bff2-b2ea5ebaa808.png"
-              alt="Caldera + Lab The Eye Serum | Men's Anti-Aging Serum">
+              src="caldera-lab.png"
+              alt="Caldera + Lab The Eye Serum"
+            >
           </div>
 
-          <h3>Caldera + Lab The Eye Serum | Men's Anti-Aging Serum</h3>
+          <h3>
+            Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
+          </h3>
 
-          <div class="stars">★★★★★ <small>(4.8)</small></div>
+          <div class="stars">
+            ★★★★★ <small>(4.8)</small>
+          </div>
 
           <div class="price">
-            $153 <small>Check price</small>
+            $153
           </div>
 
           <a
             href="https://amzn.to/45StPtV"
             class="affiliate-btn"
             target="_blank"
-            rel="nofollow sponsored noopener">
+            rel="nofollow sponsored noopener"
+          >
             SHOP NOW →
           </a>
 
         </div>
 
-        <!-- PRODUCT 3 -->
+
+        <!-- FEATURED 3 -->
+
+        <div class="product">
+
+          <span class="badge">TRENDING</span>
+
+          <div class="product-img">
+            <img
+              src="trending-owala.png"
+              alt="Owala FreeSip Stainless Steel Water Bottle"
+            >
+          </div>
+
+          <h3>
+            Owala FreeSip Stainless Steel Water Bottle
+          </h3>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <div class="price">
+            $45.00
+          </div>
+
+          <a
+            href="https://amzn.to/45VQTbc"
+            class="affiliate-btn"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+
+        <!-- FEATURED 4 -->
+
         <div class="product">
 
           <span class="badge">BEST SELLER</span>
 
           <div class="product-img">
-            <div class="placeholder">🏠</div>
+            <img
+              src="electronics-airpods.png"
+              alt="Apple AirPods Pro 3rd Generation Renewed"
+            >
           </div>
 
-          <h3>Modern Home Decor</h3>
+          <h3>
+            Apple AirPods Pro (3rd Generation) (Renewed)
+          </h3>
 
-          <div class="stars">★★★★★ <small>(4.8)</small></div>
+          <div class="stars">
+            ★★★★★
+          </div>
 
           <div class="price">
-            $39.99 <small>Check price</small>
+            $199.99
           </div>
 
           <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-3"
+            href="https://amzn.to/4wZseNX"
             class="affiliate-btn"
             target="_blank"
-            rel="nofollow sponsored noopener">
+            rel="nofollow sponsored noopener"
+          >
             SHOP NOW →
           </a>
 
         </div>
 
-        <!-- PRODUCT 4 -->
-        <div class="product">
-
-          <span class="badge">HOT</span>
-
-          <div class="product-img">
-            <div class="placeholder">⌚</div>
-          </div>
-
-          <h3>Smart Watch</h3>
-
-          <div class="stars">★★★★☆ <small>(4.5)</small></div>
-
-          <div class="price">
-            $59.99 <small>Check price</small>
-          </div>
-
-          <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-4"
-            class="affiliate-btn"
-            target="_blank"
-            rel="nofollow sponsored noopener">
-            SHOP NOW →
-          </a>
-
-        </div>
 
       </div>
 
     </section>
+
+
+    <!-- TODAY'S DEALS -->
 
     <section class="section" id="deals">
 
       <div class="deal">
 
         <div>
-          <h2>🔥 Discover Today's Deals</h2>
-          <p>Find products worth checking out before they're gone.</p>
+
+          <h2>
+            🔥 Discover Today's Deals
+          </h2>
+
+          <p>
+            Find products worth checking out before they're gone.
+          </p>
+
         </div>
 
         <a href="#featured" class="deal-btn">
@@ -706,98 +933,83 @@
 
     </section>
 
+
+    <!-- AMAZON HOLIDAY -->
+
+    <section class="section" id="holiday">
+
+      <div class="holiday">
+
+        <div>
+
+          <h2>
+            🎁 Amazon Holiday Picks
+          </h2>
+
+          <p>
+            Discover gift ideas, seasonal finds and products worth checking
+            out for the holiday season.
+          </p>
+
+        </div>
+
+        <a href="#featured" class="holiday-btn">
+          Explore Holiday Picks →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- BEAUTY -->
+
     <section class="section" id="beauty">
 
       <div class="section-title">
+
         <h2>💄 Beauty Picks</h2>
-        <a href="#featured">Explore →</a>
+
+        <a href="#categories">
+          Back to Categories ↑
+        </a>
+
       </div>
+
 
       <div class="products">
 
         <div class="product">
 
-          <div class="product-img">
-            <div class="placeholder">💋</div>
-          </div>
-
-          <h3>Premium Makeup Pick</h3>
-
-          <div class="stars">★★★★★</div>
-
-          <div class="price">$24.99</div>
-
-          <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-5"
-            class="affiliate-btn"
-            target="_blank"
-            rel="nofollow sponsored noopener">
-            SHOP NOW →
-          </a>
-
-        </div>
-
-        <div class="product">
+          <span class="badge">BEAUTY</span>
 
           <div class="product-img">
-            <div class="placeholder">🧴</div>
+
+            <img
+              src="beauty-ordinary.png"
+              alt="The Ordinary Niacinamide 10% + Zinc 1%"
+            >
+
           </div>
 
-          <h3>Skincare Essential</h3>
+          <h3>
+            The Ordinary Niacinamide 10% + Zinc 1%, Smoothing Serum
+          </h3>
 
-          <div class="stars">★★★★★</div>
-
-          <div class="price">$19.99</div>
-
-          <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-6"
-            class="affiliate-btn"
-            target="_blank"
-            rel="nofollow sponsored noopener">
-            SHOP NOW →
-          </a>
-
-        </div>
-
-        <div class="product">
-
-          <div class="product-img">
-            <div class="placeholder">💅</div>
+          <div class="stars">
+            ★★★★★
           </div>
 
-          <h3>Nail Beauty Pick</h3>
-
-          <div class="stars">★★★★☆</div>
-
-          <div class="price">$16.99</div>
-
-          <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-7"
-            class="affiliate-btn"
-            target="_blank"
-            rel="nofollow sponsored noopener">
-            SHOP NOW →
-          </a>
-
-        </div>
-
-        <div class="product">
-
-          <div class="product-img">
-            <div class="placeholder">✨</div>
+          <div class="price">
+            $6.00
           </div>
 
-          <h3>Beauty Tool</h3>
-
-          <div class="stars">★★★★★</div>
-
-          <div class="price">$27.99</div>
-
           <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-8"
+            href="https://amzn.to/3UHAZP5"
             class="affiliate-btn"
             target="_blank"
-            rel="nofollow sponsored noopener">
+            rel="nofollow sponsored noopener"
+          >
             SHOP NOW →
           </a>
 
@@ -806,99 +1018,56 @@
       </div>
 
     </section>
+
+
+    <!-- HOME -->
 
     <section class="section" id="home-products">
 
       <div class="section-title">
-        <h2>🏠 Home & Living</h2>
-        <a href="#featured">Explore →</a>
+
+        <h2>🏠 Home Picks</h2>
+
+        <a href="#categories">
+          Back to Categories ↑
+        </a>
+
       </div>
+
 
       <div class="products">
 
         <div class="product">
 
-          <div class="product-img">
-            <div class="placeholder">🛋️</div>
-          </div>
-
-          <h3>Modern Furniture Pick</h3>
-
-          <div class="stars">★★★★★</div>
-
-          <div class="price">$89.99</div>
-
-          <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-9"
-            class="affiliate-btn"
-            target="_blank"
-            rel="nofollow sponsored noopener">
-            SHOP NOW →
-          </a>
-
-        </div>
-
-        <div class="product">
+          <span class="badge">HOME</span>
 
           <div class="product-img">
-            <div class="placeholder">🕯️</div>
+
+            <img
+              src="home-hangers.png"
+              alt="Amazon Basics Velvet Non-Slip Hangers 100 Pack"
+            >
+
           </div>
 
-          <h3>Home Decor</h3>
+          <h3>
+            Amazon Basics Velvet Non-Slip Hangers – 100 Pack
+          </h3>
 
-          <div class="stars">★★★★★</div>
-
-          <div class="price">$29.99</div>
-
-          <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-10"
-            class="affiliate-btn"
-            target="_blank"
-            rel="nofollow sponsored noopener">
-            SHOP NOW →
-          </a>
-
-        </div>
-
-        <div class="product">
-
-          <div class="product-img">
-            <div class="placeholder">🍳</div>
+          <div class="stars">
+            ★★★★★
           </div>
 
-          <h3>Kitchen Essential</h3>
-
-          <div class="stars">★★★★☆</div>
-
-          <div class="price">$34.99</div>
-
-          <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-11"
-            class="affiliate-btn"
-            target="_blank"
-            rel="nofollow sponsored noopener">
-            SHOP NOW →
-          </a>
-
-        </div>
-
-        <div class="product">
-
-          <div class="product-img">
-            <div class="placeholder">☕</div>
+          <div class="price">
+            $40.49
           </div>
 
-          <h3>Kitchen & Coffee Pick</h3>
-
-          <div class="stars">★★★★★</div>
-
-          <div class="price">$22.99</div>
-
           <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-12"
+            href="https://amzn.to/4xvhXKv"
             class="affiliate-btn"
             target="_blank"
-            rel="nofollow sponsored noopener">
+            rel="nofollow sponsored noopener"
+          >
             SHOP NOW →
           </a>
 
@@ -907,99 +1076,56 @@
       </div>
 
     </section>
+
+
+    <!-- ELECTRONICS -->
 
     <section class="section" id="electronics">
 
       <div class="section-title">
-        <h2>📱 Electronics</h2>
-        <a href="#featured">Explore →</a>
+
+        <h2>🎧 Electronics</h2>
+
+        <a href="#categories">
+          Back to Categories ↑
+        </a>
+
       </div>
+
 
       <div class="products">
 
         <div class="product">
 
-          <div class="product-img">
-            <div class="placeholder">📱</div>
-          </div>
-
-          <h3>Smartphone Accessory</h3>
-
-          <div class="stars">★★★★★</div>
-
-          <div class="price">$21.99</div>
-
-          <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-13"
-            class="affiliate-btn"
-            target="_blank"
-            rel="nofollow sponsored noopener">
-            SHOP NOW →
-          </a>
-
-        </div>
-
-        <div class="product">
+          <span class="badge">HOT</span>
 
           <div class="product-img">
-            <div class="placeholder">⌨️</div>
+
+            <img
+              src="electronics-airpods.png"
+              alt="Apple AirPods Pro 3rd Generation Renewed"
+            >
+
           </div>
 
-          <h3>Wireless Keyboard</h3>
+          <h3>
+            Apple AirPods Pro (3rd Generation) (Renewed)
+          </h3>
 
-          <div class="stars">★★★★★</div>
-
-          <div class="price">$42.99</div>
-
-          <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-14"
-            class="affiliate-btn"
-            target="_blank"
-            rel="nofollow sponsored noopener">
-            SHOP NOW →
-          </a>
-
-        </div>
-
-        <div class="product">
-
-          <div class="product-img">
-            <div class="placeholder">🔊</div>
+          <div class="stars">
+            ★★★★★
           </div>
 
-          <h3>Portable Speaker</h3>
-
-          <div class="stars">★★★★☆</div>
-
-          <div class="price">$35.99</div>
-
-          <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-15"
-            class="affiliate-btn"
-            target="_blank"
-            rel="nofollow sponsored noopener">
-            SHOP NOW →
-          </a>
-
-        </div>
-
-        <div class="product">
-
-          <div class="product-img">
-            <div class="placeholder">🔌</div>
+          <div class="price">
+            $199.99
           </div>
 
-          <h3>Charging Accessories</h3>
-
-          <div class="stars">★★★★★</div>
-
-          <div class="price">$18.99</div>
-
           <a
-            href="YOUR-AMAZON-AFFILIATE-LINK-16"
+            href="https://amzn.to/4wZseNX"
             class="affiliate-btn"
             target="_blank"
-            rel="nofollow sponsored noopener">
+            rel="nofollow sponsored noopener"
+          >
             SHOP NOW →
           </a>
 
@@ -1008,102 +1134,427 @@
       </div>
 
     </section>
+
+
+    <!-- FASHION -->
+
+    <section class="section" id="fashion">
+
+      <div class="section-title">
+
+        <h2>👟 Fashion Picks</h2>
+
+        <a href="#categories">
+          Back to Categories ↑
+        </a>
+
+      </div>
+
+
+      <div class="products">
+
+        <div class="product">
+
+          <span class="badge">FASHION</span>
+
+          <div class="product-img">
+
+            <img
+              src="fashion-new-balance.png"
+              alt="New Balance Women's 327 Casual Shoes"
+            >
+
+          </div>
+
+          <h3>
+            New Balance Women's 327 Casual Shoes
+          </h3>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <div class="price">
+            $104.95
+          </div>
+
+          <a
+            href="https://amzn.to/4r3WpCp"
+            class="affiliate-btn"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- KITCHEN -->
+
+    <section class="section" id="kitchen">
+
+      <div class="section-title">
+
+        <h2>🍳 Kitchen Picks</h2>
+
+        <a href="#categories">
+          Back to Categories ↑
+        </a>
+
+      </div>
+
+
+      <div class="products">
+
+        <div class="product">
+
+          <span class="badge">POPULAR</span>
+
+          <div class="product-img">
+
+            <img
+              src="kitchen-stanley.png"
+              alt="Stanley Quencher H2.0 40 oz Tumbler"
+            >
+
+          </div>
+
+          <h3>
+            Stanley Quencher H2.0 40 oz Tumbler
+          </h3>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <div class="price">
+            $58.74
+          </div>
+
+          <a
+            href="https://amzn.to/4x0KeHQ"
+            class="affiliate-btn"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TRENDING -->
+
+    <section class="section" id="trending">
+
+      <div class="section-title">
+
+        <h2>🔥 Trending Picks</h2>
+
+        <a href="#categories">
+          Back to Categories ↑
+        </a>
+
+      </div>
+
+
+      <div class="products">
+
+        <div class="product">
+
+          <span class="badge">TRENDING</span>
+
+          <div class="product-img">
+
+            <img
+              src="trending-owala.png"
+              alt="Owala FreeSip Stainless Steel Water Bottle"
+            >
+
+          </div>
+
+          <h3>
+            Owala FreeSip Stainless Steel Water Bottle
+          </h3>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <div class="price">
+            $45.00
+          </div>
+
+          <a
+            href="https://amzn.to/45VQTbc"
+            class="affiliate-btn"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHY ASKTO SHOP -->
 
     <section class="section">
 
       <div class="section-title">
-        <h2>Why AskToShop?</h2>
+
+        <h2>
+          Why AskToShop?
+        </h2>
+
       </div>
+
 
       <div class="info-grid">
 
-        <div class="info">
-          <div class="info-icon">🔎</div>
-          <h3>Easy Discovery</h3>
-          <p>Find useful and interesting products without endless searching.</p>
-        </div>
 
         <div class="info">
-          <div class="info-icon">⭐</div>
-          <h3>Smart Picks</h3>
-          <p>Explore products and shopping ideas collected in one place.</p>
+
+          <div class="info-icon">
+            🔎
+          </div>
+
+          <h3>
+            Easy Discovery
+          </h3>
+
+          <p>
+            Find useful and interesting products without endless searching.
+          </p>
+
         </div>
 
+
         <div class="info">
-          <div class="info-icon">🛍️</div>
-          <h3>Shop Easily</h3>
-          <p>Click through to the retailer and check the latest price and availability.</p>
+
+          <div class="info-icon">
+            ⭐
+          </div>
+
+          <h3>
+            Smart Picks
+          </h3>
+
+          <p>
+            Explore products and shopping ideas collected in one place.
+          </p>
+
         </div>
+
+
+        <div class="info">
+
+          <div class="info-icon">
+            🛍️
+          </div>
+
+          <h3>
+            Shop Easily
+          </h3>
+
+          <p>
+            Click through to the retailer and check the latest price and
+            availability.
+          </p>
+
+        </div>
+
 
       </div>
 
     </section>
 
+
   </main>
+
+
+  <!-- FOOTER -->
 
   <footer>
 
     <div class="footer-main">
 
+
       <div>
-        <h3>AskToShop</h3>
+
+        <h3>
+          AskToShop
+        </h3>
+
         <p>
           Discover products, trending finds and smart shopping ideas.
           AskToShop helps make online shopping easier.
         </p>
+
       </div>
 
-      <div>
-        <h3>Explore</h3>
-        <a href="#featured">Featured Picks</a>
-        <a href="#deals">Today's Deals</a>
-        <a href="#beauty">Beauty</a>
-        <a href="#home-products">Home & Living</a>
-      </div>
 
       <div>
-        <h3>Categories</h3>
-        <a href="#electronics">Electronics</a>
-        <a href="#featured">Fashion</a>
-        <a href="#featured">Kitchen</a>
-        <a href="#featured">Trending</a>
+
+        <h3>
+          Explore
+        </h3>
+
+        <a href="#featured">
+          Featured Picks
+        </a>
+
+        <a href="#deals">
+          Today's Deals
+        </a>
+
+        <a href="#holiday">
+          Amazon Holiday
+        </a>
+
+        <a href="#beauty">
+          Beauty
+        </a>
+
+        <a href="#home-products">
+          Home
+        </a>
+
       </div>
 
+
       <div>
-        <h3>Important</h3>
-        <a href="#">About AskToShop</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Affiliate Disclosure</a>
-        <a href="#">Contact</a>
+
+        <h3>
+          Categories
+        </h3>
+
+        <a href="#electronics">
+          Electronics
+        </a>
+
+        <a href="#fashion">
+          Fashion
+        </a>
+
+        <a href="#kitchen">
+          Kitchen
+        </a>
+
+        <a href="#trending">
+          Trending
+        </a>
+
       </div>
+
+
+      <div>
+
+        <h3>
+          Important
+        </h3>
+
+        <a href="#">
+          About AskToShop
+        </a>
+
+        <a href="#">
+          Privacy Policy
+        </a>
+
+        <a href="#">
+          Affiliate Disclosure
+        </a>
+
+        <a href="#">
+          Contact
+        </a>
+
+      </div>
+
 
     </div>
 
+
     <div class="footer-bottom">
+
       © 2026 AskToShop. All rights reserved.
+
     </div>
 
   </footer>
 
+
+  <!-- SEARCH -->
+
   <script>
+
     function searchProducts(event) {
+
       event.preventDefault();
 
       const input = document.getElementById("searchInput");
-      const search = input.value.trim();
+
+      const search = input.value.trim().toLowerCase();
 
       if (search === "") {
+
         alert("Please enter a product to search.");
+
         return;
+
+      }
+
+      const searchableSections = {
+
+        beauty: "#beauty",
+        home: "#home-products",
+        electronics: "#electronics",
+        fashion: "#fashion",
+        kitchen: "#kitchen",
+        trending: "#trending",
+        owala: "#trending",
+        stanley: "#kitchen",
+        airpods: "#electronics",
+        balance: "#fashion",
+        ordinary: "#beauty",
+        hangers: "#home-products"
+
+      };
+
+      for (const keyword in searchableSections) {
+
+        if (search.includes(keyword)) {
+
+          window.location.hash = searchableSections[keyword];
+
+          return;
+
+        }
+
       }
 
       alert(
-        "Search for: " + search +
-        "\n\nYou can connect this search box to your product catalog later."
+        "Product not found yet.\n\nTry searching: Beauty, Home, Electronics, Fashion, Kitchen or Trending."
       );
+
     }
+
   </script>
+
 
 </body>
 </html>
-```
