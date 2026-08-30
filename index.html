@@ -4,25 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="AskToShop — smart shopping picks across beauty, home, electronics, fashion, kitchen and trending products.">
-<meta name="theme-color" content="#111827">
+<meta name="description" content="AskToShop - Smart shopping picks, trending products and useful finds.">
 
 <title>AskToShop | Smart Shopping Picks</title>
 
 <style>
 :root{
-  --navy:#0d1524;
-  --navy2:#18243a;
+  --navy:#0b1424;
+  --navy2:#162238;
   --red:#e53935;
-  --red-dark:#c62828;
-  --orange:#ffb703;
-  --bg:#f4f6f8;
+  --red2:#c62828;
+  --gold:#ffb703;
+  --bg:#f5f6f8;
   --white:#fff;
   --text:#111827;
   --muted:#6b7280;
   --border:#e5e7eb;
-  --shadow:0 12px 35px rgba(15,23,42,.08);
-  --shadow2:0 22px 55px rgba(15,23,42,.14);
+  --shadow:0 10px 30px rgba(15,23,42,.08);
+  --shadow2:0 18px 45px rgba(15,23,42,.13);
+  --radius:18px;
 }
 
 *{
@@ -36,25 +36,15 @@ html{
 }
 
 body{
-  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   background:var(--bg);
   color:var(--text);
   line-height:1.5;
 }
 
 a{
-  color:inherit;
   text-decoration:none;
-}
-
-button,
-input,
-textarea{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
+  color:inherit;
 }
 
 img{
@@ -62,12 +52,17 @@ img{
   max-width:100%;
 }
 
+button,
+input{
+  font:inherit;
+}
+
 /* TOP BAR */
 
 .topbar{
-  height:28px;
+  height:30px;
   padding:0 5%;
-  background:#080f1b;
+  background:#070d18;
   color:#cbd5e1;
   display:flex;
   justify-content:space-between;
@@ -81,21 +76,20 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  min-height:62px;
-  padding:8px 5%;
-  background:rgba(13,21,36,.98);
-  backdrop-filter:blur(14px);
+  min-height:68px;
+  padding:10px 5%;
+  background:rgba(11,20,36,.98);
   color:#fff;
   display:flex;
   align-items:center;
-  gap:18px;
-  box-shadow:0 5px 25px rgba(0,0,0,.14);
+  gap:20px;
+  box-shadow:0 5px 25px rgba(0,0,0,.15);
 }
 
 .logo{
   font-size:27px;
-  font-weight:950;
-  letter-spacing:-1.4px;
+  font-weight:900;
+  letter-spacing:-1.5px;
   white-space:nowrap;
 }
 
@@ -104,13 +98,13 @@ header{
 }
 
 .logo-dot{
-  color:var(--orange) !important;
+  color:var(--gold);
 }
 
 .search{
   flex:1;
   max-width:760px;
-  height:42px;
+  height:44px;
   display:flex;
   overflow:hidden;
   background:#fff;
@@ -119,46 +113,43 @@ header{
 
 .search input{
   flex:1;
-  min-width:0;
   border:0;
   outline:0;
   padding:0 16px;
-  color:#111827;
   font-size:13px;
+  color:#111827;
 }
 
 .search button{
   width:55px;
   border:0;
-  background:var(--orange);
-  color:#111827;
+  background:var(--gold);
+  cursor:pointer;
   font-size:18px;
-  font-weight:900;
 }
 
-.header-deal{
+.deal-link{
+  color:#fff;
   font-size:12px;
-  font-weight:900;
+  font-weight:800;
   white-space:nowrap;
 }
 
-.header-deal:hover{
-  color:var(--orange);
+.deal-link:hover{
+  color:var(--gold);
 }
 
-/* NAVIGATION */
+/* NAV */
 
 nav{
   background:var(--navy2);
   color:#fff;
-  padding:10px 5%;
+  padding:11px 5%;
   display:flex;
   justify-content:center;
-  align-items:center;
-  gap:27px;
+  gap:30px;
   overflow-x:auto;
   white-space:nowrap;
-  scrollbar-width:none;
 }
 
 nav::-webkit-scrollbar{
@@ -172,66 +163,59 @@ nav a{
 }
 
 nav a:hover{
-  color:var(--orange);
+  color:var(--gold);
 }
 
-/* MAIN */
+/* CONTAINER */
 
-main{
-  overflow:hidden;
+.container{
+  width:90%;
+  max-width:1380px;
+  margin:auto;
 }
 
 /* HERO */
 
-.hero-wrap{
-  width:90%;
-  max-width:1400px;
-  margin:18px auto 0;
-}
-
 .hero{
-  min-height:300px;
   position:relative;
+  min-height:360px;
+  margin:22px 0;
+  padding:55px 6%;
   overflow:hidden;
-  border:1px solid #e7e9ee;
   border-radius:24px;
   background:
-    radial-gradient(circle at 87% 20%,rgba(229,57,53,.14),transparent 25%),
-    radial-gradient(circle at 75% 100%,rgba(255,183,3,.15),transparent 30%),
-    linear-gradient(120deg,#fff 0%,#fafbfc 58%,#fff2ef 100%);
+    radial-gradient(circle at 90% 20%,rgba(229,57,53,.16),transparent 27%),
+    radial-gradient(circle at 80% 100%,rgba(255,183,3,.14),transparent 30%),
+    linear-gradient(120deg,#fff,#f9fafb 60%,#fff3ef);
+  border:1px solid var(--border);
   box-shadow:var(--shadow);
-  display:flex;
-  align-items:center;
-  padding:36px 6%;
 }
 
 .hero-content{
   position:relative;
-  z-index:4;
+  z-index:3;
   max-width:650px;
 }
 
 .eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
+  display:inline-block;
   padding:7px 12px;
-  margin-bottom:12px;
-  border-radius:999px;
+  margin-bottom:15px;
+  border-radius:30px;
+  border:1px solid #f2d2d0;
   background:#fff;
-  border:1px solid #f0d4d2;
   color:var(--red);
   font-size:10px;
-  font-weight:950;
+  font-weight:900;
   letter-spacing:.8px;
   text-transform:uppercase;
 }
 
 .hero h1{
-  font-size:clamp(34px,4.3vw,58px);
-  line-height:1.01;
-  letter-spacing:-2.6px;
-  margin-bottom:12px;
+  font-size:clamp(40px,5vw,64px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin-bottom:15px;
 }
 
 .hero h1 span{
@@ -240,270 +224,133 @@ main{
 
 .hero p{
   max-width:570px;
-  color:#657083;
+  color:var(--muted);
   font-size:14px;
-  line-height:1.65;
-  margin-bottom:18px;
+  line-height:1.7;
+  margin-bottom:22px;
 }
 
-.hero-actions{
+.hero-buttons{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
 }
 
-.primary-btn,
-.secondary-btn{
+.btn{
   display:inline-flex;
-  align-items:center;
   justify-content:center;
-  padding:11px 18px;
+  align-items:center;
+  padding:12px 19px;
   border-radius:9px;
   font-size:12px;
-  font-weight:950;
+  font-weight:900;
   transition:.2s;
 }
 
-.primary-btn{
-  color:#fff;
+.btn-red{
   background:var(--red);
-  box-shadow:0 8px 20px rgba(229,57,53,.2);
+  color:#fff;
 }
 
-.primary-btn:hover{
-  background:var(--red-dark);
+.btn-red:hover{
+  background:var(--red2);
   transform:translateY(-2px);
 }
 
-.secondary-btn{
-  color:#202938;
-  background:#fff;
-  border:1px solid #dfe3e9;
-}
-
-.secondary-btn:hover{
-  transform:translateY(-2px);
-}
-
-/* HERO DECORATION */
-
-.hero-art{
-  position:absolute;
-  right:4%;
-  bottom:-70px;
-  width:320px;
-  height:320px;
-  border-radius:50%;
-  background:linear-gradient(145deg,#fff,#edf0f4);
-  box-shadow:
-    inset 0 0 0 1px rgba(0,0,0,.04),
-    0 25px 55px rgba(0,0,0,.09);
-}
-
-.hero-art:before{
-  content:"";
-  position:absolute;
-  width:205px;
-  height:205px;
-  left:58px;
-  top:56px;
-  border-radius:28px;
-  background:#fff;
-  transform:rotate(9deg);
-  box-shadow:0 20px 45px rgba(0,0,0,.1);
-}
-
-.hero-art:after{
-  content:"ASK TO SHOP";
-  position:absolute;
-  top:132px;
-  left:82px;
-  color:var(--red);
-  font-size:15px;
-  font-weight:950;
-  letter-spacing:1px;
-  transform:rotate(9deg);
-}
-
-/* QUICK FEATURE */
-
-.quick-feature{
-  width:90%;
-  max-width:1400px;
-  margin:15px auto 0;
-}
-
-.quick-card{
-  display:grid;
-  grid-template-columns:230px 1fr auto;
-  align-items:center;
-  gap:22px;
-  padding:13px;
+.btn-white{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:18px;
-  box-shadow:var(--shadow);
 }
 
-.quick-image{
-  height:145px;
-  border-radius:13px;
-  overflow:hidden;
-  background:linear-gradient(145deg,#f8f9fb,#eef1f5);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.quick-image img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.quick-info small{
-  display:block;
-  color:var(--red);
-  text-transform:uppercase;
-  letter-spacing:.8px;
-  font-size:9px;
-  font-weight:950;
-  margin-bottom:5px;
-}
-
-.quick-info h2{
-  font-size:22px;
-  line-height:1.2;
-  margin-bottom:6px;
-}
-
-.quick-info p{
-  color:var(--muted);
-  font-size:12px;
-  max-width:650px;
-  margin-bottom:7px;
-}
-
-.quick-rating{
-  color:#f59e0b;
-  font-size:12px;
-  font-weight:800;
-}
-
-.quick-rating span{
-  color:#8b95a5;
-  margin-left:4px;
-}
-
-.quick-side{
-  text-align:right;
-  min-width:145px;
-}
-
-.quick-price{
-  font-size:24px;
-  font-weight:950;
-  margin-bottom:9px;
-}
-
-/* BUTTONS */
-
-.shop-btn,
-.feature-shop{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:var(--red);
-  color:#fff;
-  border-radius:9px;
-  font-size:11px;
-  font-weight:950;
-  padding:11px 16px;
-  transition:.2s;
-}
-
-.shop-btn:hover,
-.feature-shop:hover{
-  background:var(--red-dark);
+.btn-white:hover{
   transform:translateY(-2px);
+}
+
+.hero-circle{
+  position:absolute;
+  right:-80px;
+  bottom:-120px;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#fff,#e9edf2);
+  box-shadow:0 25px 60px rgba(0,0,0,.1);
+}
+
+.hero-circle:after{
+  content:"ASK TO SHOP";
+  position:absolute;
+  top:170px;
+  left:105px;
+  color:var(--red);
+  font-weight:900;
+  font-size:17px;
+  letter-spacing:1px;
+  transform:rotate(-8deg);
 }
 
 /* TRUST */
 
-.trust-strip{
-  width:90%;
-  max-width:1400px;
-  margin:14px auto 0;
+.trust{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:11px;
+  gap:12px;
+  margin-bottom:38px;
 }
 
-.trust-item{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:12px 15px;
+.trust-card{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:13px;
+  border-radius:14px;
+  padding:14px;
+  display:flex;
+  gap:11px;
+  align-items:center;
 }
 
 .trust-icon{
-  width:35px;
-  height:35px;
-  flex:none;
+  width:38px;
+  height:38px;
   display:grid;
   place-items:center;
+  background:#fff1f0;
   border-radius:10px;
-  background:#fff3f2;
-  font-size:16px;
+  font-size:17px;
 }
 
-.trust-item strong{
+.trust-card strong{
   display:block;
   font-size:12px;
 }
 
-.trust-item span{
-  display:block;
+.trust-card small{
   color:var(--muted);
   font-size:10px;
 }
 
-/* SECTIONS */
+/* SECTION */
+
+section{
+  scroll-margin-top:145px;
+}
 
 .section{
-  width:90%;
-  max-width:1400px;
-  margin:40px auto;
+  margin:45px 0;
 }
 
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:15px;
-  margin-bottom:17px;
+.section-title{
+  margin-bottom:18px;
 }
 
-.section-head h2{
-  font-size:26px;
-  line-height:1.1;
-  letter-spacing:-.8px;
+.section-title h2{
+  font-size:28px;
+  letter-spacing:-1px;
 }
 
-.section-head p{
+.section-title p{
   color:var(--muted);
   font-size:12px;
-  margin-top:5px;
-}
-
-.section-link{
-  color:var(--red);
-  font-size:12px;
-  font-weight:950;
-  white-space:nowrap;
+  margin-top:4px;
 }
 
 /* CATEGORIES */
@@ -515,12 +362,11 @@ main{
 }
 
 .category{
-  min-width:0;
   background:#fff;
   border:1px solid var(--border);
   border-radius:16px;
   padding:7px;
-  box-shadow:0 5px 20px rgba(17,24,39,.05);
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
   transition:.25s;
 }
 
@@ -529,60 +375,149 @@ main{
   box-shadow:var(--shadow2);
 }
 
-.category-img{
+.category-image{
   height:145px;
   overflow:hidden;
   border-radius:11px;
-  background:#f4f6f8;
+  background:#f1f3f5;
 }
 
-.category-img img{
+.category-image img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:.4s;
 }
 
-.category:hover .category-img img{
-  transform:scale(1.05);
-}
-
-.category-label{
+.category-name{
   padding:10px 5px 7px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
 }
 
-.category-label strong{
+.category-name strong{
   font-size:12px;
 }
 
-.category-label span{
-  color:#9aa2af;
-  font-size:14px;
+.category-name span{
+  color:var(--red);
+  font-weight:900;
 }
 
-/* FEATURED GRID */
+/* FEATURED */
 
-.featured-grid{
+.featured{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:17px;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  padding:14px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:var(--shadow);
 }
 
-.product-card{
-  position:relative;
+.featured-image{
+  min-height:390px;
+  border-radius:16px;
+  background:linear-gradient(145deg,#f8f9fb,#e9edf1);
+  display:flex;
+  justify-content:center;
+  align-items:center;
   overflow:hidden;
+}
+
+.featured-image img{
+  width:90%;
+  height:90%;
+  object-fit:contain;
+}
+
+.featured-info{
+  padding:35px 30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.featured-label{
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:9px;
+}
+
+.featured-info h2{
+  font-size:34px;
+  line-height:1.1;
+  letter-spacing:-1px;
+  margin-bottom:10px;
+}
+
+.rating{
+  color:#f59e0b;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.rating span{
+  color:#8b95a5;
+  margin-left:5px;
+}
+
+.featured-info p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+  margin-bottom:14px;
+}
+
+.featured-list{
+  list-style:none;
+  margin-bottom:18px;
+}
+
+.featured-list li{
+  color:#4b5563;
+  font-size:11px;
+  margin-bottom:7px;
+}
+
+.featured-list li:before{
+  content:"✓";
+  color:var(--red);
+  font-weight:900;
+  margin-right:7px;
+}
+
+.price{
+  font-size:27px;
+  font-weight:900;
+  margin-bottom:14px;
+}
+
+/* PRODUCTS */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.product{
   background:#fff;
   border:1px solid var(--border);
   border-radius:18px;
-  padding:12px;
-  box-shadow:0 6px 24px rgba(17,24,39,.06);
+  padding:11px;
+  box-shadow:0 5px 22px rgba(0,0,0,.06);
   transition:.25s;
+  position:relative;
 }
 
-.product-card:hover{
+.product:hover{
   transform:translateY(-5px);
   box-shadow:var(--shadow2);
 }
@@ -592,360 +527,139 @@ main{
   top:18px;
   left:18px;
   z-index:5;
-  padding:5px 8px;
-  border-radius:999px;
   background:var(--red);
   color:#fff;
+  border-radius:20px;
+  padding:5px 8px;
   font-size:8px;
-  font-weight:950;
-  letter-spacing:.5px;
+  font-weight:900;
 }
 
 .product-image{
-  height:235px;
-  margin-bottom:12px;
+  height:260px;
   border-radius:12px;
+  background:#f5f6f8;
   overflow:hidden;
-  background:linear-gradient(145deg,#f8f9fb,#f0f2f5);
   display:flex;
   align-items:center;
   justify-content:center;
+  margin-bottom:12px;
 }
 
 .product-image img{
   width:100%;
   height:100%;
   object-fit:contain;
-  transition:.35s;
-}
-
-.product-card:hover .product-image img{
-  transform:scale(1.05);
 }
 
 .product-info{
-  padding:2px 3px 3px;
+  padding:3px;
 }
 
-.category-tag{
-  display:inline-block;
-  margin-bottom:5px;
+.tag{
   color:var(--red);
-  font-size:8px;
-  font-weight:950;
-  letter-spacing:.7px;
+  font-size:9px;
+  font-weight:900;
   text-transform:uppercase;
+  letter-spacing:.7px;
+  margin-bottom:5px;
 }
 
-.product-info h3{
-  min-height:43px;
-  margin-bottom:6px;
-  font-size:14px;
+.product h3{
+  font-size:15px;
   line-height:1.4;
+  min-height:63px;
+  margin-bottom:5px;
 }
 
-.rating{
-  color:#f59e0b;
-  font-size:11px;
-  margin-bottom:6px;
-}
-
-.rating span{
-  color:#8b95a5;
-  margin-left:3px;
-}
-
-.price-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.product-price{
+  font-size:20px;
+  font-weight:900;
   margin-bottom:10px;
 }
 
-.price{
-  font-size:19px;
-  font-weight:950;
-}
-
-.price-note{
-  color:#9aa2af;
-  font-size:9px;
-}
-
-/* FEATURE PRODUCT */
-
-.feature-product{
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:20px;
-  padding:14px;
-  margin-bottom:18px;
-  overflow:hidden;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:21px;
-  box-shadow:var(--shadow);
-}
-
-.feature-product-image{
-  min-height:365px;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:16px;
-  background:
-    radial-gradient(circle at 50% 35%,#fff 0,#f5f6f8 58%,#e9ebef 100%);
-}
-
-.feature-product-image:before{
-  content:"ASKTOSHOP PICK";
-  position:absolute;
-  top:16px;
-  left:16px;
-  z-index:4;
-  padding:7px 10px;
-  border-radius:999px;
-  background:#111827;
+.shop{
+  display:block;
+  width:100%;
+  text-align:center;
+  padding:11px;
+  background:var(--red);
   color:#fff;
-  font-size:8px;
-  font-weight:950;
-  letter-spacing:.6px;
-}
-
-.feature-product-image img{
-  width:88%;
-  height:88%;
-  object-fit:contain;
-}
-
-.feature-product-info{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:25px;
-}
-
-.feature-small{
-  color:var(--red);
-  font-size:10px;
-  font-weight:950;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  margin-bottom:8px;
-}
-
-.feature-product-info h2{
-  font-size:31px;
-  line-height:1.08;
-  letter-spacing:-1px;
-  margin-bottom:9px;
-}
-
-.feature-product-info p{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.65;
-  margin:12px 0;
-}
-
-.feature-price{
-  font-size:28px;
-  font-weight:950;
-  margin-bottom:14px;
-}
-
-.feature-list{
-  list-style:none;
-  display:grid;
-  gap:7px;
-  margin-bottom:18px;
-}
-
-.feature-list li{
-  color:#505b6c;
+  border-radius:9px;
   font-size:11px;
+  font-weight:900;
 }
 
-.feature-list li:before{
-  content:"✓";
-  color:var(--red);
-  font-weight:950;
-  margin-right:7px;
+.shop:hover{
+  background:var(--red2);
 }
 
-/* DEAL BANNER */
+/* DEAL */
 
-.deal-banner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
-  padding:30px 35px;
+.deal{
+  padding:32px 35px;
+  border-radius:20px;
+  background:linear-gradient(115deg,#0e1727,#1b2941);
   color:#fff;
-  border-radius:19px;
-  background:
-    radial-gradient(circle at 80% 30%,rgba(255,183,3,.18),transparent 25%),
-    linear-gradient(115deg,#101827,#1d2940);
-  box-shadow:var(--shadow);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
 
-.deal-banner small{
+.deal small{
   color:#ffca28;
-  font-weight:950;
   font-size:10px;
-  letter-spacing:1px;
+  font-weight:900;
   text-transform:uppercase;
+  letter-spacing:1px;
 }
 
-.deal-banner h2{
-  font-size:27px;
-  margin:4px 0 6px;
+.deal h2{
+  font-size:28px;
+  margin:5px 0;
 }
 
-.deal-banner p{
-  color:#bfc7d4;
+.deal p{
+  color:#bdc6d4;
   font-size:12px;
 }
 
 .deal-button{
-  padding:12px 19px;
-  border-radius:9px;
-  background:var(--orange);
+  background:var(--gold);
   color:#111827;
-  font-size:11px;
-  font-weight:950;
-  white-space:nowrap;
-}
-
-/* CATEGORY PRODUCTS */
-
-.category-section{
-  scroll-margin-top:140px;
-}
-
-.category-product-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
-}
-
-.mini-product{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:11px;
-  box-shadow:0 5px 20px rgba(17,24,39,.05);
-  transition:.25s;
-}
-
-.mini-product:hover{
-  transform:translateY(-5px);
-  box-shadow:var(--shadow2);
-}
-
-.mini-image{
-  height:240px;
-  margin-bottom:12px;
-  border-radius:12px;
-  overflow:hidden;
-  background:#f5f6f8;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.mini-image img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.mini-info{
-  padding:2px 4px 4px;
-}
-
-.mini-info h3{
-  min-height:43px;
-  margin-bottom:7px;
-  font-size:14px;
-  line-height:1.4;
-}
-
-.mini-price{
-  font-size:19px;
-  font-weight:950;
-  margin-bottom:11px;
-}
-
-/* HOLIDAY */
-
-.holiday{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
-  padding:31px;
-  border:1px solid #f0e2dc;
-  border-radius:20px;
-  background:
-    radial-gradient(circle at 90% 20%,rgba(229,57,53,.12),transparent 25%),
-    linear-gradient(135deg,#fff,#fff5ef);
-}
-
-.holiday h2{
-  font-size:27px;
-  margin-bottom:6px;
-}
-
-.holiday p{
-  max-width:700px;
-  color:var(--muted);
-  font-size:12px;
-}
-
-.holiday-btn{
   padding:12px 19px;
   border-radius:9px;
-  background:var(--red);
-  color:#fff;
   font-size:11px;
-  font-weight:950;
+  font-weight:900;
   white-space:nowrap;
 }
 
 /* WHY */
 
-.why-grid{
+.why{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:16px;
 }
 
 .why-card{
-  padding:25px;
-  text-align:center;
   background:#fff;
   border:1px solid var(--border);
   border-radius:17px;
-  transition:.2s;
-}
-
-.why-card:hover{
-  transform:translateY(-4px);
-  box-shadow:var(--shadow);
+  padding:25px;
+  text-align:center;
 }
 
 .why-icon{
   width:52px;
   height:52px;
+  margin:0 auto 12px;
   display:grid;
   place-items:center;
-  margin:0 auto 12px;
+  background:#fff1f0;
   border-radius:14px;
-  background:#fff2f1;
-  font-size:23px;
+  font-size:22px;
 }
 
 .why-card h3{
@@ -959,187 +673,90 @@ main{
   line-height:1.6;
 }
 
-/* SEARCH MESSAGE */
-
-.search-message{
-  display:none;
-  width:90%;
-  max-width:1400px;
-  margin:15px auto;
-  padding:13px 17px;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:12px;
-  color:#505b6c;
-  font-size:12px;
-}
-
-.search-message strong{
-  color:var(--red);
-}
-
 /* FOOTER */
 
 footer{
-  margin-top:60px;
-  background:#080f1b;
+  margin-top:65px;
+  background:#070d18;
   color:#fff;
 }
 
-.footer-main{
+.footer{
   width:90%;
-  max-width:1400px;
+  max-width:1380px;
   margin:auto;
   padding:45px 0;
   display:grid;
   grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:32px;
+  gap:35px;
 }
 
-.footer-brand h2{
+.footer h2{
   font-size:23px;
-  margin-bottom:8px;
+  margin-bottom:9px;
 }
 
-.footer-brand h2 span{
+.footer h2 span{
   color:#ff5148;
 }
 
-.footer-brand p{
-  max-width:420px;
+.footer p{
+  max-width:430px;
   color:#9da8b8;
   font-size:11px;
   line-height:1.7;
 }
 
-.footer-main h3{
+.footer h3{
   font-size:12px;
-  margin-bottom:13px;
+  margin-bottom:12px;
 }
 
-.footer-main a{
+.footer a{
   display:block;
   color:#aeb7c6;
   font-size:11px;
   margin-bottom:8px;
 }
 
-.footer-main a:hover{
+.footer a:hover{
   color:#fff;
 }
 
-.footer-bottom{
-  padding:16px 5%;
-  border-top:1px solid #1d293c;
+.copyright{
+  border-top:1px solid #1b2738;
+  padding:16px;
   text-align:center;
   color:#7f8999;
   font-size:10px;
 }
 
-/* IMAGE FALLBACK */
+/* MOBILE */
 
-.image-fallback{
-  width:100%;
-  height:100%;
-  min-height:100px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-  color:#6b7280;
-  background:linear-gradient(135deg,#f8fafc,#eef1f5);
-  font-size:11px;
-  font-weight:800;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1100px){
+@media(max-width:1000px){
 
   .categories{
     grid-template-columns:repeat(3,1fr);
   }
 
-  .featured-grid{
+  .products{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .category-product-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .hero-art{
-    right:-80px;
-    opacity:.45;
-  }
-}
-
-@media(max-width:850px){
-
-  header{
-    flex-wrap:wrap;
-  }
-
-  .logo{
-    font-size:25px;
-  }
-
-  .header-deal{
-    display:none;
-  }
-
-  .search{
-    order:3;
-    flex-basis:100%;
-    max-width:none;
-  }
-
-  nav{
-    justify-content:flex-start;
-  }
-
-  .hero{
-    min-height:300px;
-    padding:32px 27px;
-  }
-
-  .hero-art{
-    right:-110px;
-    opacity:.28;
-  }
-
-  .quick-card{
-    grid-template-columns:170px 1fr;
-  }
-
-  .quick-side{
-    grid-column:2;
-    text-align:left;
-  }
-
-  .trust-strip{
+  .featured{
     grid-template-columns:1fr;
   }
 
-  .feature-product{
+  .trust{
     grid-template-columns:1fr;
   }
 
-  .feature-product-image{
-    min-height:330px;
-  }
-
-  .why-grid{
-    grid-template-columns:1fr;
-  }
-
-  .footer-main{
+  .footer{
     grid-template-columns:repeat(2,1fr);
   }
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
 
   .topbar{
     justify-content:center;
@@ -1150,142 +767,91 @@ footer{
   }
 
   header{
-    padding:8px 5%;
+    flex-wrap:wrap;
   }
 
-  .logo{
-    font-size:23px;
-  }
-
-  .hero-wrap,
-  .quick-feature,
-  .section,
-  .trust-strip{
-    width:92%;
-  }
-
-  .hero{
-    min-height:350px;
-    padding:28px 21px;
-    border-radius:18px;
-  }
-
-  .hero h1{
-    font-size:37px;
-    letter-spacing:-1.8px;
-  }
-
-  .hero p{
-    max-width:330px;
-    font-size:13px;
-  }
-
-  .hero-art{
-    width:230px;
-    height:230px;
-    right:-105px;
-    bottom:-30px;
-  }
-
-  .hero-art:before{
-    width:145px;
-    height:145px;
-    left:43px;
-    top:42px;
-  }
-
-  .hero-art:after{
-    left:60px;
-    top:93px;
-    font-size:10px;
-  }
-
-  .quick-card{
-    grid-template-columns:105px 1fr;
-    gap:12px;
-    padding:10px;
-  }
-
-  .quick-image{
-    height:105px;
-  }
-
-  .quick-info h2{
-    font-size:15px;
-  }
-
-  .quick-info p{
+  .deal-link{
     display:none;
   }
 
-  .quick-side{
-    grid-column:1/-1;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+  .search{
+    order:3;
+    flex-basis:100%;
   }
 
-  .quick-price{
-    margin:0;
-    font-size:20px;
+  nav{
+    justify-content:flex-start;
+    gap:22px;
+  }
+
+  .hero{
+    min-height:380px;
+    padding:38px 24px;
+  }
+
+  .hero h1{
+    font-size:42px;
+    letter-spacing:-2px;
+  }
+
+  .hero-circle{
+    width:280px;
+    height:280px;
+    right:-120px;
+    bottom:-80px;
+    opacity:.5;
+  }
+
+  .hero-circle:after{
+    top:115px;
+    left:65px;
+    font-size:11px;
   }
 
   .categories{
     grid-template-columns:repeat(2,1fr);
-    gap:10px;
   }
 
-  .category-img{
+  .category-image{
     height:125px;
   }
 
-  .featured-grid{
+  .products{
     grid-template-columns:1fr;
   }
 
   .product-image{
-    height:265px;
+    height:290px;
   }
 
-  .category-product-grid{
-    grid-template-columns:1fr;
+  .featured-image{
+    min-height:300px;
   }
 
-  .mini-image{
-    height:275px;
+  .featured-info{
+    padding:22px 14px;
   }
 
-  .feature-product{
-    padding:9px;
+  .featured-info h2{
+    font-size:27px;
   }
 
-  .feature-product-image{
-    min-height:285px;
-  }
-
-  .feature-product-info{
-    padding:20px 13px;
-  }
-
-  .feature-product-info h2{
-    font-size:26px;
-  }
-
-  .deal-banner,
-  .holiday{
+  .deal{
     display:block;
     padding:25px 21px;
   }
 
-  .deal-button,
-  .holiday-btn{
+  .deal-button{
     display:inline-block;
     margin-top:16px;
   }
 
-  .footer-main{
+  .why{
     grid-template-columns:1fr;
-    gap:23px;
+  }
+
+  .footer{
+    grid-template-columns:1fr;
   }
 }
 </style>
@@ -1305,19 +871,15 @@ footer{
   </a>
 
   <form class="search" id="searchForm">
-
     <input
       id="searchInput"
       type="search"
       placeholder="Search products, categories & ideas..."
-      autocomplete="off"
     >
-
     <button type="submit">🔍</button>
-
   </form>
 
-  <a href="#deals" class="header-deal">
+  <a href="#deals" class="deal-link">
     🔥 Today's Deals
   </a>
 
@@ -1333,14 +895,13 @@ footer{
   <a href="#fashion">Fashion</a>
   <a href="#kitchen">Kitchen</a>
   <a href="#trending">Trending</a>
-  <a href="#holiday">Holiday Picks</a>
 </nav>
 
 <main id="home">
 
-<!-- HERO -->
+<div class="container">
 
-<div class="hero-wrap">
+  <!-- HERO -->
 
   <section class="hero">
 
@@ -1356,17 +917,17 @@ footer{
       </h1>
 
       <p>
-        Discover useful products, trending finds and smart shopping ideas —
-        all in one clean place.
+        Discover useful products, trending finds and smart shopping ideas
+        — all in one clean place.
       </p>
 
-      <div class="hero-actions">
+      <div class="hero-buttons">
 
-        <a href="#featured" class="primary-btn">
+        <a href="#featured" class="btn btn-red">
           Shop Featured →
         </a>
 
-        <a href="#categories" class="secondary-btn">
+        <a href="#categories" class="btn btn-white">
           Browse Categories
         </a>
 
@@ -1374,1159 +935,821 @@ footer{
 
     </div>
 
-    <div class="hero-art"></div>
+    <div class="hero-circle"></div>
+
+  </section>
+
+
+  <!-- TRUST -->
+
+  <div class="trust">
+
+    <div class="trust-card">
+      <div class="trust-icon">🔎</div>
+      <div>
+        <strong>Easy Discovery</strong>
+        <small>Find products faster</small>
+      </div>
+    </div>
+
+    <div class="trust-card">
+      <div class="trust-icon">⭐</div>
+      <div>
+        <strong>Smart Picks</strong>
+        <small>Selected products</small>
+      </div>
+    </div>
+
+    <div class="trust-card">
+      <div class="trust-icon">🛒</div>
+      <div>
+        <strong>Easy Shopping</strong>
+        <small>Visit the retailer</small>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- CATEGORIES -->
+
+  <section id="categories" class="section">
+
+    <div class="section-title">
+      <h2>Shop by Category</h2>
+      <p>Explore popular shopping categories.</p>
+    </div>
+
+    <div class="categories">
+
+      <a class="category" href="#beauty">
+        <div class="category-image">
+          <img src="beauty-ordinary.png" alt="Beauty">
+        </div>
+        <div class="category-name">
+          <strong>💄 Beauty</strong>
+          <span>→</span>
+        </div>
+      </a>
+
+      <a class="category" href="#home-products">
+        <div class="category-image">
+          <img src="home-hangers.png" alt="Home">
+        </div>
+        <div class="category-name">
+          <strong>🏠 Home</strong>
+          <span>→</span>
+        </div>
+      </a>
+
+      <a class="category" href="#electronics">
+        <div class="category-image">
+          <img src="electronics-airpods.png" alt="Electronics">
+        </div>
+        <div class="category-name">
+          <strong>🎧 Electronics</strong>
+          <span>→</span>
+        </div>
+      </a>
+
+      <a class="category" href="#fashion">
+        <div class="category-image">
+          <img src="fashion-new-balance.png" alt="Fashion">
+        </div>
+        <div class="category-name">
+          <strong>👟 Fashion</strong>
+          <span>→</span>
+        </div>
+      </a>
+
+      <a class="category" href="#kitchen">
+        <div class="category-image">
+          <img src="kitchen-stanley.png" alt="Kitchen">
+        </div>
+        <div class="category-name">
+          <strong>🍳 Kitchen</strong>
+          <span>→</span>
+        </div>
+      </a>
+
+      <a class="category" href="#trending">
+        <div class="category-image">
+          <img src="trending-owala.png" alt="Trending">
+        </div>
+        <div class="category-name">
+          <strong>🔥 Trending</strong>
+          <span>→</span>
+        </div>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURED -->
+
+  <section id="featured" class="section">
+
+    <div class="section-title">
+      <h2>Featured Shopping Pick</h2>
+      <p>Our featured product of the moment.</p>
+    </div>
+
+    <div class="featured">
+
+      <div class="featured-image">
+        <img
+          src="ISDIN.png"
+          alt="ISDIN Uradin Podos Foot Care"
+        >
+      </div>
+
+      <div class="featured-info">
+
+        <div class="featured-label">
+          AskToShop Featured Pick
+        </div>
+
+        <h2>
+          ISDIN Uradin Podos Foot Care
+        </h2>
+
+        <div class="rating">
+          ★★★★★ <span>4.7 / 5</span>
+        </div>
+
+        <p>
+          A featured personal-care product selected by AskToShop
+          for shoppers looking for useful beauty and personal-care finds.
+        </p>
+
+        <ul class="featured-list">
+          <li>Featured AskToShop pick</li>
+          <li>Easy product discovery</li>
+          <li>Check retailer for latest price and availability</li>
+        </ul>
+
+        <div class="price">$39</div>
+
+        <a
+          href="https://amzn.to/46unnJG"
+          class="btn btn-red"
+          target="_blank"
+          rel="nofollow sponsored noopener"
+        >
+          SHOP NOW →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- POPULAR PRODUCTS -->
+
+  <section class="section">
+
+    <div class="section-title">
+      <h2>Popular Picks</h2>
+      <p>More products worth checking out.</p>
+    </div>
+
+    <div class="products">
+
+      <!-- CALDERA -->
+
+      <article class="product">
+
+        <span class="badge">NEW</span>
+
+        <div class="product-image">
+          <img
+            src="CalderaLab.png"
+            alt="Caldera + Lab The Eye Serum"
+          >
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Beauty</div>
+
+          <h3>
+            Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
+          </h3>
+
+          <div class="rating">
+            ★★★★★ <span>4.8</span>
+          </div>
+
+          <div class="product-price">$153</div>
+
+          <a
+            href="https://amzn.to/45StPtV"
+            class="shop"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- OWALA -->
+
+      <article class="product">
+
+        <span class="badge">TRENDING</span>
+
+        <div class="product-image">
+          <img
+            src="trending-owala.png"
+            alt="Owala FreeSip Stainless Steel Water Bottle"
+          >
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Trending</div>
+
+          <h3>
+            Owala FreeSip Stainless Steel Water Bottle
+          </h3>
+
+          <div class="rating">
+            ★★★★★ <span>Popular Pick</span>
+          </div>
+
+          <div class="product-price">$45.00</div>
+
+          <a
+            href="https://amzn.to/45VQTbc"
+            class="shop"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- AIRPODS -->
+
+      <article class="product">
+
+        <span class="badge">BEST SELLER</span>
+
+        <div class="product-image">
+          <img
+            src="electronics-airpods.png"
+            alt="Apple AirPods Pro"
+          >
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Electronics</div>
+
+          <h3>
+            Apple AirPods Pro (3rd Generation) (Renewed)
+          </h3>
+
+          <div class="rating">
+            ★★★★★ <span>Popular Pick</span>
+          </div>
+
+          <div class="product-price">$199.99</div>
+
+          <a
+            href="https://amzn.to/4wZseNX"
+            class="shop"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- DEAL -->
+
+  <section id="deals" class="section">
+
+    <div class="deal">
+
+      <div>
+        <small>Smart Shopping</small>
+        <h2>Discover Today's Deals</h2>
+        <p>Find products worth checking out today.</p>
+      </div>
+
+      <a href="#featured" class="deal-button">
+        Explore Picks →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- BEAUTY -->
+
+  <section id="beauty" class="section">
+
+    <div class="section-title">
+      <h2>💄 Beauty Picks</h2>
+      <p>Beauty products selected for easy discovery.</p>
+    </div>
+
+    <div class="products">
+
+      <article class="product">
+
+        <div class="product-image">
+          <img
+            src="beauty-ordinary.png"
+            alt="The Ordinary Niacinamide"
+          >
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Beauty</div>
+
+          <h3>
+            The Ordinary Niacinamide 10% + Zinc 1%, Smoothing Serum
+          </h3>
+
+          <div class="rating">★★★★★</div>
+
+          <div class="product-price">$6.00</div>
+
+          <a
+            href="https://amzn.to/3UHAZP5"
+            class="shop"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOME -->
+
+  <section id="home-products" class="section">
+
+    <div class="section-title">
+      <h2>🏠 Home Picks</h2>
+      <p>Useful products for home and organization.</p>
+    </div>
+
+    <div class="products">
+
+      <article class="product">
+
+        <div class="product-image">
+          <img
+            src="home-hangers.png"
+            alt="Amazon Basics Velvet Non-Slip Hangers"
+          >
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Home</div>
+
+          <h3>
+            Amazon Basics Velvet Non-Slip Hangers – 100 Pack
+          </h3>
+
+          <div class="rating">★★★★★</div>
+
+          <div class="product-price">$40.49</div>
+
+          <a
+            href="https://amzn.to/4xvhXKv"
+            class="shop"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- ELECTRONICS -->
+
+  <section id="electronics" class="section">
+
+    <div class="section-title">
+      <h2>🎧 Electronics</h2>
+      <p>Popular technology and everyday gadgets.</p>
+    </div>
+
+    <div class="products">
+
+      <article class="product">
+
+        <div class="product-image">
+          <img
+            src="electronics-airpods.png"
+            alt="Apple AirPods Pro"
+          >
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Electronics</div>
+
+          <h3>
+            Apple AirPods Pro (3rd Generation) (Renewed)
+          </h3>
+
+          <div class="rating">★★★★★</div>
+
+          <div class="product-price">$199.99</div>
+
+          <a
+            href="https://amzn.to/4wZseNX"
+            class="shop"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- FASHION -->
+
+  <section id="fashion" class="section">
+
+    <div class="section-title">
+      <h2>👟 Fashion Picks</h2>
+      <p>Casual styles and everyday fashion finds.</p>
+    </div>
+
+    <div class="products">
+
+      <article class="product">
+
+        <div class="product-image">
+          <img
+            src="fashion-new-balance.png"
+            alt="New Balance Women's 327"
+          >
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Fashion</div>
+
+          <h3>
+            New Balance Women's 327 Casual Shoes
+          </h3>
+
+          <div class="rating">★★★★★</div>
+
+          <div class="product-price">$104.95</div>
+
+          <a
+            href="https://amzn.to/4r3WpCp"
+            class="shop"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- KITCHEN -->
+
+  <section id="kitchen" class="section">
+
+    <div class="section-title">
+      <h2>🍳 Kitchen Picks</h2>
+      <p>Popular kitchen and drinkware finds.</p>
+    </div>
+
+    <div class="products">
+
+      <article class="product">
+
+        <div class="product-image">
+          <img
+            src="kitchen-stanley.png"
+            alt="Stanley Quencher H2.0"
+          >
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Kitchen</div>
+
+          <h3>
+            Stanley Quencher H2.0 40 oz Tumbler
+          </h3>
+
+          <div class="rating">★★★★★</div>
+
+          <div class="product-price">$58.74</div>
+
+          <a
+            href="https://amzn.to/4x0KeHQ"
+            class="shop"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- TRENDING -->
+
+  <section id="trending" class="section">
+
+    <div class="section-title">
+      <h2>🔥 Trending Picks</h2>
+      <p>Products getting attention right now.</p>
+    </div>
+
+    <div class="products">
+
+      <article class="product">
+
+        <span class="badge">TRENDING</span>
+
+        <div class="product-image">
+          <img
+            src="trending-owala.png"
+            alt="Owala FreeSip"
+          >
+        </div>
+
+        <div class="product-info">
+
+          <div class="tag">Trending</div>
+
+          <h3>
+            Owala FreeSip Stainless Steel Water Bottle
+          </h3>
+
+          <div class="rating">★★★★★</div>
+
+          <div class="product-price">$45.00</div>
+
+          <a
+            href="https://amzn.to/45VQTbc"
+            class="shop"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            SHOP NOW →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY ASK TO SHOP -->
+
+  <section class="section">
+
+    <div class="section-title">
+      <h2>Why AskToShop?</h2>
+      <p>Simple discovery. Better shopping.</p>
+    </div>
+
+    <div class="why">
+
+      <div class="why-card">
+
+        <div class="why-icon">🔎</div>
+
+        <h3>Easy Discovery</h3>
+
+        <p>
+          Find useful and interesting products without endless searching.
+        </p>
+
+      </div>
+
+      <div class="why-card">
+
+        <div class="why-icon">⭐</div>
+
+        <h3>Smart Picks</h3>
+
+        <p>
+          Browse selected products and shopping ideas in one place.
+        </p>
+
+      </div>
+
+      <div class="why-card">
+
+        <div class="why-icon">🛍️</div>
+
+        <h3>Shop Easily</h3>
+
+        <p>
+          Visit the retailer to check the latest price and availability.
+        </p>
+
+      </div>
+
+    </div>
 
   </section>
 
 </div>
 
-<!-- QUICK FEATURED PRODUCT -->
-
-<section class="quick-feature">
-
-  <div class="quick-card">
-
-    <div class="quick-image">
-
-      <img
-        src="ISDIN.png"
-        alt="ISDIN Uradin Podos Foot Care"
-        onerror="imageError(this,'ISDIN Uradin Podos')"
-      >
-
-    </div>
-
-    <div class="quick-info">
-
-      <small>Featured Pick</small>
-
-      <h2>ISDIN Uradin Podos Foot Care</h2>
-
-      <p>
-        A featured personal-care pick selected by AskToShop.
-      </p>
-
-      <div class="quick-rating">
-        ★★★★★ <span>4.7 / 5</span>
-      </div>
-
-    </div>
-
-    <div class="quick-side">
-
-      <div class="quick-price">$39</div>
-
-      <a
-        href="https://amzn.to/46unnJG"
-        class="shop-btn"
-        target="_blank"
-        rel="nofollow sponsored noopener"
-      >
-        SHOP NOW →
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- TRUST -->
-
-<div class="trust-strip">
-
-  <div class="trust-item">
-
-    <div class="trust-icon">🔎</div>
-
-    <div>
-      <strong>Easy Discovery</strong>
-      <span>Find interesting products faster</span>
-    </div>
-
-  </div>
-
-  <div class="trust-item">
-
-    <div class="trust-icon">⭐</div>
-
-    <div>
-      <strong>Smart Picks</strong>
-      <span>Selected products for easy browsing</span>
-    </div>
-
-  </div>
-
-  <div class="trust-item">
-
-    <div class="trust-icon">🛒</div>
-
-    <div>
-      <strong>Shop Easily</strong>
-      <span>Visit the retailer for current price</span>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- CATEGORIES -->
-
-<section class="section" id="categories">
-
-  <div class="section-head">
-
-    <div>
-      <h2>Shop by Category</h2>
-      <p>Explore our most popular shopping categories.</p>
-    </div>
-
-  </div>
-
-  <div class="categories">
-
-    <a class="category" href="#beauty">
-
-      <div class="category-img">
-
-        <img
-          src="beauty-ordinary.png"
-          alt="Beauty"
-          onerror="imageError(this,'Beauty')"
-        >
-
-      </div>
-
-      <div class="category-label">
-        <strong>💄 Beauty</strong>
-        <span>→</span>
-      </div>
-
-    </a>
-
-    <a class="category" href="#home-products">
-
-      <div class="category-img">
-
-        <img
-          src="home-hangers.png"
-          alt="Home"
-          onerror="imageError(this,'Home')"
-        >
-
-      </div>
-
-      <div class="category-label">
-        <strong>🏠 Home</strong>
-        <span>→</span>
-      </div>
-
-    </a>
-
-    <a class="category" href="#electronics">
-
-      <div class="category-img">
-
-        <img
-          src="electronics-airpods.png"
-          alt="Electronics"
-          onerror="imageError(this,'Electronics')"
-        >
-
-      </div>
-
-      <div class="category-label">
-        <strong>🎧 Electronics</strong>
-        <span>→</span>
-      </div>
-
-    </a>
-
-    <a class="category" href="#fashion">
-
-      <div class="category-img">
-
-        <img
-          src="fashion-new-balance.png"
-          alt="Fashion"
-          onerror="imageError(this,'Fashion')"
-        >
-
-      </div>
-
-      <div class="category-label">
-        <strong>👟 Fashion</strong>
-        <span>→</span>
-      </div>
-
-    </a>
-
-    <a class="category" href="#kitchen">
-
-      <div class="category-img">
-
-        <img
-          src="kitchen-stanley.png"
-          alt="Kitchen"
-          onerror="imageError(this,'Kitchen')"
-        >
-
-      </div>
-
-      <div class="category-label">
-        <strong>🍳 Kitchen</strong>
-        <span>→</span>
-      </div>
-
-    </a>
-
-    <a class="category" href="#trending">
-
-      <div class="category-img">
-
-        <img
-          src="trending-owala.png"
-          alt="Trending"
-          onerror="imageError(this,'Trending')"
-        >
-
-      </div>
-
-      <div class="category-label">
-        <strong>🔥 Trending</strong>
-        <span>→</span>
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-<!-- FEATURED -->
-
-<section class="section" id="featured">
-
-  <div class="section-head">
-
-    <div>
-      <h2>Featured Shopping Picks</h2>
-      <p>A few products worth checking out today.</p>
-    </div>
-
-    <a href="#deals" class="section-link">
-      Today's Deals →
-    </a>
-
-  </div>
-
-  <!-- ISDIN -->
-
-  <div class="feature-product">
-
-    <div class="feature-product-image">
-
-      <img
-        src="ISDIN.png"
-        alt="ISDIN Uradin Podos Foot Care"
-        onerror="imageError(this,'ISDIN Uradin Podos')"
-      >
-
-    </div>
-
-    <div class="feature-product-info">
-
-      <div class="feature-small">
-        Featured Beauty Pick
-      </div>
-
-      <h2>
-        ISDIN Uradin Podos Foot Care
-      </h2>
-
-      <div class="rating">
-        ★★★★★ <span>4.7 / 5</span>
-      </div>
-
-      <p>
-        A featured foot-care product selected for shoppers
-        looking for useful beauty and personal-care finds.
-      </p>
-
-      <ul class="feature-list">
-        <li>Featured AskToShop pick</li>
-        <li>Clean product presentation</li>
-        <li>Check latest Amazon price & availability</li>
-      </ul>
-
-      <div class="feature-price">$39</div>
-
-      <a
-        href="https://amzn.to/46unnJG"
-        class="feature-shop"
-        target="_blank"
-        rel="nofollow sponsored noopener"
-      >
-        SHOP NOW →
-      </a>
-
-    </div>
-
-  </div>
-
-  <div class="featured-grid">
-
-    <!-- CALDERA -->
-
-    <div class="product-card">
-
-      <span class="badge">NEW</span>
-
-      <div class="product-image">
-
-        <img
-          src="CalderaLab.png"
-          alt="Caldera + Lab The Eye Serum"
-          onerror="imageError(this,'Caldera + Lab')"
-        >
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-tag">Beauty</div>
-
-        <h3>
-          Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
-        </h3>
-
-        <div class="rating">
-          ★★★★★ <span>4.8</span>
-        </div>
-
-        <div class="price-row">
-          <div class="price">$153</div>
-          <div class="price-note">Check price</div>
-        </div>
-
-        <a
-          href="https://amzn.to/45StPtV"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
-      </div>
-
-    </div>
-
-    <!-- OWALA -->
-
-    <div class="product-card">
-
-      <span class="badge">TRENDING</span>
-
-      <div class="product-image">
-
-        <img
-          src="trending-owala.png"
-          alt="Owala FreeSip Stainless Steel Water Bottle"
-          onerror="imageError(this,'Owala FreeSip')"
-        >
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-tag">Trending</div>
-
-        <h3>
-          Owala FreeSip Stainless Steel Water Bottle
-        </h3>
-
-        <div class="rating">
-          ★★★★★ <span>Popular Pick</span>
-        </div>
-
-        <div class="price-row">
-          <div class="price">$45.00</div>
-          <div class="price-note">Check price</div>
-        </div>
-
-        <a
-          href="https://amzn.to/45VQTbc"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
-      </div>
-
-    </div>
-
-    <!-- AIRPODS -->
-
-    <div class="product-card">
-
-      <span class="badge">BEST SELLER</span>
-
-      <div class="product-image">
-
-        <img
-          src="electronics-airpods.png"
-          alt="Apple AirPods Pro 3rd Generation Renewed"
-          onerror="imageError(this,'Apple AirPods')"
-        >
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-tag">Electronics</div>
-
-        <h3>
-          Apple AirPods Pro (3rd Generation) (Renewed)
-        </h3>
-
-        <div class="rating">
-          ★★★★★ <span>Popular Pick</span>
-        </div>
-
-        <div class="price-row">
-          <div class="price">$199.99</div>
-          <div class="price-note">Check price</div>
-        </div>
-
-        <a
-          href="https://amzn.to/4wZseNX"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- DEALS -->
-
-<section class="section" id="deals">
-
-  <div class="deal-banner">
-
-    <div>
-
-      <small>Smart Shopping</small>
-
-      <h2>Discover Today's Deals</h2>
-
-      <p>
-        Find products worth checking out before you miss them.
-      </p>
-
-    </div>
-
-    <a href="#featured" class="deal-button">
-      Explore Picks →
-    </a>
-
-  </div>
-
-</section>
-
-<!-- BEAUTY -->
-
-<section class="section category-section" id="beauty">
-
-  <div class="section-head">
-
-    <div>
-      <h2>💄 Beauty Picks</h2>
-      <p>Beauty products selected for easy discovery.</p>
-    </div>
-
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
-
-  </div>
-
-  <div class="category-product-grid">
-
-    <div class="mini-product">
-
-      <div class="mini-image">
-
-        <img
-          src="beauty-ordinary.png"
-          alt="The Ordinary Niacinamide 10% + Zinc 1%"
-          onerror="imageError(this,'The Ordinary')"
-        >
-
-      </div>
-
-      <div class="mini-info">
-
-        <div class="category-tag">Beauty</div>
-
-        <h3>
-          The Ordinary Niacinamide 10% + Zinc 1%, Smoothing Serum
-        </h3>
-
-        <div class="rating">★★★★★</div>
-
-        <div class="mini-price">$6.00</div>
-
-        <a
-          href="https://amzn.to/3UHAZP5"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
-      </div>
-
-    </div>
-
-    <div class="mini-product">
-
-      <div class="mini-image">
-
-        <img
-          src="CalderaLab.png"
-          alt="Caldera + Lab Eye Serum"
-          onerror="imageError(this,'Caldera + Lab')"
-        >
-
-      </div>
-
-      <div class="mini-info">
-
-        <div class="category-tag">Beauty</div>
-
-        <h3>
-          Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
-        </h3>
-
-        <div class="rating">★★★★★</div>
-
-        <div class="mini-price">$153</div>
-
-        <a
-          href="https://amzn.to/45StPtV"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- HOME -->
-
-<section class="section category-section" id="home-products">
-
-  <div class="section-head">
-
-    <div>
-      <h2>🏠 Home Picks</h2>
-      <p>Useful products for your home and everyday organization.</p>
-    </div>
-
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
-
-  </div>
-
-  <div class="category-product-grid">
-
-    <div class="mini-product">
-
-      <div class="mini-image">
-
-        <img
-          src="home-hangers.png"
-          alt="Amazon Basics Velvet Non-Slip Hangers"
-          onerror="imageError(this,'Amazon Basics Hangers')"
-        >
-
-      </div>
-
-      <div class="mini-info">
-
-        <div class="category-tag">Home</div>
-
-        <h3>
-          Amazon Basics Velvet Non-Slip Hangers – 100 Pack
-        </h3>
-
-        <div class="rating">★★★★★</div>
-
-        <div class="mini-price">$40.49</div>
-
-        <a
-          href="https://amzn.to/4xvhXKv"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ELECTRONICS -->
-
-<section class="section category-section" id="electronics">
-
-  <div class="section-head">
-
-    <div>
-      <h2>🎧 Electronics</h2>
-      <p>Popular tech products and everyday gadgets.</p>
-    </div>
-
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
-
-  </div>
-
-  <div class="category-product-grid">
-
-    <div class="mini-product">
-
-      <div class="mini-image">
-
-        <img
-          src="electronics-airpods.png"
-          alt="Apple AirPods Pro"
-          onerror="imageError(this,'Apple AirPods')"
-        >
-
-      </div>
-
-      <div class="mini-info">
-
-        <div class="category-tag">Electronics</div>
-
-        <h3>
-          Apple AirPods Pro (3rd Generation) (Renewed)
-        </h3>
-
-        <div class="rating">★★★★★</div>
-
-        <div class="mini-price">$199.99</div>
-
-        <a
-          href="https://amzn.to/4wZseNX"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- FASHION -->
-
-<section class="section category-section" id="fashion">
-
-  <div class="section-head">
-
-    <div>
-      <h2>👟 Fashion Picks</h2>
-      <p>Casual styles and everyday fashion finds.</p>
-    </div>
-
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
-
-  </div>
-
-  <div class="category-product-grid">
-
-    <div class="mini-product">
-
-      <div class="mini-image">
-
-        <img
-          src="fashion-new-balance.png"
-          alt="New Balance Women's 327"
-          onerror="imageError(this,'New Balance')"
-        >
-
-      </div>
-
-      <div class="mini-info">
-
-        <div class="category-tag">Fashion</div>
-
-        <h3>
-          New Balance Women's 327 Casual Shoes
-        </h3>
-
-        <div class="rating">★★★★★</div>
-
-        <div class="mini-price">$104.95</div>
-
-        <a
-          href="https://amzn.to/4r3WpCp"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- KITCHEN -->
-
-<section class="section category-section" id="kitchen">
-
-  <div class="section-head">
-
-    <div>
-      <h2>🍳 Kitchen Picks</h2>
-      <p>Popular kitchen and drinkware finds.</p>
-    </div>
-
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
-
-  </div>
-
-  <div class="category-product-grid">
-
-    <div class="mini-product">
-
-      <div class="mini-image">
-
-        <img
-          src="kitchen-stanley.png"
-          alt="Stanley Quencher H2.0"
-          onerror="imageError(this,'Stanley Quencher')"
-        >
-
-      </div>
-
-      <div class="mini-info">
-
-        <div class="category-tag">Kitchen</div>
-
-        <h3>
-          Stanley Quencher H2.0 40 oz Tumbler
-        </h3>
-
-        <div class="rating">★★★★★</div>
-
-        <div class="mini-price">$58.74</div>
-
-        <a
-          href="https://amzn.to/4x0KeHQ"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- TRENDING -->
-
-<section class="section category-section" id="trending">
-
-  <div class="section-head">
-
-    <div>
-      <h2>🔥 Trending Picks</h2>
-      <p>Products getting attention right now.</p>
-    </div>
-
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
-
-  </div>
-
-  <div class="category-product-grid">
-
-    <div class="mini-product">
-
-      <div class="mini-image">
-
-        <img
-          src="trending-owala.png"
-          alt="Owala FreeSip"
-          onerror="imageError(this,'Owala FreeSip')"
-        >
-
-      </div>
-
-      <div class="mini-info">
-
-        <div class="category-tag">Trending</div>
-
-        <h3>
-          Owala FreeSip Stainless Steel Water Bottle
-        </h3>
-
-        <div class="rating">★★★★★</div>
-
-        <div class="mini-price">$45.00</div>
-
-        <a
-          href="https://amzn.to/45VQTbc"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- HOLIDAY -->
-
-<section class="section" id="holiday">
-
-  <div class="holiday">
-
-    <div>
-
-      <h2>🎁 Amazon Holiday Picks</h2>
-
-      <p>
-        Discover gift ideas, seasonal finds and products worth
-        checking out for the holiday season.
-      </p>
-
-    </div>
-
-    <a href="#featured" class="holiday-btn">
-      Explore Picks →
-    </a>
-
-  </div>
-
-</section>
-
-<!-- WHY -->
-
-<section class="section">
-
-  <div class="section-head">
-
-    <div>
-      <h2>Why AskToShop?</h2>
-      <p>Simple discovery. Better shopping.</p>
-    </div>
-
-  </div>
-
-  <div class="why-grid">
-
-    <div class="why-card">
-
-      <div class="why-icon">🔎</div>
-
-      <h3>Easy Discovery</h3>
-
-      <p>
-        Find useful and interesting products without endless searching.
-      </p>
-
-    </div>
-
-    <div class="why-card">
-
-      <div class="why-icon">⭐</div>
-
-      <h3>Smart Picks</h3>
-
-      <p>
-        Browse selected products and shopping ideas in one place.
-      </p>
-
-    </div>
-
-    <div class="why-card">
-
-      <div class="why-icon">🛍️</div>
-
-      <h3>Shop Easily</h3>
-
-      <p>
-        Visit the retailer to check the latest price and availability.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- SEARCH MESSAGE -->
-
-<div class="search-message" id="searchMessage"></div>
-
 </main>
+
 
 <!-- FOOTER -->
 
 <footer>
 
-  <div class="footer-main">
+  <div class="footer">
 
-    <div class="footer-brand">
-
-      <h2>
-        AskTo<span>Shop</span>
-      </h2>
+    <div>
+      <h2>AskTo<span>Shop</span></h2>
 
       <p>
         Discover products, trending finds and smart shopping ideas.
         AskToShop makes online product discovery simple and convenient.
       </p>
-
     </div>
 
     <div>
-
       <h3>Explore</h3>
-
       <a href="#featured">Featured Picks</a>
       <a href="#deals">Today's Deals</a>
-      <a href="#holiday">Holiday Picks</a>
       <a href="#categories">Categories</a>
-
     </div>
 
     <div>
-
       <h3>Categories</h3>
-
       <a href="#beauty">Beauty</a>
       <a href="#home-products">Home</a>
       <a href="#electronics">Electronics</a>
       <a href="#fashion">Fashion</a>
       <a href="#kitchen">Kitchen</a>
       <a href="#trending">Trending</a>
-
     </div>
 
     <div>
-
       <h3>Information</h3>
-
       <a href="#home">About AskToShop</a>
       <a href="#home">Privacy</a>
       <a href="#home">Affiliate Disclosure</a>
       <a href="#home">Contact</a>
-
     </div>
 
   </div>
 
-  <div class="footer-bottom">
+  <div class="copyright">
     © 2026 AskToShop. All rights reserved.
   </div>
 
 </footer>
 
+
 <script>
-
-/* IMAGE FALLBACK */
-
-function imageError(img,name){
-
-  if(!img || img.dataset.failed === "1"){
-    return;
-  }
-
-  img.dataset.failed = "1";
-
-  const fallback = document.createElement("div");
-
-  fallback.className = "image-fallback";
-  fallback.textContent = name;
-
-  img.replaceWith(fallback);
-}
 
 /* SEARCH */
 
-const searchInput =
-  document.getElementById("searchInput");
-
-const searchMessage =
-  document.getElementById("searchMessage");
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
 
 const searchMap = {
-
   beauty:"#beauty",
   ordinary:"#beauty",
   niacinamide:"#beauty",
-  zinc:"#beauty",
-  caldera:"#beauty",
-  "eye serum":"#beauty",
-
+  caldera:"#featured",
   home:"#home-products",
   hanger:"#home-products",
   hangers:"#home-products",
-  "amazon basics":"#home-products",
-
   electronics:"#electronics",
   airpods:"#electronics",
   apple:"#electronics",
-  headphone:"#electronics",
-
   fashion:"#fashion",
   "new balance":"#fashion",
   shoes:"#fashion",
-
   kitchen:"#kitchen",
   stanley:"#kitchen",
   tumbler:"#kitchen",
-
   trending:"#trending",
   owala:"#trending",
   bottle:"#trending",
-
   deals:"#deals",
-  featured:"#featured",
-  holiday:"#holiday"
-
+  featured:"#featured"
 };
 
-document
-  .getElementById("searchForm")
-  .addEventListener("submit",function(event){
+searchForm.addEventListener("submit",function(e){
 
-    event.preventDefault();
+  e.preventDefault();
 
-    const search =
-      searchInput.value.trim().toLowerCase();
+  const query =
+    searchInput.value.trim().toLowerCase();
 
-    if(!search){
+  if(!query){
+    searchInput.focus();
+    return;
+  }
 
-      searchInput.focus();
+  let target = null;
+
+  for(const key in searchMap){
+
+    if(query.includes(key)){
+      target = searchMap[key];
+      break;
+    }
+
+  }
+
+  if(target){
+
+    const element =
+      document.querySelector(target);
+
+    if(element){
+
+      element.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
 
       return;
-
     }
 
-    let destination = null;
+  }
 
-    for(const keyword in searchMap){
-
-      if(search.includes(keyword)){
-
-        destination = searchMap[keyword];
-
-        break;
-
-      }
-
-    }
-
-    if(destination){
-
-      const target =
-        document.querySelector(destination);
-
-      if(target){
-
-        target.scrollIntoView({
-          behavior:"smooth",
-          block:"start"
-        });
-
-        searchMessage.style.display = "none";
-
-        return;
-
-      }
-
-    }
-
-    searchMessage.style.display = "block";
-
-    searchMessage.innerHTML =
-      'No exact match found. Try <strong>Beauty, Home, Electronics, Fashion, Kitchen, Trending, Owala, Stanley, AirPods</strong> or <strong>New Balance</strong>.';
-
-    setTimeout(function(){
-
-      searchMessage.style.display = "none";
-
-    },5000);
-
-  });
-
-searchInput.addEventListener("input",function(){
-
-  searchMessage.style.display = "none";
+  alert(
+    "No exact match found. Try Beauty, Home, Electronics, Fashion, Kitchen, Trending, Owala, Stanley or AirPods."
+  );
 
 });
-
-/* CONSOLE */
-
-console.log("AskToShop loaded successfully.");
 
 </script>
 
