@@ -4,24 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="AskToShop — discover smart shopping picks across beauty, home, electronics, fashion, kitchen and trending products.">
+<meta name="description" content="AskToShop — smart shopping picks across beauty, home, electronics, fashion, kitchen and trending products.">
+<meta name="theme-color" content="#111827">
 
 <title>AskToShop | Smart Shopping Picks</title>
 
 <style>
 :root{
-  --navy:#101827;
-  --navy2:#1d2940;
+  --navy:#0d1524;
+  --navy2:#18243a;
   --red:#e53935;
   --red-dark:#c62828;
   --orange:#ffb703;
-  --bg:#f4f5f7;
+  --cream:#fffaf7;
+  --bg:#f4f6f8;
   --white:#fff;
-  --text:#172033;
+  --text:#111827;
   --muted:#6b7280;
   --border:#e5e7eb;
-  --shadow:0 10px 35px rgba(17,24,39,.08);
-  --shadow2:0 18px 45px rgba(17,24,39,.14);
+  --soft:#f8fafc;
+  --shadow:0 12px 35px rgba(15,23,42,.08);
+  --shadow2:0 22px 55px rgba(15,23,42,.14);
+  --radius:20px;
 }
 
 *{
@@ -32,7 +36,6 @@
 
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:145px;
 }
 
 body{
@@ -43,48 +46,64 @@ body{
 }
 
 a{
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
 }
 
 button,
-input{
+input,
+select,
+textarea{
   font:inherit;
 }
 
-/* ================= TOP BAR ================= */
+button{
+  cursor:pointer;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+/* =========================
+   TOP BAR
+========================= */
 
 .topbar{
-  min-height:36px;
+  min-height:34px;
   padding:0 5%;
+  background:#080f1b;
+  color:#cbd5e1;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:#080e19;
-  color:#dbe2ec;
   font-size:11px;
 }
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 header{
   position:sticky;
   top:0;
   z-index:1000;
-  min-height:76px;
-  padding:13px 5%;
+  min-height:68px;
+  padding:10px 5%;
+  background:rgba(13,21,36,.97);
+  backdrop-filter:blur(14px);
+  color:#fff;
   display:flex;
   align-items:center;
-  gap:25px;
-  background:rgba(16,24,39,.98);
-  box-shadow:0 6px 22px rgba(0,0,0,.13);
+  gap:20px;
+  box-shadow:0 5px 25px rgba(0,0,0,.14);
 }
 
 .logo{
-  font-size:29px;
+  font-size:28px;
   font-weight:950;
-  letter-spacing:-1.5px;
-  color:white;
+  letter-spacing:-1.4px;
   white-space:nowrap;
 }
 
@@ -99,159 +118,134 @@ header{
 .search{
   flex:1;
   max-width:760px;
-  height:46px;
+  height:44px;
   display:flex;
-  background:white;
-  border-radius:10px;
   overflow:hidden;
-  box-shadow:0 5px 18px rgba(0,0,0,.14);
+  background:#fff;
+  border-radius:10px;
 }
 
 .search input{
-  width:100%;
+  flex:1;
+  min-width:0;
   border:0;
   outline:0;
-  padding:0 17px;
-  color:#202938;
-  font-size:14px;
+  padding:0 16px;
+  color:#111827;
+  font-size:13px;
 }
 
 .search button{
-  width:60px;
+  width:56px;
   border:0;
   background:var(--orange);
   color:#111827;
-  cursor:pointer;
   font-size:18px;
   font-weight:900;
 }
 
-.search button:hover{
-  background:#ffc928;
-}
-
 .header-deal{
-  color:white;
-  font-size:13px;
+  font-size:12px;
   font-weight:900;
   white-space:nowrap;
 }
 
-/* ================= NAV ================= */
+.header-deal:hover{
+  color:var(--orange);
+}
+
+/* =========================
+   NAV
+========================= */
 
 nav{
-  position:relative;
-  z-index:900;
+  background:var(--navy2);
+  color:#fff;
+  padding:10px 5%;
   display:flex;
   justify-content:center;
-  gap:30px;
-  padding:12px 5%;
-  background:#202c42;
-  color:white;
+  align-items:center;
+  gap:27px;
   overflow-x:auto;
   white-space:nowrap;
+  scrollbar-width:none;
+}
+
+nav::-webkit-scrollbar{
+  display:none;
 }
 
 nav a{
-  color:#e6ebf3;
-  font-size:13px;
+  color:#dbe3ef;
+  font-size:12px;
   font-weight:800;
-  transition:.2s;
 }
 
 nav a:hover{
   color:var(--orange);
 }
 
-/* ================= GENERAL ================= */
+/* =========================
+   MAIN
+========================= */
 
 main{
   overflow:hidden;
 }
 
-.section{
-  width:90%;
-  max-width:1400px;
-  margin:48px auto;
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:20px;
-  margin-bottom:20px;
-}
-
-.section-head h2{
-  font-size:29px;
-  line-height:1.1;
-  letter-spacing:-.9px;
-}
-
-.section-head p{
-  margin-top:6px;
-  color:var(--muted);
-  font-size:13px;
-}
-
-.section-link{
-  color:var(--red);
-  font-size:13px;
-  font-weight:900;
-  white-space:nowrap;
-}
-
-/* ================= HERO ================= */
+/* =========================
+   HERO
+========================= */
 
 .hero-wrap{
   width:90%;
   max-width:1400px;
-  margin:27px auto 0;
+  margin:18px auto 0;
 }
 
 .hero{
-  min-height:410px;
+  min-height:285px;
   position:relative;
   overflow:hidden;
+  border:1px solid #e7e9ee;
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 87% 20%,rgba(229,57,53,.14),transparent 25%),
+    radial-gradient(circle at 75% 100%,rgba(255,183,3,.15),transparent 30%),
+    linear-gradient(120deg,#fff 0%,#fafbfc 58%,#fff2ef 100%);
+  box-shadow:var(--shadow);
   display:flex;
   align-items:center;
-  padding:55px 6%;
-  border:1px solid #e9ebef;
-  border-radius:25px;
-  background:
-    radial-gradient(circle at 88% 15%,rgba(229,57,53,.13),transparent 28%),
-    radial-gradient(circle at 76% 100%,rgba(255,183,3,.13),transparent 31%),
-    linear-gradient(120deg,#fff,#f8fafc 58%,#fff1ee);
-  box-shadow:var(--shadow);
+  padding:34px 6%;
 }
 
 .hero-content{
   position:relative;
-  z-index:3;
-  max-width:670px;
+  z-index:4;
+  max-width:650px;
 }
 
 .eyebrow{
   display:inline-flex;
-  padding:8px 13px;
-  margin-bottom:18px;
-  border:1px solid #f1d0ce;
+  align-items:center;
+  gap:7px;
+  padding:7px 12px;
+  margin-bottom:12px;
   border-radius:999px;
-  background:white;
+  background:#fff;
+  border:1px solid #f0d4d2;
   color:var(--red);
-  font-size:11px;
+  font-size:10px;
   font-weight:950;
   letter-spacing:.8px;
   text-transform:uppercase;
 }
 
 .hero h1{
-  margin-bottom:18px;
-  color:#101827;
-  font-size:clamp(42px,5vw,68px);
-  line-height:1.02;
-  letter-spacing:-3px;
+  font-size:clamp(34px,4.3vw,58px);
+  line-height:1.01;
+  letter-spacing:-2.6px;
+  margin-bottom:12px;
 }
 
 .hero h1 span{
@@ -259,16 +253,16 @@ main{
 }
 
 .hero p{
-  max-width:600px;
-  margin-bottom:28px;
-  color:#626d7e;
-  font-size:17px;
-  line-height:1.7;
+  max-width:570px;
+  color:#657083;
+  font-size:14px;
+  line-height:1.65;
+  margin-bottom:18px;
 }
 
 .hero-actions{
   display:flex;
-  gap:12px;
+  gap:10px;
   flex-wrap:wrap;
 }
 
@@ -277,17 +271,17 @@ main{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:13px 22px;
+  padding:11px 18px;
   border-radius:9px;
-  font-size:13px;
+  font-size:12px;
   font-weight:950;
   transition:.2s;
 }
 
 .primary-btn{
+  color:#fff;
   background:var(--red);
-  color:white;
-  box-shadow:0 8px 20px rgba(229,57,53,.22);
+  box-shadow:0 8px 20px rgba(229,57,53,.2);
 }
 
 .primary-btn:hover{
@@ -296,24 +290,23 @@ main{
 }
 
 .secondary-btn{
-  border:1px solid #dce1e8;
-  background:white;
   color:#202938;
+  background:#fff;
+  border:1px solid #dfe3e9;
 }
 
 .secondary-btn:hover{
   transform:translateY(-2px);
-  border-color:#b9c0ca;
 }
 
-/* HERO DECOR */
+/* hero decoration */
 
 .hero-art{
   position:absolute;
-  right:5%;
-  bottom:-35px;
-  width:390px;
-  height:390px;
+  right:4%;
+  bottom:-70px;
+  width:320px;
+  height:320px;
   border-radius:50%;
   background:linear-gradient(145deg,#fff,#edf0f4);
   box-shadow:
@@ -324,177 +317,431 @@ main{
 .hero-art:before{
   content:"";
   position:absolute;
-  width:235px;
-  height:235px;
-  top:70px;
-  left:78px;
-  border-radius:30px;
-  background:white;
+  width:205px;
+  height:205px;
+  left:58px;
+  top:56px;
+  border-radius:28px;
+  background:#fff;
   transform:rotate(9deg);
   box-shadow:0 20px 45px rgba(0,0,0,.1);
 }
 
 .hero-art:after{
-  content:"SHOP SMART";
+  content:"ASK TO SHOP";
   position:absolute;
-  top:148px;
-  left:103px;
+  top:132px;
+  left:82px;
   color:var(--red);
-  font-size:18px;
+  font-size:15px;
   font-weight:950;
   letter-spacing:1px;
   transform:rotate(9deg);
 }
 
-/* ================= TRUST ================= */
+/* =========================
+   QUICK FEATURED PRODUCT
+========================= */
+
+.quick-feature{
+  width:90%;
+  max-width:1400px;
+  margin:15px auto 0;
+}
+
+.quick-card{
+  display:grid;
+  grid-template-columns:230px 1fr auto;
+  align-items:center;
+  gap:22px;
+  padding:13px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+}
+
+.quick-image{
+  height:145px;
+  border-radius:13px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#f8f9fb,#eef1f5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.quick-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.quick-info small{
+  display:block;
+  color:var(--red);
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  font-size:9px;
+  font-weight:950;
+  margin-bottom:5px;
+}
+
+.quick-info h2{
+  font-size:22px;
+  line-height:1.2;
+  margin-bottom:6px;
+}
+
+.quick-info p{
+  color:var(--muted);
+  font-size:12px;
+  max-width:650px;
+  margin-bottom:7px;
+}
+
+.quick-rating{
+  color:#f59e0b;
+  font-size:12px;
+  font-weight:800;
+}
+
+.quick-rating span{
+  color:#8b95a5;
+  margin-left:4px;
+}
+
+.quick-side{
+  text-align:right;
+  min-width:145px;
+}
+
+.quick-price{
+  font-size:24px;
+  font-weight:950;
+  margin-bottom:9px;
+}
+
+.shop-btn,
+.feature-shop{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--red);
+  color:#fff;
+  border-radius:9px;
+  font-size:11px;
+  font-weight:950;
+  padding:11px 16px;
+  transition:.2s;
+}
+
+.shop-btn:hover,
+.feature-shop:hover{
+  background:var(--red-dark);
+  transform:translateY(-2px);
+}
+
+/* =========================
+   TRUST
+========================= */
 
 .trust-strip{
   width:90%;
   max-width:1400px;
-  margin:18px auto 0;
+  margin:14px auto 0;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:13px;
+  gap:11px;
 }
 
 .trust-item{
   display:flex;
   align-items:center;
-  gap:12px;
-  padding:15px 18px;
-  background:white;
+  gap:10px;
+  padding:12px 15px;
+  background:#fff;
   border:1px solid var(--border);
-  border-radius:14px;
+  border-radius:13px;
 }
 
 .trust-icon{
-  width:40px;
-  height:40px;
+  width:35px;
+  height:35px;
+  flex:none;
   display:grid;
   place-items:center;
-  flex:none;
-  border-radius:11px;
-  background:#fff2f1;
-  font-size:18px;
+  border-radius:10px;
+  background:#fff3f2;
+  font-size:16px;
 }
 
 .trust-item strong{
   display:block;
-  font-size:13px;
+  font-size:12px;
 }
 
 .trust-item span{
   display:block;
-  margin-top:2px;
   color:var(--muted);
-  font-size:11px;
+  font-size:10px;
 }
 
-/* ================= CATEGORIES ================= */
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+  width:90%;
+  max-width:1400px;
+  margin:40px auto;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:15px;
+  margin-bottom:17px;
+}
+
+.section-head h2{
+  font-size:26px;
+  line-height:1.1;
+  letter-spacing:-.8px;
+}
+
+.section-head p{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:5px;
+}
+
+.section-link{
+  color:var(--red);
+  font-size:12px;
+  font-weight:950;
+  white-space:nowrap;
+}
+
+/* =========================
+   CATEGORIES
+========================= */
 
 .categories{
   display:grid;
   grid-template-columns:repeat(6,1fr);
-  gap:16px;
+  gap:14px;
 }
 
 .category{
-  padding:8px;
-  background:white;
+  min-width:0;
+  background:#fff;
   border:1px solid var(--border);
-  border-radius:17px;
+  border-radius:16px;
+  padding:7px;
   box-shadow:0 5px 20px rgba(17,24,39,.05);
   transition:.25s;
 }
 
 .category:hover{
-  transform:translateY(-6px);
+  transform:translateY(-5px);
   box-shadow:var(--shadow2);
 }
 
 .category-img{
-  height:155px;
+  height:145px;
   overflow:hidden;
-  border-radius:12px;
-  background:#f4f5f7;
+  border-radius:11px;
+  background:#f4f6f8;
 }
 
 .category-img img{
   width:100%;
   height:100%;
-  display:block;
   object-fit:cover;
   transition:.4s;
 }
 
-.category:hover img{
+.category:hover .category-img img{
   transform:scale(1.05);
 }
 
 .category-label{
+  padding:10px 5px 7px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  padding:13px 7px 10px;
+  justify-content:space-between;
 }
 
 .category-label strong{
-  font-size:14px;
+  font-size:12px;
 }
 
 .category-label span{
-  color:#9ca3af;
-  font-size:16px;
+  color:#9aa2af;
+  font-size:14px;
 }
 
-/* ================= FEATURED HERO PRODUCT ================= */
+/* =========================
+   FEATURED GRID
+========================= */
+
+.featured-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
+}
+
+.product-card{
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:12px;
+  box-shadow:0 6px 24px rgba(17,24,39,.06);
+  transition:.25s;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow2);
+}
+
+.badge{
+  position:absolute;
+  top:18px;
+  left:18px;
+  z-index:5;
+  padding:5px 8px;
+  border-radius:999px;
+  background:var(--red);
+  color:#fff;
+  font-size:8px;
+  font-weight:950;
+  letter-spacing:.5px;
+}
+
+.product-image{
+  height:235px;
+  margin-bottom:12px;
+  border-radius:12px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#f8f9fb,#f0f2f5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transition:.35s;
+}
+
+.product-card:hover .product-image img{
+  transform:scale(1.05);
+}
+
+.product-info{
+  padding:2px 3px 3px;
+}
+
+.category-tag{
+  display:inline-block;
+  margin-bottom:5px;
+  color:var(--red);
+  font-size:8px;
+  font-weight:950;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+}
+
+.product-info h3{
+  min-height:43px;
+  margin-bottom:6px;
+  font-size:14px;
+  line-height:1.4;
+}
+
+.rating{
+  color:#f59e0b;
+  font-size:11px;
+  margin-bottom:6px;
+}
+
+.rating span{
+  color:#8b95a5;
+  margin-left:3px;
+}
+
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.price{
+  font-size:19px;
+  font-weight:950;
+}
+
+.price-note{
+  color:#9aa2af;
+  font-size:9px;
+}
+
+/* =========================
+   FEATURE PRODUCT
+========================= */
 
 .feature-product{
   display:grid;
-  grid-template-columns:1.12fr .88fr;
-  gap:22px;
-  padding:16px;
-  margin-bottom:22px;
+  grid-template-columns:1.05fr .95fr;
+  gap:20px;
+  padding:14px;
+  margin-bottom:18px;
   overflow:hidden;
-  background:white;
+  background:#fff;
   border:1px solid var(--border);
-  border-radius:22px;
+  border-radius:21px;
   box-shadow:var(--shadow);
 }
 
 .feature-product-image{
-  min-height:405px;
+  min-height:365px;
   position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
   overflow:hidden;
-  border-radius:17px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:16px;
   background:
-    radial-gradient(circle at 50% 35%,#fff,#f4f6f8 60%,#e8ebef);
+    radial-gradient(circle at 50% 35%,#fff 0,#f5f6f8 58%,#e9ebef 100%);
 }
 
 .feature-product-image:before{
   content:"ASKTOSHOP PICK";
   position:absolute;
-  top:18px;
-  left:18px;
-  z-index:5;
-  padding:7px 11px;
+  top:16px;
+  left:16px;
+  z-index:4;
+  padding:7px 10px;
   border-radius:999px;
   background:#111827;
-  color:white;
-  font-size:9px;
+  color:#fff;
+  font-size:8px;
   font-weight:950;
-  letter-spacing:.7px;
+  letter-spacing:.6px;
 }
 
 .feature-product-image img{
-  width:90%;
-  height:90%;
-  display:block;
-  position:relative;
-  z-index:2;
+  width:88%;
+  height:88%;
   object-fit:contain;
 }
 
@@ -502,248 +749,69 @@ main{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:30px 28px;
+  padding:25px;
 }
 
 .feature-small{
-  margin-bottom:10px;
   color:var(--red);
-  font-size:11px;
+  font-size:10px;
   font-weight:950;
-  text-transform:uppercase;
   letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:8px;
 }
 
 .feature-product-info h2{
-  margin-bottom:12px;
-  font-size:35px;
-  line-height:1.1;
-  letter-spacing:-1.3px;
+  font-size:31px;
+  line-height:1.08;
+  letter-spacing:-1px;
+  margin-bottom:9px;
 }
 
 .feature-product-info p{
-  margin-bottom:17px;
   color:var(--muted);
-  font-size:14px;
-  line-height:1.7;
+  font-size:13px;
+  line-height:1.65;
+  margin:12px 0;
 }
 
-.rating{
-  margin-bottom:9px;
-  color:#f5a623;
-  font-size:12px;
-  font-weight:900;
-}
-
-.rating span{
-  margin-left:4px;
-  color:#8992a0;
+.feature-price{
+  font-size:28px;
+  font-weight:950;
+  margin-bottom:14px;
 }
 
 .feature-list{
-  display:grid;
-  gap:9px;
-  margin:0 0 22px;
-  padding:0;
   list-style:none;
+  display:grid;
+  gap:7px;
+  margin-bottom:18px;
 }
 
 .feature-list li{
   color:#505b6c;
-  font-size:12px;
+  font-size:11px;
 }
 
 .feature-list li:before{
   content:"✓";
-  margin-right:8px;
   color:var(--red);
   font-weight:950;
+  margin-right:7px;
 }
 
-.feature-price{
-  margin-bottom:17px;
-  font-size:31px;
-  font-weight:950;
-}
-
-.feature-shop{
-  width:max-content;
-  display:inline-flex;
-  padding:14px 23px;
-  border-radius:9px;
-  background:var(--red);
-  color:white;
-  font-size:13px;
-  font-weight:950;
-  box-shadow:0 8px 22px rgba(229,57,53,.2);
-  transition:.2s;
-}
-
-.feature-shop:hover{
-  background:var(--red-dark);
-  transform:translateY(-2px);
-}
-
-/* ================= PRODUCT GRID ================= */
-
-.featured-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.product-card,
-.mini-product{
-  overflow:hidden;
-  position:relative;
-  padding:13px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:18px;
-  box-shadow:0 6px 24px rgba(17,24,39,.06);
-  transition:.25s;
-}
-
-.product-card:hover,
-.mini-product:hover{
-  transform:translateY(-6px);
-  box-shadow:var(--shadow2);
-}
-
-.badge{
-  position:absolute;
-  top:20px;
-  left:20px;
-  z-index:5;
-  padding:6px 9px;
-  border-radius:999px;
-  background:var(--red);
-  color:white;
-  font-size:9px;
-  font-weight:950;
-  letter-spacing:.5px;
-}
-
-.product-image,
-.mini-image{
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
-  margin-bottom:14px;
-  border-radius:13px;
-  background:linear-gradient(145deg,#f8f9fb,#f0f2f5);
-}
-
-.product-image{
-  height:260px;
-}
-
-.mini-image{
-  height:270px;
-}
-
-.product-image:after{
-  content:"";
-  position:absolute;
-  bottom:10px;
-  width:78%;
-  height:24px;
-  border-radius:50%;
-  background:rgba(0,0,0,.07);
-  filter:blur(15px);
-}
-
-.product-image img,
-.mini-image img{
-  width:100%;
-  height:100%;
-  display:block;
-  position:relative;
-  z-index:2;
-  object-fit:contain;
-  transition:.35s;
-}
-
-.product-card:hover img,
-.mini-product:hover img{
-  transform:scale(1.05);
-}
-
-.product-info,
-.mini-info{
-  padding:2px 4px 4px;
-}
-
-.category-tag{
-  display:inline-block;
-  margin-bottom:6px;
-  color:var(--red);
-  font-size:9px;
-  font-weight:950;
-  text-transform:uppercase;
-  letter-spacing:.7px;
-}
-
-.product-info h3,
-.mini-info h3{
-  min-height:44px;
-  margin-bottom:7px;
-  font-size:15px;
-  line-height:1.4;
-}
-
-.price-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:12px;
-}
-
-.price,
-.mini-price{
-  color:#111827;
-  font-size:21px;
-  font-weight:950;
-}
-
-.mini-price{
-  margin-bottom:12px;
-}
-
-.price-note{
-  color:#9aa2af;
-  font-size:10px;
-}
-
-.shop-btn{
-  display:block;
-  width:100%;
-  padding:11px;
-  border-radius:9px;
-  background:var(--red);
-  color:white;
-  text-align:center;
-  font-size:12px;
-  font-weight:950;
-  transition:.2s;
-}
-
-.shop-btn:hover{
-  background:var(--red-dark);
-}
-
-/* ================= DEAL BANNER ================= */
+/* =========================
+   DEAL BANNER
+========================= */
 
 .deal-banner{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:25px;
-  padding:35px 38px;
-  color:white;
-  border-radius:20px;
+  padding:30px 35px;
+  color:#fff;
+  border-radius:19px;
   background:
     radial-gradient(circle at 80% 30%,rgba(255,183,3,.18),transparent 25%),
     linear-gradient(115deg,#101827,#1d2940);
@@ -753,90 +821,145 @@ main{
 .deal-banner small{
   color:#ffca28;
   font-weight:950;
+  font-size:10px;
   letter-spacing:1px;
   text-transform:uppercase;
 }
 
 .deal-banner h2{
-  margin:5px 0 7px;
-  font-size:29px;
+  font-size:27px;
+  margin:4px 0 6px;
 }
 
 .deal-banner p{
-  color:#bdc6d4;
-  font-size:13px;
+  color:#bfc7d4;
+  font-size:12px;
 }
 
 .deal-button{
-  padding:13px 21px;
+  padding:12px 19px;
   border-radius:9px;
   background:var(--orange);
   color:#111827;
-  font-size:12px;
+  font-size:11px;
   font-weight:950;
   white-space:nowrap;
 }
 
-/* ================= CATEGORY PRODUCT SECTIONS ================= */
+/* =========================
+   CATEGORY PRODUCTS
+========================= */
+
+.category-section{
+  scroll-margin-top:140px;
+}
 
 .category-product-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  gap:17px;
 }
 
-.category-section{
-  scroll-margin-top:145px;
+.mini-product{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:11px;
+  box-shadow:0 5px 20px rgba(17,24,39,.05);
+  transition:.25s;
 }
 
-/* ================= HOLIDAY ================= */
+.mini-product:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow2);
+}
+
+.mini-image{
+  height:240px;
+  margin-bottom:12px;
+  border-radius:12px;
+  overflow:hidden;
+  background:#f5f6f8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.mini-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.mini-info{
+  padding:2px 4px 4px;
+}
+
+.mini-info h3{
+  min-height:43px;
+  margin-bottom:7px;
+  font-size:14px;
+  line-height:1.4;
+}
+
+.mini-price{
+  font-size:19px;
+  font-weight:950;
+  margin-bottom:11px;
+}
+
+/* =========================
+   HOLIDAY
+========================= */
 
 .holiday{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:25px;
-  padding:35px;
-  border:1px solid #f0dfd8;
-  border-radius:21px;
+  padding:31px;
+  border:1px solid #f0e2dc;
+  border-radius:20px;
   background:
     radial-gradient(circle at 90% 20%,rgba(229,57,53,.12),transparent 25%),
     linear-gradient(135deg,#fff,#fff5ef);
 }
 
 .holiday h2{
-  margin-bottom:8px;
-  font-size:28px;
+  font-size:27px;
+  margin-bottom:6px;
 }
 
 .holiday p{
-  max-width:720px;
+  max-width:700px;
   color:var(--muted);
-  font-size:13px;
+  font-size:12px;
 }
 
 .holiday-btn{
-  padding:13px 21px;
+  padding:12px 19px;
   border-radius:9px;
   background:var(--red);
-  color:white;
-  font-size:12px;
+  color:#fff;
+  font-size:11px;
   font-weight:950;
   white-space:nowrap;
 }
 
-/* ================= WHY ================= */
+/* =========================
+   WHY
+========================= */
 
 .why-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:17px;
+  gap:16px;
 }
 
 .why-card{
-  padding:28px;
+  padding:25px;
   text-align:center;
-  background:white;
+  background:#fff;
   border:1px solid var(--border);
   border-radius:17px;
   transition:.2s;
@@ -848,67 +971,50 @@ main{
 }
 
 .why-icon{
-  width:55px;
-  height:55px;
+  width:52px;
+  height:52px;
   display:grid;
   place-items:center;
-  margin:0 auto 13px;
-  border-radius:15px;
+  margin:0 auto 12px;
+  border-radius:14px;
   background:#fff2f1;
-  font-size:25px;
+  font-size:23px;
 }
 
 .why-card h3{
-  margin-bottom:7px;
-  font-size:16px;
+  font-size:15px;
+  margin-bottom:6px;
 }
 
 .why-card p{
   color:var(--muted);
-  font-size:12px;
+  font-size:11px;
   line-height:1.6;
 }
 
-/* ================= SEARCH ================= */
-
-.search-message{
-  display:none;
-  width:90%;
-  max-width:1400px;
-  margin:20px auto;
-  padding:15px 18px;
-  border:1px solid var(--border);
-  border-radius:13px;
-  background:white;
-  color:#505b6c;
-  font-size:13px;
-}
-
-.search-message strong{
-  color:var(--red);
-}
-
-/* ================= FOOTER ================= */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-  margin-top:65px;
-  background:#080e19;
-  color:white;
+  margin-top:60px;
+  background:#080f1b;
+  color:#fff;
 }
 
 .footer-main{
   width:90%;
   max-width:1400px;
   margin:auto;
-  padding:50px 0;
+  padding:45px 0;
   display:grid;
   grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:35px;
+  gap:32px;
 }
 
 .footer-brand h2{
-  margin-bottom:10px;
-  font-size:25px;
+  font-size:23px;
+  margin-bottom:8px;
 }
 
 .footer-brand h2 span{
@@ -916,37 +1022,230 @@ footer{
 }
 
 .footer-brand p{
-  max-width:430px;
+  max-width:420px;
   color:#9da8b8;
-  font-size:12px;
+  font-size:11px;
   line-height:1.7;
 }
 
 .footer-main h3{
-  margin-bottom:15px;
-  font-size:13px;
+  font-size:12px;
+  margin-bottom:13px;
 }
 
 .footer-main a{
   display:block;
-  margin-bottom:9px;
   color:#aeb7c6;
-  font-size:12px;
+  font-size:11px;
+  margin-bottom:8px;
 }
 
 .footer-main a:hover{
-  color:white;
+  color:#fff;
 }
 
 .footer-bottom{
-  padding:18px 5%;
-  border-top:1px solid #202b3e;
-  color:#7f8999;
+  padding:16px 5%;
+  border-top:1px solid #1d293c;
   text-align:center;
-  font-size:11px;
+  color:#7f8999;
+  font-size:10px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* =========================
+   SEARCH MESSAGE
+========================= */
+
+.search-message{
+  display:none;
+  width:90%;
+  max-width:1400px;
+  margin:15px auto;
+  padding:13px 17px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  color:#505b6c;
+  font-size:12px;
+}
+
+.search-message strong{
+  color:var(--red);
+}
+
+/* =========================
+   ADMIN / PRODUCT MANAGER
+========================= */
+
+.admin-panel{
+  display:none;
+  width:90%;
+  max-width:1100px;
+  margin:30px auto;
+  padding:22px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+}
+
+.admin-panel.active{
+  display:block;
+}
+
+.admin-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:18px;
+}
+
+.admin-title h2{
+  font-size:22px;
+}
+
+.admin-close{
+  border:0;
+  background:#111827;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:8px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.admin-form{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea{
+  width:100%;
+  border:1px solid #dfe3e9;
+  border-radius:8px;
+  padding:10px;
+  outline:0;
+  font-size:12px;
+}
+
+.admin-form textarea{
+  min-height:70px;
+  resize:vertical;
+}
+
+.admin-full{
+  grid-column:1/-1;
+}
+
+.admin-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.admin-btn{
+  border:0;
+  border-radius:8px;
+  padding:10px 14px;
+  font-size:11px;
+  font-weight:900;
+  background:#111827;
+  color:#fff;
+}
+
+.admin-btn.red{
+  background:var(--red);
+}
+
+.admin-btn.light{
+  background:#eef1f5;
+  color:#111827;
+}
+
+.admin-products{
+  display:grid;
+  gap:8px;
+}
+
+.admin-product{
+  display:grid;
+  grid-template-columns:55px 1fr auto;
+  align-items:center;
+  gap:12px;
+  padding:9px;
+  border:1px solid var(--border);
+  border-radius:10px;
+}
+
+.admin-product img{
+  width:55px;
+  height:55px;
+  border-radius:8px;
+  object-fit:contain;
+  background:#f5f6f8;
+}
+
+.admin-product strong{
+  display:block;
+  font-size:12px;
+}
+
+.admin-product small{
+  color:var(--muted);
+  font-size:10px;
+}
+
+.admin-product-actions{
+  display:flex;
+  gap:5px;
+}
+
+.admin-product-actions button{
+  border:0;
+  border-radius:6px;
+  padding:6px 8px;
+  font-size:9px;
+  font-weight:900;
+}
+
+.edit-btn{
+  background:#eef2ff;
+  color:#3730a3;
+}
+
+.delete-btn{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+/* =========================
+   IMAGE FALLBACK
+========================= */
+
+.image-fallback{
+  width:100%;
+  height:100%;
+  min-height:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  color:#6b7280;
+  background:
+    linear-gradient(135deg,#f8fafc,#eef1f5);
+  font-size:11px;
+  font-weight:800;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:1100px){
 
@@ -963,15 +1262,19 @@ footer{
   }
 
   .hero-art{
-    right:-70px;
-    opacity:.55;
+    right:-80px;
+    opacity:.45;
   }
 }
 
-@media(max-width:800px){
+@media(max-width:850px){
 
   header{
     flex-wrap:wrap;
+  }
+
+  .logo{
+    font-size:25px;
   }
 
   .header-deal{
@@ -986,17 +1289,25 @@ footer{
 
   nav{
     justify-content:flex-start;
-    gap:21px;
   }
 
   .hero{
-    min-height:390px;
-    padding:42px 28px;
+    min-height:300px;
+    padding:32px 27px;
   }
 
   .hero-art{
-    right:-120px;
-    opacity:.35;
+    right:-110px;
+    opacity:.28;
+  }
+
+  .quick-card{
+    grid-template-columns:170px 1fr;
+  }
+
+  .quick-side{
+    grid-column:2;
+    text-align:left;
   }
 
   .trust-strip{
@@ -1008,7 +1319,7 @@ footer{
   }
 
   .feature-product-image{
-    min-height:350px;
+    min-height:330px;
   }
 
   .why-grid{
@@ -1024,7 +1335,6 @@ footer{
 
   .topbar{
     justify-content:center;
-    text-align:center;
   }
 
   .topbar span:last-child{
@@ -1032,132 +1342,146 @@ footer{
   }
 
   header{
-    padding:12px 5%;
+    padding:10px 5%;
   }
 
   .logo{
-    font-size:24px;
+    font-size:23px;
   }
 
   .hero-wrap,
+  .quick-feature,
   .section,
   .trust-strip{
     width:92%;
   }
 
   .hero{
-    min-height:430px;
-    padding:35px 22px;
-    border-radius:20px;
+    min-height:350px;
+    padding:28px 21px;
+    border-radius:18px;
   }
 
   .hero h1{
-    font-size:39px;
-    letter-spacing:-2px;
+    font-size:37px;
+    letter-spacing:-1.8px;
   }
 
   .hero p{
-    font-size:14px;
+    max-width:330px;
+    font-size:13px;
   }
 
   .hero-art{
-    width:260px;
-    height:260px;
+    width:230px;
+    height:230px;
     right:-105px;
-    bottom:-20px;
+    bottom:-30px;
   }
 
   .hero-art:before{
-    width:165px;
-    height:165px;
-    top:48px;
-    left:48px;
+    width:145px;
+    height:145px;
+    left:43px;
+    top:42px;
   }
 
   .hero-art:after{
-    top:106px;
-    left:68px;
-    font-size:12px;
+    left:60px;
+    top:93px;
+    font-size:10px;
   }
 
-  .section{
-    margin:38px auto;
+  .quick-card{
+    grid-template-columns:105px 1fr;
+    gap:12px;
+    padding:10px;
   }
 
-  .section-head{
-    align-items:flex-start;
-    flex-direction:column;
+  .quick-image{
+    height:105px;
   }
 
-  .section-head h2{
-    font-size:23px;
+  .quick-info h2{
+    font-size:15px;
+  }
+
+  .quick-info p{
+    display:none;
+  }
+
+  .quick-side{
+    grid-column:1/-1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .quick-price{
+    margin:0;
+    font-size:20px;
   }
 
   .categories{
     grid-template-columns:repeat(2,1fr);
-    gap:11px;
+    gap:10px;
   }
 
   .category-img{
-    height:130px;
+    height:125px;
   }
 
-  .category-label{
-    padding:10px 5px 8px;
-  }
-
-  .category-label strong{
-    font-size:12px;
-  }
-
-  .featured-grid,
-  .category-product-grid{
+  .featured-grid{
     grid-template-columns:1fr;
   }
 
   .product-image{
-    height:280px;
+    height:265px;
+  }
+
+  .category-product-grid{
+    grid-template-columns:1fr;
   }
 
   .mini-image{
-    height:280px;
+    height:275px;
   }
 
   .feature-product{
-    padding:10px;
+    padding:9px;
   }
 
   .feature-product-image{
-    min-height:300px;
+    min-height:285px;
   }
 
   .feature-product-info{
-    padding:22px 14px;
+    padding:20px 13px;
   }
 
   .feature-product-info h2{
-    font-size:28px;
+    font-size:26px;
   }
 
   .deal-banner,
   .holiday{
     display:block;
-    padding:28px 22px;
+    padding:25px 21px;
   }
 
   .deal-button,
   .holiday-btn{
     display:inline-block;
-    margin-top:18px;
+    margin-top:16px;
   }
 
   .footer-main{
     grid-template-columns:1fr;
-    gap:25px;
+    gap:23px;
   }
 
-  .footer-brand p{
-    max-width:none;
+  .admin-form{
+    grid-template-columns:1fr;
   }
 }
 </style>
@@ -1165,20 +1489,18 @@ footer{
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
   <span>Welcome to AskToShop 🛍️</span>
   <span>Smart picks • Better discovery • Easy shopping</span>
 </div>
 
-<!-- HEADER -->
 <header>
 
   <a href="#home" class="logo">
     AskTo<span>Shop</span><span class="logo-dot">.</span>
   </a>
 
-  <form class="search" onsubmit="searchProducts(event)">
+  <form class="search" id="searchForm">
     <input
       id="searchInput"
       type="search"
@@ -1194,7 +1516,6 @@ footer{
 
 </header>
 
-<!-- NAV -->
 <nav>
   <a href="#home">Home</a>
   <a href="#categories">Categories</a>
@@ -1205,14 +1526,15 @@ footer{
   <a href="#fashion">Fashion</a>
   <a href="#kitchen">Kitchen</a>
   <a href="#trending">Trending</a>
-  <a href="#holiday">Holiday</a>
+  <a href="#holiday">Holiday Picks</a>
 </nav>
 
 <main id="home">
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <div class="hero-wrap">
+
 <section class="hero">
 
   <div class="hero-content">
@@ -1227,20 +1549,18 @@ footer{
     </h1>
 
     <p>
-      Explore useful products, trending finds and smart shopping
-      ideas — all in one simple and beautiful place.
+      Discover useful products, trending finds and smart shopping ideas —
+      all in one clean place.
     </p>
 
     <div class="hero-actions">
-
-      <a href="#categories" class="primary-btn">
-        Explore Categories →
+      <a href="#featured" class="primary-btn">
+        Shop Featured →
       </a>
 
-      <a href="#featured" class="secondary-btn">
-        View Featured Picks
+      <a href="#categories" class="secondary-btn">
+        Browse Categories
       </a>
-
     </div>
 
   </div>
@@ -1248,9 +1568,59 @@ footer{
   <div class="hero-art"></div>
 
 </section>
+
 </div>
 
-<!-- ================= TRUST ================= -->
+<!-- QUICK FEATURED PRODUCT -->
+
+<section class="quick-feature">
+
+  <div class="quick-card">
+
+    <div class="quick-image">
+      <img
+        src="ISDIN.png"
+        alt="ISDIN Uradin Podos Foot Care"
+        onerror="imageError(this,'ISDIN Uradin Podos')"
+      >
+    </div>
+
+    <div class="quick-info">
+
+      <small>Featured Pick</small>
+
+      <h2>ISDIN Uradin Podos Foot Care</h2>
+
+      <p>
+        A featured personal-care pick selected by AskToShop.
+      </p>
+
+      <div class="quick-rating">
+        ★★★★★ <span>4.7 / 5</span>
+      </div>
+
+    </div>
+
+    <div class="quick-side">
+
+      <div class="quick-price">$39</div>
+
+      <a
+        href="https://amzn.to/46unnJG"
+        class="shop-btn"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TRUST -->
 
 <div class="trust-strip">
 
@@ -1266,7 +1636,7 @@ footer{
     <div class="trust-icon">⭐</div>
     <div>
       <strong>Smart Picks</strong>
-      <span>Selected products worth checking</span>
+      <span>Selected products for easy browsing</span>
     </div>
   </div>
 
@@ -1274,13 +1644,13 @@ footer{
     <div class="trust-icon">🛒</div>
     <div>
       <strong>Shop Easily</strong>
-      <span>Visit the retailer for latest availability</span>
+      <span>Visit the retailer for current price</span>
     </div>
   </div>
 
 </div>
 
-<!-- ================= CATEGORIES ================= -->
+<!-- CATEGORIES -->
 
 <section class="section" id="categories">
 
@@ -1289,10 +1659,6 @@ footer{
       <h2>Shop by Category</h2>
       <p>Explore our most popular shopping categories.</p>
     </div>
-
-    <a href="#featured" class="section-link">
-      View Featured →
-    </a>
   </div>
 
   <div class="categories">
@@ -1300,8 +1666,9 @@ footer{
     <a class="category" href="#beauty">
       <div class="category-img">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/beauty-ordinary.png"
-          alt="Beauty products"
+          src="beauty-ordinary.png"
+          alt="Beauty"
+          onerror="imageError(this,'Beauty')"
         >
       </div>
       <div class="category-label">
@@ -1313,8 +1680,9 @@ footer{
     <a class="category" href="#home-products">
       <div class="category-img">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/home-hangers.png"
-          alt="Home products"
+          src="home-hangers.png"
+          alt="Home"
+          onerror="imageError(this,'Home')"
         >
       </div>
       <div class="category-label">
@@ -1326,8 +1694,9 @@ footer{
     <a class="category" href="#electronics">
       <div class="category-img">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/electronics-airpods.png"
+          src="electronics-airpods.png"
           alt="Electronics"
+          onerror="imageError(this,'Electronics')"
         >
       </div>
       <div class="category-label">
@@ -1339,8 +1708,9 @@ footer{
     <a class="category" href="#fashion">
       <div class="category-img">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/fashion-new-balance.png"
+          src="fashion-new-balance.png"
           alt="Fashion"
+          onerror="imageError(this,'Fashion')"
         >
       </div>
       <div class="category-label">
@@ -1352,8 +1722,9 @@ footer{
     <a class="category" href="#kitchen">
       <div class="category-img">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/kitchen-stanley.png"
+          src="kitchen-stanley.png"
           alt="Kitchen"
+          onerror="imageError(this,'Kitchen')"
         >
       </div>
       <div class="category-label">
@@ -1365,8 +1736,9 @@ footer{
     <a class="category" href="#trending">
       <div class="category-img">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/trending-owala.png"
-          alt="Trending products"
+          src="trending-owala.png"
+          alt="Trending"
+          onerror="imageError(this,'Trending')"
         >
       </div>
       <div class="category-label">
@@ -1376,33 +1748,34 @@ footer{
     </a>
 
   </div>
+
 </section>
 
-<!-- ================= FEATURED ================= -->
+<!-- FEATURED -->
 
 <section class="section" id="featured">
 
   <div class="section-head">
+
     <div>
       <h2>Featured Shopping Picks</h2>
-      <p>Products worth checking out today.</p>
+      <p>A few products worth checking out today.</p>
     </div>
 
     <a href="#deals" class="section-link">
       Today's Deals →
     </a>
-  </div>
 
-  <!-- ISDIN FEATURED PRODUCT -->
+  </div>
 
   <div class="feature-product">
 
     <div class="feature-product-image">
 
       <img
-        src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/ISDIN.png?v=2026"
+        src="ISDIN.png"
         alt="ISDIN Uradin Podos Foot Care"
-        loading="eager"
+        onerror="imageError(this,'ISDIN Uradin Podos')"
       >
 
     </div>
@@ -1422,19 +1795,17 @@ footer{
       </div>
 
       <p>
-        A featured foot-care pick for shoppers looking for a
-        practical beauty and personal-care product.
+        A featured foot-care product selected for shoppers looking
+        for useful beauty and personal-care finds.
       </p>
 
       <ul class="feature-list">
-        <li>Featured AskToShop selection</li>
-        <li>Premium product presentation</li>
+        <li>Featured AskToShop pick</li>
+        <li>Clean product presentation</li>
         <li>Check latest Amazon price & availability</li>
       </ul>
 
-      <div class="feature-price">
-        $39
-      </div>
+      <div class="feature-price">$39</div>
 
       <a
         href="https://amzn.to/46unnJG"
@@ -1449,11 +1820,7 @@ footer{
 
   </div>
 
-  <!-- FEATURED CARDS -->
-
   <div class="featured-grid">
-
-    <!-- CALDERA -->
 
     <div class="product-card">
 
@@ -1461,9 +1828,9 @@ footer{
 
       <div class="product-image">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/caldera-lab.png"
+          src="caldera-lab.png"
           alt="Caldera + Lab The Eye Serum"
-          loading="lazy"
+          onerror="imageError(this,'Caldera + Lab')"
         >
       </div>
 
@@ -1494,9 +1861,8 @@ footer{
         </a>
 
       </div>
-    </div>
 
-    <!-- OWALA -->
+    </div>
 
     <div class="product-card">
 
@@ -1504,9 +1870,9 @@ footer{
 
       <div class="product-image">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/trending-owala.png"
+          src="trending-owala.png"
           alt="Owala FreeSip Stainless Steel Water Bottle"
-          loading="lazy"
+          onerror="imageError(this,'Owala FreeSip')"
         >
       </div>
 
@@ -1537,9 +1903,8 @@ footer{
         </a>
 
       </div>
-    </div>
 
-    <!-- AIRPODS -->
+    </div>
 
     <div class="product-card">
 
@@ -1547,9 +1912,9 @@ footer{
 
       <div class="product-image">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/electronics-airpods.png"
+          src="electronics-airpods.png"
           alt="Apple AirPods Pro 3rd Generation Renewed"
-          loading="lazy"
+          onerror="imageError(this,'Apple AirPods')"
         >
       </div>
 
@@ -1580,13 +1945,14 @@ footer{
         </a>
 
       </div>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- ================= DEALS ================= -->
+<!-- DEAL -->
 
 <section class="section" id="deals">
 
@@ -1610,11 +1976,12 @@ footer{
 
 </section>
 
-<!-- ================= BEAUTY ================= -->
+<!-- BEAUTY -->
 
 <section class="section category-section" id="beauty">
 
   <div class="section-head">
+
     <div>
       <h2>💄 Beauty Picks</h2>
       <p>Beauty products selected for easy discovery.</p>
@@ -1623,6 +1990,7 @@ footer{
     <a href="#categories" class="section-link">
       Categories ↑
     </a>
+
   </div>
 
   <div class="category-product-grid">
@@ -1631,9 +1999,9 @@ footer{
 
       <div class="mini-image">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/beauty-ordinary.png"
+          src="beauty-ordinary.png"
           alt="The Ordinary Niacinamide 10% + Zinc 1%"
-          loading="lazy"
+          onerror="imageError(this,'The Ordinary')"
         >
       </div>
 
@@ -1645,9 +2013,7 @@ footer{
           The Ordinary Niacinamide 10% + Zinc 1%, Smoothing Serum
         </h3>
 
-        <div class="rating">
-          ★★★★★
-        </div>
+        <div class="rating">★★★★★</div>
 
         <div class="mini-price">$6.00</div>
 
@@ -1661,17 +2027,54 @@ footer{
         </a>
 
       </div>
+
+    </div>
+
+    <div class="mini-product">
+
+      <div class="mini-image">
+        <img
+          src="caldera-lab.png"
+          alt="Caldera + Lab Eye Serum"
+          onerror="imageError(this,'Caldera + Lab')"
+        >
+      </div>
+
+      <div class="mini-info">
+
+        <div class="category-tag">Beauty</div>
+
+        <h3>
+          Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
+        </h3>
+
+        <div class="rating">★★★★★</div>
+
+        <div class="mini-price">$153</div>
+
+        <a
+          href="https://amzn.to/45StPtV"
+          class="shop-btn"
+          target="_blank"
+          rel="nofollow sponsored noopener"
+        >
+          SHOP NOW →
+        </a>
+
+      </div>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- ================= HOME ================= -->
+<!-- HOME -->
 
 <section class="section category-section" id="home-products">
 
   <div class="section-head">
+
     <div>
       <h2>🏠 Home Picks</h2>
       <p>Useful products for your home and everyday organization.</p>
@@ -1680,6 +2083,7 @@ footer{
     <a href="#categories" class="section-link">
       Categories ↑
     </a>
+
   </div>
 
   <div class="category-product-grid">
@@ -1688,9 +2092,9 @@ footer{
 
       <div class="mini-image">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/home-hangers.png"
-          alt="Amazon Basics Velvet Non-Slip Hangers 100 Pack"
-          loading="lazy"
+          src="home-hangers.png"
+          alt="Amazon Basics Velvet Non-Slip Hangers"
+          onerror="imageError(this,'Amazon Basics Hangers')"
         >
       </div>
 
@@ -1702,9 +2106,7 @@ footer{
           Amazon Basics Velvet Non-Slip Hangers – 100 Pack
         </h3>
 
-        <div class="rating">
-          ★★★★★
-        </div>
+        <div class="rating">★★★★★</div>
 
         <div class="mini-price">$40.49</div>
 
@@ -1718,17 +2120,19 @@ footer{
         </a>
 
       </div>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- ================= ELECTRONICS ================= -->
+<!-- ELECTRONICS -->
 
 <section class="section category-section" id="electronics">
 
   <div class="section-head">
+
     <div>
       <h2>🎧 Electronics</h2>
       <p>Popular tech products and everyday gadgets.</p>
@@ -1737,6 +2141,7 @@ footer{
     <a href="#categories" class="section-link">
       Categories ↑
     </a>
+
   </div>
 
   <div class="category-product-grid">
@@ -1745,9 +2150,9 @@ footer{
 
       <div class="mini-image">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/electronics-airpods.png"
-          alt="Apple AirPods Pro 3rd Generation Renewed"
-          loading="lazy"
+          src="electronics-airpods.png"
+          alt="Apple AirPods Pro"
+          onerror="imageError(this,'Apple AirPods')"
         >
       </div>
 
@@ -1759,9 +2164,7 @@ footer{
           Apple AirPods Pro (3rd Generation) (Renewed)
         </h3>
 
-        <div class="rating">
-          ★★★★★
-        </div>
+        <div class="rating">★★★★★</div>
 
         <div class="mini-price">$199.99</div>
 
@@ -1775,17 +2178,19 @@ footer{
         </a>
 
       </div>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- ================= FASHION ================= -->
+<!-- FASHION -->
 
 <section class="section category-section" id="fashion">
 
   <div class="section-head">
+
     <div>
       <h2>👟 Fashion Picks</h2>
       <p>Casual styles and everyday fashion finds.</p>
@@ -1794,6 +2199,7 @@ footer{
     <a href="#categories" class="section-link">
       Categories ↑
     </a>
+
   </div>
 
   <div class="category-product-grid">
@@ -1802,9 +2208,9 @@ footer{
 
       <div class="mini-image">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/fashion-new-balance.png"
-          alt="New Balance Women's 327 Casual Shoes"
-          loading="lazy"
+          src="fashion-new-balance.png"
+          alt="New Balance Women's 327"
+          onerror="imageError(this,'New Balance')"
         >
       </div>
 
@@ -1816,9 +2222,7 @@ footer{
           New Balance Women's 327 Casual Shoes
         </h3>
 
-        <div class="rating">
-          ★★★★★
-        </div>
+        <div class="rating">★★★★★</div>
 
         <div class="mini-price">$104.95</div>
 
@@ -1832,17 +2236,19 @@ footer{
         </a>
 
       </div>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- ================= KITCHEN ================= -->
+<!-- KITCHEN -->
 
 <section class="section category-section" id="kitchen">
 
   <div class="section-head">
+
     <div>
       <h2>🍳 Kitchen Picks</h2>
       <p>Popular kitchen and drinkware finds.</p>
@@ -1851,6 +2257,7 @@ footer{
     <a href="#categories" class="section-link">
       Categories ↑
     </a>
+
   </div>
 
   <div class="category-product-grid">
@@ -1859,9 +2266,9 @@ footer{
 
       <div class="mini-image">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/kitchen-stanley.png"
-          alt="Stanley Quencher H2.0 40 oz Tumbler"
-          loading="lazy"
+          src="kitchen-stanley.png"
+          alt="Stanley Quencher H2.0"
+          onerror="imageError(this,'Stanley Quencher')"
         >
       </div>
 
@@ -1873,9 +2280,7 @@ footer{
           Stanley Quencher H2.0 40 oz Tumbler
         </h3>
 
-        <div class="rating">
-          ★★★★★
-        </div>
+        <div class="rating">★★★★★</div>
 
         <div class="mini-price">$58.74</div>
 
@@ -1889,17 +2294,19 @@ footer{
         </a>
 
       </div>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- ================= TRENDING ================= -->
+<!-- TRENDING -->
 
 <section class="section category-section" id="trending">
 
   <div class="section-head">
+
     <div>
       <h2>🔥 Trending Picks</h2>
       <p>Products getting attention right now.</p>
@@ -1908,6 +2315,7 @@ footer{
     <a href="#categories" class="section-link">
       Categories ↑
     </a>
+
   </div>
 
   <div class="category-product-grid">
@@ -1916,9 +2324,9 @@ footer{
 
       <div class="mini-image">
         <img
-          src="https://raw.githubusercontent.com/AskToShop/AskToShop.github.io/main/trending-owala.png"
-          alt="Owala FreeSip Stainless Steel Water Bottle"
-          loading="lazy"
+          src="trending-owala.png"
+          alt="Owala FreeSip"
+          onerror="imageError(this,'Owala FreeSip')"
         >
       </div>
 
@@ -1930,9 +2338,7 @@ footer{
           Owala FreeSip Stainless Steel Water Bottle
         </h3>
 
-        <div class="rating">
-          ★★★★★
-        </div>
+        <div class="rating">★★★★★</div>
 
         <div class="mini-price">$45.00</div>
 
@@ -1946,25 +2352,28 @@ footer{
         </a>
 
       </div>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- ================= HOLIDAY ================= -->
+<!-- HOLIDAY -->
 
 <section class="section" id="holiday">
 
   <div class="holiday">
 
     <div>
+
       <h2>🎁 Amazon Holiday Picks</h2>
 
       <p>
         Discover gift ideas, seasonal finds and products worth
         checking out for the holiday season.
       </p>
+
     </div>
 
     <a href="#featured" class="holiday-btn">
@@ -1975,7 +2384,7 @@ footer{
 
 </section>
 
-<!-- ================= WHY ================= -->
+<!-- WHY -->
 
 <section class="section">
 
@@ -2030,11 +2439,90 @@ footer{
 
 </section>
 
+<!-- SEARCH MESSAGE -->
+
 <div class="search-message" id="searchMessage"></div>
+
+<!-- LOCAL PRODUCT MANAGER -->
+
+<section class="admin-panel" id="admin">
+
+  <div class="admin-title">
+
+    <div>
+      <h2>AskToShop Product Manager</h2>
+      <p style="color:#6b7280;font-size:11px;margin-top:4px;">
+        Manage products stored in this browser.
+      </p>
+    </div>
+
+    <button
+      type="button"
+      class="admin-close"
+      onclick="closeAdmin()"
+    >
+      CLOSE
+    </button>
+
+  </div>
+
+  <div class="admin-form">
+
+    <input id="adminName" placeholder="Product name">
+
+    <input id="adminCategory" placeholder="Category">
+
+    <input id="adminImage" placeholder="Image filename e.g. product.png">
+
+    <input id="adminPrice" placeholder="Price e.g. $29.99">
+
+    <input id="adminLink" placeholder="Affiliate URL">
+
+    <input id="adminBadge" placeholder="Badge e.g. NEW">
+
+    <textarea
+      id="adminDescription"
+      class="admin-full"
+      placeholder="Short product description"
+    ></textarea>
+
+    <div class="admin-actions admin-full">
+
+      <button
+        type="button"
+        class="admin-btn red"
+        onclick="saveAdminProduct()"
+      >
+        SAVE PRODUCT
+      </button>
+
+      <button
+        type="button"
+        class="admin-btn light"
+        onclick="clearAdminForm()"
+      >
+        CLEAR
+      </button>
+
+      <button
+        type="button"
+        class="admin-btn"
+        onclick="resetProducts()"
+      >
+        RESET PRODUCTS
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="adminProducts" class="admin-products"></div>
+
+</section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -2098,63 +2586,95 @@ footer{
 
 <script>
 
-/* ================= SEARCH ================= */
+/* ==========================================================
+   IMAGE FALLBACK
+========================================================== */
 
-function searchProducts(event){
+function imageError(img,name){
 
-  event.preventDefault();
-
-  const input=document.getElementById("searchInput");
-  const message=document.getElementById("searchMessage");
-
-  const search=input.value.trim().toLowerCase();
-
-  if(!search){
-    input.focus();
+  if(img.dataset.failed === "1"){
     return;
   }
 
-  const sections={
-    beauty:"#beauty",
-    ordinary:"#beauty",
-    niacinamide:"#beauty",
-    zinc:"#beauty",
-    isdin:"#featured",
-    foot:"#featured",
-    caldera:"#featured",
+  img.dataset.failed = "1";
 
-    home:"#home-products",
-    hangers:"#home-products",
-    amazon:"#home-products",
+  const fallback = document.createElement("div");
 
-    electronics:"#electronics",
-    airpods:"#electronics",
-    apple:"#electronics",
+  fallback.className = "image-fallback";
+  fallback.textContent = name;
 
-    fashion:"#fashion",
-    "new balance":"#fashion",
-    shoes:"#fashion",
+  img.replaceWith(fallback);
+}
 
-    kitchen:"#kitchen",
-    stanley:"#kitchen",
-    tumbler:"#kitchen",
+/* ==========================================================
+   SEARCH
+========================================================== */
 
-    trending:"#trending",
-    owala:"#trending",
-    bottle:"#trending",
+const searchInput = document.getElementById("searchInput");
+const searchMessage = document.getElementById("searchMessage");
 
-    deals:"#deals",
-    featured:"#featured",
-    holiday:"#holiday"
-  };
+const searchMap = {
+  beauty:"#beauty",
+  ordinary:"#beauty",
+  niacinamide:"#beauty",
+  zinc:"#beauty",
+  caldera:"#beauty",
+  "eye serum":"#beauty",
 
-  let found=false;
+  home:"#home-products",
+  hanger:"#home-products",
+  hangers:"#home-products",
+  "amazon basics":"#home-products",
 
-  for(const keyword in sections){
+  electronics:"#electronics",
+  airpods:"#electronics",
+  apple:"#electronics",
+  headphone:"#electronics",
 
-    if(search.includes(keyword)){
+  fashion:"#fashion",
+  "new balance":"#fashion",
+  shoes:"#fashion",
 
-      const target=document.querySelector(sections[keyword]);
+  kitchen:"#kitchen",
+  stanley:"#kitchen",
+  tumbler:"#kitchen",
+
+  trending:"#trending",
+  owala:"#trending",
+  bottle:"#trending",
+
+  deals:"#deals",
+  featured:"#featured",
+  holiday:"#holiday"
+};
+
+document
+  .getElementById("searchForm")
+  .addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const search = searchInput.value.trim().toLowerCase();
+
+    if(!search){
+      searchInput.focus();
+      return;
+    }
+
+    let destination = null;
+
+    for(const keyword in searchMap){
+
+      if(search.includes(keyword)){
+        destination = searchMap[keyword];
+        break;
+      }
+
+    }
+
+    if(destination){
+
+      const target = document.querySelector(destination);
 
       if(target){
 
@@ -2163,32 +2683,480 @@ function searchProducts(event){
           block:"start"
         });
 
-        found=true;
-        break;
+        searchMessage.style.display = "none";
+        return;
       }
+
     }
-  }
 
-  if(!found){
+    searchMessage.style.display = "block";
 
-    message.style.display="block";
-
-    message.innerHTML=
-      'No exact match found. Try <strong>Beauty, Home, Electronics, Fashion, Kitchen, Trending, ISDIN, Owala, Stanley, AirPods</strong> or <strong>New Balance</strong>.';
+    searchMessage.innerHTML =
+      'No exact match found. Try <strong>Beauty, Home, Electronics, Fashion, Kitchen, Trending, Owala, Stanley, AirPods</strong> or <strong>New Balance</strong>.';
 
     setTimeout(function(){
-      message.style.display="none";
+
+      searchMessage.style.display = "none";
+
     },5000);
+
+  });
+
+searchInput.addEventListener("input",function(){
+
+  searchMessage.style.display = "none";
+
+});
+
+/* ==========================================================
+   LOCAL PRODUCT MANAGER
+========================================================== */
+
+const DEFAULT_PRODUCTS = [
+
+  {
+    id:"isin-featured",
+    name:"ISDIN Uradin Podos Foot Care",
+    category:"Beauty",
+    image:"ISDIN.png",
+    price:"$39",
+    link:"https://amzn.to/46unnJG",
+    badge:"FEATURED",
+    description:"Featured AskToShop beauty pick."
+  },
+
+  {
+    id:"caldera",
+    name:"Caldera + Lab The Eye Serum | Men's Anti-Aging Serum",
+    category:"Beauty",
+    image:"caldera-lab.png",
+    price:"$153",
+    link:"https://amzn.to/45StPtV",
+    badge:"NEW",
+    description:"Men's anti-aging eye serum."
+  },
+
+  {
+    id:"owala",
+    name:"Owala FreeSip Stainless Steel Water Bottle",
+    category:"Trending",
+    image:"trending-owala.png",
+    price:"$45.00",
+    link:"https://amzn.to/45VQTbc",
+    badge:"TRENDING",
+    description:"Popular stainless steel water bottle."
+  },
+
+  {
+    id:"airpods",
+    name:"Apple AirPods Pro (3rd Generation) (Renewed)",
+    category:"Electronics",
+    image:"electronics-airpods.png",
+    price:"$199.99",
+    link:"https://amzn.to/4wZseNX",
+    badge:"BEST SELLER",
+    description:"Popular Apple audio pick."
+  },
+
+  {
+    id:"ordinary",
+    name:"The Ordinary Niacinamide 10% + Zinc 1%, Smoothing Serum",
+    category:"Beauty",
+    image:"beauty-ordinary.png",
+    price:"$6.00",
+    link:"https://amzn.to/3UHAZP5",
+    badge:"",
+    description:"Beauty and skincare serum."
+  },
+
+  {
+    id:"hangers",
+    name:"Amazon Basics Velvet Non-Slip Hangers – 100 Pack",
+    category:"Home",
+    image:"home-hangers.png",
+    price:"$40.49",
+    link:"https://amzn.to/4xvhXKv",
+    badge:"",
+    description:"Home organization product."
+  },
+
+  {
+    id:"newbalance",
+    name:"New Balance Women's 327 Casual Shoes",
+    category:"Fashion",
+    image:"fashion-new-balance.png",
+    price:"$104.95",
+    link:"https://amzn.to/4r3WpCp",
+    badge:"",
+    description:"Everyday fashion shoes."
+  },
+
+  {
+    id:"stanley",
+    name:"Stanley Quencher H2.0 40 oz Tumbler",
+    category:"Kitchen",
+    image:"kitchen-stanley.png",
+    price:"$58.74",
+    link:"https://amzn.to/4x0KeHQ",
+    badge:"",
+    description:"Popular drinkware pick."
+  }
+
+];
+
+let adminProducts =
+  JSON.parse(localStorage.getItem("askToShopProducts")) ||
+  DEFAULT_PRODUCTS;
+
+let editingProductId = null;
+
+/* Open admin with #admin */
+
+function openAdmin(){
+
+  const panel = document.getElementById("admin");
+
+  if(!panel){
+    return;
+  }
+
+  panel.classList.add("active");
+
+  panel.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+  renderAdminProducts();
+}
+
+/* Close admin */
+
+function closeAdmin(){
+
+  const panel = document.getElementById("admin");
+
+  if(panel){
+    panel.classList.remove("active");
+  }
+
+  if(location.hash === "#admin"){
+    history.replaceState(null,"",location.pathname + location.search);
   }
 }
 
-/* REMOVE SEARCH MESSAGE WHILE TYPING */
+/* Save */
 
-document.getElementById("searchInput").addEventListener("input",function(){
+function saveAdminProduct(){
 
-  document.getElementById("searchMessage").style.display="none";
+  const name =
+    document.getElementById("adminName").value.trim();
+
+  const category =
+    document.getElementById("adminCategory").value.trim();
+
+  const image =
+    document.getElementById("adminImage").value.trim();
+
+  const price =
+    document.getElementById("adminPrice").value.trim();
+
+  const link =
+    document.getElementById("adminLink").value.trim();
+
+  const badge =
+    document.getElementById("adminBadge").value.trim();
+
+  const description =
+    document.getElementById("adminDescription").value.trim();
+
+  if(!name || !category || !image || !price || !link){
+
+    alert("Please fill Product Name, Category, Image, Price and Affiliate URL.");
+
+    return;
+  }
+
+  if(editingProductId){
+
+    const product = adminProducts.find(
+      p => p.id === editingProductId
+    );
+
+    if(product){
+
+      product.name = name;
+      product.category = category;
+      product.image = image;
+      product.price = price;
+      product.link = link;
+      product.badge = badge;
+      product.description = description;
+
+    }
+
+    editingProductId = null;
+
+  }else{
+
+    adminProducts.push({
+
+      id:"product-" + Date.now(),
+
+      name,
+      category,
+      image,
+      price,
+      link,
+      badge,
+      description
+
+    });
+
+  }
+
+  localStorage.setItem(
+    "askToShopProducts",
+    JSON.stringify(adminProducts)
+  );
+
+  clearAdminForm();
+  renderAdminProducts();
+
+  alert("Product saved successfully in this browser.");
+
+}
+
+/* Edit */
+
+function editAdminProduct(id){
+
+  const product =
+    adminProducts.find(p => p.id === id);
+
+  if(!product){
+    return;
+  }
+
+  document.getElementById("adminName").value =
+    product.name;
+
+  document.getElementById("adminCategory").value =
+    product.category;
+
+  document.getElementById("adminImage").value =
+    product.image;
+
+  document.getElementById("adminPrice").value =
+    product.price;
+
+  document.getElementById("adminLink").value =
+    product.link;
+
+  document.getElementById("adminBadge").value =
+    product.badge || "";
+
+  document.getElementById("adminDescription").value =
+    product.description || "";
+
+  editingProductId = id;
+
+  document
+    .getElementById("adminName")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
+}
+
+/* Delete */
+
+function deleteAdminProduct(id){
+
+  const ok =
+    confirm("Delete this product from the local Product Manager?");
+
+  if(!ok){
+    return;
+  }
+
+  adminProducts =
+    adminProducts.filter(p => p.id !== id);
+
+  localStorage.setItem(
+    "askToShopProducts",
+    JSON.stringify(adminProducts)
+  );
+
+  renderAdminProducts();
+}
+
+/* Clear */
+
+function clearAdminForm(){
+
+  document.getElementById("adminName").value = "";
+  document.getElementById("adminCategory").value = "";
+  document.getElementById("adminImage").value = "";
+  document.getElementById("adminPrice").value = "";
+  document.getElementById("adminLink").value = "";
+  document.getElementById("adminBadge").value = "";
+  document.getElementById("adminDescription").value = "";
+
+  editingProductId = null;
+}
+
+/* Render admin list */
+
+function renderAdminProducts(){
+
+  const container =
+    document.getElementById("adminProducts");
+
+  if(!container){
+    return;
+  }
+
+  container.innerHTML = "";
+
+  adminProducts.forEach(product => {
+
+    const row =
+      document.createElement("div");
+
+    row.className = "admin-product";
+
+    row.innerHTML = `
+
+      <img
+        src="${escapeHtml(product.image)}"
+        alt=""
+        onerror="imageError(this,'Product')"
+      >
+
+      <div>
+        <strong>${escapeHtml(product.name)}</strong>
+        <small>
+          ${escapeHtml(product.category)}
+          • ${escapeHtml(product.price)}
+        </small>
+      </div>
+
+      <div class="admin-product-actions">
+
+        <button
+          class="edit-btn"
+          type="button"
+          onclick="editAdminProduct('${product.id}')"
+        >
+          EDIT
+        </button>
+
+        <button
+          class="delete-btn"
+          type="button"
+          onclick="deleteAdminProduct('${product.id}')"
+        >
+          DELETE
+        </button>
+
+      </div>
+
+    `;
+
+    container.appendChild(row);
+
+  });
+
+}
+
+/* Escape HTML */
+
+function escapeHtml(value){
+
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+
+}
+
+/* Reset */
+
+function resetProducts(){
+
+  const ok =
+    confirm("Reset Product Manager to the original AskToShop products?");
+
+  if(!ok){
+    return;
+  }
+
+  adminProducts =
+    JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+
+  localStorage.setItem(
+    "askToShopProducts",
+    JSON.stringify(adminProducts)
+  );
+
+  clearAdminForm();
+  renderAdminProducts();
+}
+
+/* ==========================================================
+   ADMIN HASH
+========================================================== */
+
+function checkAdminHash(){
+
+  if(location.hash.toLowerCase() === "#admin"){
+
+    openAdmin();
+
+  }
+
+}
+
+window.addEventListener("hashchange",checkAdminHash);
+
+checkAdminHash();
+
+/* ==========================================================
+   KEYBOARD SHORTCUT
+   Ctrl + Shift + A opens Product Manager
+========================================================== */
+
+document.addEventListener("keydown",function(event){
+
+  if(
+    event.ctrlKey &&
+    event.shiftKey &&
+    event.key.toLowerCase() === "a"
+  ){
+
+    event.preventDefault();
+
+    openAdmin();
+
+  }
 
 });
+
+/* ==========================================================
+   CONSOLE INFO
+========================================================== */
+
+console.log(
+  "AskToShop loaded successfully."
+);
+
+console.log(
+  "Product Manager: use #admin or Ctrl + Shift + A"
+);
 
 </script>
 
