@@ -4,31 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="AskToShop - Smart shopping picks, trending products and useful finds.">
+<meta name="description" content="AskToShop — discover smart shopping picks across beauty, home, electronics, fashion and kitchen.">
 
 <title>AskToShop | Smart Shopping Picks</title>
 
 <style>
 :root{
   --navy:#0b1424;
-  --navy2:#162238;
+  --navy2:#17243a;
   --red:#e53935;
-  --red2:#c62828;
-  --gold:#ffb703;
+  --red-dark:#c62828;
+  --orange:#ffb703;
   --bg:#f5f6f8;
-  --white:#fff;
+  --white:#ffffff;
   --text:#111827;
-  --muted:#6b7280;
+  --muted:#667085;
   --border:#e5e7eb;
-  --shadow:0 10px 30px rgba(15,23,42,.08);
-  --shadow2:0 18px 45px rgba(15,23,42,.13);
+  --shadow:0 10px 30px rgba(15,23,42,.07);
+  --shadow2:0 18px 45px rgba(15,23,42,.12);
   --radius:18px;
 }
 
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 html{
@@ -65,8 +65,8 @@ input{
   background:#070d18;
   color:#cbd5e1;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   font-size:10px;
 }
 
@@ -82,8 +82,8 @@ header{
   color:#fff;
   display:flex;
   align-items:center;
-  gap:20px;
-  box-shadow:0 5px 25px rgba(0,0,0,.15);
+  gap:22px;
+  box-shadow:0 4px 20px rgba(0,0,0,.15);
 }
 
 .logo{
@@ -97,33 +97,34 @@ header{
   color:#ff5148;
 }
 
-.logo-dot{
-  color:var(--gold);
+.logo .dot{
+  color:var(--orange);
 }
 
 .search{
   flex:1;
   max-width:760px;
-  height:44px;
+  height:43px;
   display:flex;
   overflow:hidden;
   background:#fff;
-  border-radius:10px;
+  border-radius:9px;
 }
 
 .search input{
-  flex:1;
+  width:100%;
+  min-width:0;
   border:0;
   outline:0;
-  padding:0 16px;
-  font-size:13px;
+  padding:0 15px;
   color:#111827;
+  font-size:13px;
 }
 
 .search button{
   width:55px;
   border:0;
-  background:var(--gold);
+  background:var(--orange);
   cursor:pointer;
   font-size:18px;
 }
@@ -136,20 +137,23 @@ header{
 }
 
 .deal-link:hover{
-  color:var(--gold);
+  color:var(--orange);
 }
 
-/* NAV */
+/* NAVIGATION */
 
 nav{
   background:var(--navy2);
   color:#fff;
-  padding:11px 5%;
+  min-height:42px;
+  padding:0 5%;
   display:flex;
+  align-items:center;
   justify-content:center;
-  gap:30px;
+  gap:28px;
   overflow-x:auto;
   white-space:nowrap;
+  scrollbar-width:none;
 }
 
 nav::-webkit-scrollbar{
@@ -157,38 +161,48 @@ nav::-webkit-scrollbar{
 }
 
 nav a{
-  color:#dbe3ef;
+  color:#dce4ef;
   font-size:12px;
-  font-weight:800;
+  font-weight:700;
 }
 
 nav a:hover{
-  color:var(--gold);
+  color:var(--orange);
 }
 
-/* CONTAINER */
+/* MAIN */
+
+main{
+  overflow:hidden;
+}
 
 .container{
   width:90%;
-  max-width:1380px;
-  margin:auto;
+  max-width:1400px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 /* HERO */
 
+.hero-wrap{
+  margin-top:20px;
+}
+
 .hero{
+  min-height:330px;
   position:relative;
-  min-height:360px;
-  margin:22px 0;
-  padding:55px 6%;
   overflow:hidden;
+  padding:50px 6%;
+  border:1px solid var(--border);
   border-radius:24px;
   background:
-    radial-gradient(circle at 90% 20%,rgba(229,57,53,.16),transparent 27%),
-    radial-gradient(circle at 80% 100%,rgba(255,183,3,.14),transparent 30%),
-    linear-gradient(120deg,#fff,#f9fafb 60%,#fff3ef);
-  border:1px solid var(--border);
+    radial-gradient(circle at 90% 20%,rgba(229,57,53,.13),transparent 27%),
+    radial-gradient(circle at 80% 100%,rgba(255,183,3,.13),transparent 30%),
+    linear-gradient(120deg,#fff,#fafbfc 60%,#fff3ef);
   box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
 }
 
 .hero-content{
@@ -199,20 +213,20 @@ nav a:hover{
 
 .eyebrow{
   display:inline-block;
+  margin-bottom:14px;
   padding:7px 12px;
-  margin-bottom:15px;
+  border:1px solid #f1d5d3;
   border-radius:30px;
-  border:1px solid #f2d2d0;
   background:#fff;
   color:var(--red);
   font-size:10px;
   font-weight:900;
-  letter-spacing:.8px;
+  letter-spacing:.7px;
   text-transform:uppercase;
 }
 
 .hero h1{
-  font-size:clamp(40px,5vw,64px);
+  font-size:clamp(38px,5vw,64px);
   line-height:1;
   letter-spacing:-3px;
   margin-bottom:15px;
@@ -223,7 +237,7 @@ nav a:hover{
 }
 
 .hero p{
-  max-width:570px;
+  max-width:560px;
   color:var(--muted);
   font-size:14px;
   line-height:1.7;
@@ -238,8 +252,8 @@ nav a:hover{
 
 .btn{
   display:inline-flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   padding:12px 19px;
   border-radius:9px;
   font-size:12px;
@@ -253,68 +267,70 @@ nav a:hover{
 }
 
 .btn-red:hover{
-  background:var(--red2);
+  background:var(--red-dark);
   transform:translateY(-2px);
 }
 
 .btn-white{
   background:#fff;
-  border:1px solid var(--border);
+  border:1px solid #dfe3e8;
+  color:#111827;
 }
 
 .btn-white:hover{
   transform:translateY(-2px);
 }
 
-.hero-circle{
+.hero-decoration{
   position:absolute;
-  right:-80px;
-  bottom:-120px;
-  width:420px;
-  height:420px;
+  width:330px;
+  height:330px;
+  right:-25px;
+  bottom:-145px;
   border-radius:50%;
   background:linear-gradient(145deg,#fff,#e9edf2);
-  box-shadow:0 25px 60px rgba(0,0,0,.1);
+  box-shadow:0 20px 50px rgba(0,0,0,.09);
 }
 
-.hero-circle:after{
+.hero-decoration:before{
   content:"ASK TO SHOP";
   position:absolute;
-  top:170px;
-  left:105px;
+  left:82px;
+  top:100px;
+  transform:rotate(8deg);
   color:var(--red);
+  font-size:15px;
   font-weight:900;
-  font-size:17px;
   letter-spacing:1px;
-  transform:rotate(-8deg);
 }
 
 /* TRUST */
 
 .trust{
+  margin-top:15px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:12px;
-  margin-bottom:38px;
 }
 
 .trust-card{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:14px 16px;
   background:#fff;
   border:1px solid var(--border);
   border-radius:14px;
-  padding:14px;
-  display:flex;
-  gap:11px;
-  align-items:center;
 }
 
 .trust-icon{
   width:38px;
   height:38px;
+  flex:none;
   display:grid;
   place-items:center;
-  background:#fff1f0;
   border-radius:10px;
+  background:#fff2f1;
   font-size:17px;
 }
 
@@ -323,34 +339,41 @@ nav a:hover{
   font-size:12px;
 }
 
-.trust-card small{
+.trust-card span{
+  display:block;
   color:var(--muted);
   font-size:10px;
 }
 
 /* SECTION */
 
-section{
-  scroll-margin-top:145px;
-}
-
 .section{
-  margin:45px 0;
+  margin-top:45px;
 }
 
-.section-title{
+.section-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:15px;
   margin-bottom:18px;
 }
 
-.section-title h2{
-  font-size:28px;
-  letter-spacing:-1px;
+.section-header h2{
+  font-size:27px;
+  letter-spacing:-.8px;
 }
 
-.section-title p{
+.section-header p{
   color:var(--muted);
   font-size:12px;
   margin-top:4px;
+}
+
+.section-link{
+  color:var(--red);
+  font-size:12px;
+  font-weight:900;
 }
 
 /* CATEGORIES */
@@ -366,7 +389,7 @@ section{
   border:1px solid var(--border);
   border-radius:16px;
   padding:7px;
-  box-shadow:0 5px 20px rgba(0,0,0,.05);
+  box-shadow:var(--shadow);
   transition:.25s;
 }
 
@@ -379,7 +402,7 @@ section{
   height:145px;
   overflow:hidden;
   border-radius:11px;
-  background:#f1f3f5;
+  background:#f3f5f7;
 }
 
 .category-image img{
@@ -400,31 +423,31 @@ section{
 }
 
 .category-name span{
-  color:var(--red);
-  font-weight:900;
+  color:#9ca3af;
 }
 
 /* FEATURED */
 
 .featured{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1.05fr .95fr;
   gap:20px;
   padding:14px;
   background:#fff;
   border:1px solid var(--border);
-  border-radius:22px;
+  border-radius:21px;
   box-shadow:var(--shadow);
 }
 
 .featured-image{
   min-height:390px;
-  border-radius:16px;
-  background:linear-gradient(145deg,#f8f9fb,#e9edf1);
-  display:flex;
-  justify-content:center;
-  align-items:center;
   overflow:hidden;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:16px;
+  background:linear-gradient(145deg,#fafafa,#edf0f3);
 }
 
 .featured-image img{
@@ -433,24 +456,37 @@ section{
   object-fit:contain;
 }
 
+.featured-label{
+  position:absolute;
+  left:16px;
+  top:16px;
+  z-index:2;
+  padding:7px 10px;
+  border-radius:30px;
+  background:#111827;
+  color:#fff;
+  font-size:8px;
+  font-weight:900;
+}
+
 .featured-info{
-  padding:35px 30px;
+  padding:30px;
   display:flex;
   flex-direction:column;
   justify-content:center;
 }
 
-.featured-label{
+.featured-small{
   color:var(--red);
   font-size:10px;
   font-weight:900;
-  text-transform:uppercase;
   letter-spacing:1px;
-  margin-bottom:9px;
+  text-transform:uppercase;
+  margin-bottom:8px;
 }
 
 .featured-info h2{
-  font-size:34px;
+  font-size:32px;
   line-height:1.1;
   letter-spacing:-1px;
   margin-bottom:10px;
@@ -459,62 +495,55 @@ section{
 .rating{
   color:#f59e0b;
   font-size:12px;
-  font-weight:800;
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 
 .rating span{
-  color:#8b95a5;
-  margin-left:5px;
+  color:#8993a3;
+  margin-left:4px;
 }
 
 .featured-info p{
   color:var(--muted);
   font-size:13px;
   line-height:1.7;
-  margin-bottom:14px;
+  margin:8px 0 15px;
 }
 
-.featured-list{
+.feature-list{
   list-style:none;
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 
-.featured-list li{
-  color:#4b5563;
+.feature-list li{
+  color:#505b6b;
   font-size:11px;
   margin-bottom:7px;
 }
 
-.featured-list li:before{
+.feature-list li::before{
   content:"✓";
   color:var(--red);
   font-weight:900;
   margin-right:7px;
 }
 
-.price{
-  font-size:27px;
-  font-weight:900;
-  margin-bottom:14px;
-}
-
 /* PRODUCTS */
 
-.products{
+.product-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
 }
 
 .product{
+  position:relative;
   background:#fff;
   border:1px solid var(--border);
   border-radius:18px;
   padding:11px;
-  box-shadow:0 5px 22px rgba(0,0,0,.06);
+  box-shadow:var(--shadow);
   transition:.25s;
-  position:relative;
 }
 
 .product:hover{
@@ -524,25 +553,25 @@ section{
 
 .badge{
   position:absolute;
-  top:18px;
-  left:18px;
+  top:17px;
+  left:17px;
   z-index:5;
+  padding:5px 8px;
+  border-radius:30px;
   background:var(--red);
   color:#fff;
-  border-radius:20px;
-  padding:5px 8px;
   font-size:8px;
   font-weight:900;
 }
 
 .product-image{
-  height:260px;
-  border-radius:12px;
-  background:#f5f6f8;
+  height:235px;
   overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
+  border-radius:12px;
+  background:#f5f6f8;
   margin-bottom:12px;
 }
 
@@ -552,13 +581,9 @@ section{
   object-fit:contain;
 }
 
-.product-info{
-  padding:3px;
-}
-
-.tag{
+.product-category{
   color:var(--red);
-  font-size:9px;
+  font-size:8px;
   font-weight:900;
   text-transform:uppercase;
   letter-spacing:.7px;
@@ -566,40 +591,39 @@ section{
 }
 
 .product h3{
-  font-size:15px;
+  min-height:45px;
+  font-size:14px;
   line-height:1.4;
-  min-height:63px;
-  margin-bottom:5px;
+  margin-bottom:7px;
 }
 
-.product-price{
-  font-size:20px;
-  font-weight:900;
-  margin-bottom:10px;
-}
-
-.shop{
-  display:block;
+.shop-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   width:100%;
-  text-align:center;
   padding:11px;
+  border-radius:9px;
   background:var(--red);
   color:#fff;
-  border-radius:9px;
   font-size:11px;
   font-weight:900;
+  transition:.2s;
 }
 
-.shop:hover{
-  background:var(--red2);
+.shop-button:hover{
+  background:var(--red-dark);
+  transform:translateY(-2px);
 }
 
 /* DEAL */
 
 .deal{
-  padding:32px 35px;
+  padding:30px 35px;
   border-radius:20px;
-  background:linear-gradient(115deg,#0e1727,#1b2941);
+  background:
+    radial-gradient(circle at 80% 20%,rgba(255,183,3,.15),transparent 25%),
+    linear-gradient(115deg,#0f1828,#1b2940);
   color:#fff;
   display:flex;
   justify-content:space-between;
@@ -611,13 +635,13 @@ section{
   color:#ffca28;
   font-size:10px;
   font-weight:900;
-  text-transform:uppercase;
   letter-spacing:1px;
+  text-transform:uppercase;
 }
 
 .deal h2{
   font-size:28px;
-  margin:5px 0;
+  margin:4px 0 5px;
 }
 
 .deal p{
@@ -626,29 +650,70 @@ section{
 }
 
 .deal-button{
-  background:var(--gold);
-  color:#111827;
-  padding:12px 19px;
+  padding:12px 20px;
   border-radius:9px;
+  background:var(--orange);
+  color:#111827;
   font-size:11px;
   font-weight:900;
   white-space:nowrap;
 }
 
+/* CATEGORY PRODUCT SECTIONS */
+
+.category-products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.mini-product{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:11px;
+  box-shadow:var(--shadow);
+}
+
+.mini-image{
+  height:250px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:#f5f6f8;
+  margin-bottom:12px;
+}
+
+.mini-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.mini-product h3{
+  min-height:45px;
+  font-size:14px;
+  line-height:1.4;
+  margin-bottom:10px;
+}
+
 /* WHY */
 
-.why{
+.why-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:16px;
 }
 
-.why-card{
+.why{
+  padding:26px;
+  text-align:center;
   background:#fff;
   border:1px solid var(--border);
   border-radius:17px;
-  padding:25px;
-  text-align:center;
+  box-shadow:var(--shadow);
 }
 
 .why-icon{
@@ -657,17 +722,17 @@ section{
   margin:0 auto 12px;
   display:grid;
   place-items:center;
-  background:#fff1f0;
   border-radius:14px;
+  background:#fff2f1;
   font-size:22px;
 }
 
-.why-card h3{
+.why h3{
   font-size:15px;
   margin-bottom:6px;
 }
 
-.why-card p{
+.why p{
   color:var(--muted);
   font-size:11px;
   line-height:1.6;
@@ -676,14 +741,14 @@ section{
 /* FOOTER */
 
 footer{
-  margin-top:65px;
-  background:#070d18;
+  margin-top:60px;
+  background:#080f1b;
   color:#fff;
 }
 
 .footer{
   width:90%;
-  max-width:1380px;
+  max-width:1400px;
   margin:auto;
   padding:45px 0;
   display:grid;
@@ -693,7 +758,7 @@ footer{
 
 .footer h2{
   font-size:23px;
-  margin-bottom:9px;
+  margin-bottom:8px;
 }
 
 .footer h2 span{
@@ -709,7 +774,7 @@ footer{
 
 .footer h3{
   font-size:12px;
-  margin-bottom:12px;
+  margin-bottom:13px;
 }
 
 .footer a{
@@ -723,31 +788,85 @@ footer{
   color:#fff;
 }
 
-.copyright{
-  border-top:1px solid #1b2738;
-  padding:16px;
+.footer-bottom{
+  border-top:1px solid #1d293c;
+  padding:16px 5%;
   text-align:center;
   color:#7f8999;
   font-size:10px;
 }
 
-/* MOBILE */
+/* SEARCH RESULT */
 
-@media(max-width:1000px){
+.search-result{
+  display:none;
+  margin-top:15px;
+  padding:14px 17px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.search-result strong{
+  color:var(--red);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
 
   .categories{
     grid-template-columns:repeat(3,1fr);
   }
 
-  .products{
+  .product-grid{
     grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero-decoration{
+    opacity:.45;
+  }
+}
+
+@media(max-width:850px){
+
+  header{
+    flex-wrap:wrap;
+  }
+
+  .search{
+    order:3;
+    flex-basis:100%;
+    max-width:none;
+  }
+
+  .deal-link{
+    display:none;
+  }
+
+  nav{
+    justify-content:flex-start;
+  }
+
+  .trust{
+    grid-template-columns:1fr;
   }
 
   .featured{
     grid-template-columns:1fr;
   }
 
-  .trust{
+  .featured-image{
+    min-height:330px;
+  }
+
+  .category-products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .why-grid{
     grid-template-columns:1fr;
   }
 
@@ -756,7 +875,7 @@ footer{
   }
 }
 
-@media(max-width:700px){
+@media(max-width:600px){
 
   .topbar{
     justify-content:center;
@@ -767,69 +886,67 @@ footer{
   }
 
   header{
-    flex-wrap:wrap;
+    padding:9px 5%;
   }
 
-  .deal-link{
-    display:none;
+  .logo{
+    font-size:23px;
   }
 
-  .search{
-    order:3;
-    flex-basis:100%;
-  }
-
-  nav{
-    justify-content:flex-start;
-    gap:22px;
+  .container{
+    width:92%;
   }
 
   .hero{
-    min-height:380px;
-    padding:38px 24px;
+    min-height:370px;
+    padding:30px 22px;
+    border-radius:18px;
   }
 
   .hero h1{
-    font-size:42px;
+    font-size:39px;
     letter-spacing:-2px;
   }
 
-  .hero-circle{
-    width:280px;
-    height:280px;
-    right:-120px;
-    bottom:-80px;
-    opacity:.5;
+  .hero p{
+    font-size:13px;
   }
 
-  .hero-circle:after{
-    top:115px;
-    left:65px;
-    font-size:11px;
+  .hero-decoration{
+    width:230px;
+    height:230px;
+    right:-110px;
+    bottom:-45px;
+    opacity:.35;
   }
 
   .categories{
     grid-template-columns:repeat(2,1fr);
+    gap:10px;
   }
 
   .category-image{
     height:125px;
   }
 
-  .products{
+  .product-grid{
     grid-template-columns:1fr;
   }
 
   .product-image{
-    height:290px;
+    height:270px;
   }
 
-  .featured-image{
-    min-height:300px;
+  .category-products{
+    grid-template-columns:1fr;
+  }
+
+  .mini-image{
+    height:280px;
   }
 
   .featured-info{
-    padding:22px 14px;
+    padding:20px 12px;
   }
 
   .featured-info h2{
@@ -844,10 +961,6 @@ footer{
   .deal-button{
     display:inline-block;
     margin-top:16px;
-  }
-
-  .why{
-    grid-template-columns:1fr;
   }
 
   .footer{
@@ -867,16 +980,20 @@ footer{
 <header>
 
   <a href="#home" class="logo">
-    AskTo<span>Shop</span><span class="logo-dot">.</span>
+    AskTo<span>Shop</span><span class="dot">.</span>
   </a>
 
   <form class="search" id="searchForm">
+
     <input
       id="searchInput"
       type="search"
       placeholder="Search products, categories & ideas..."
+      autocomplete="off"
     >
+
     <button type="submit">🔍</button>
+
   </form>
 
   <a href="#deals" class="deal-link">
@@ -886,6 +1003,7 @@ footer{
 </header>
 
 <nav>
+
   <a href="#home">Home</a>
   <a href="#categories">Categories</a>
   <a href="#featured">Featured</a>
@@ -895,15 +1013,17 @@ footer{
   <a href="#fashion">Fashion</a>
   <a href="#kitchen">Kitchen</a>
   <a href="#trending">Trending</a>
+  <a href="#deals">Deals</a>
+
 </nav>
 
 <main id="home">
 
-<div class="container">
+<!-- HERO -->
 
-  <!-- HERO -->
+<section class="container hero-wrap">
 
-  <section class="hero">
+  <div class="hero">
 
     <div class="hero-content">
 
@@ -917,8 +1037,8 @@ footer{
       </h1>
 
       <p>
-        Discover useful products, trending finds and smart shopping ideas
-        — all in one clean place.
+        Discover useful products, trending finds and smart shopping ideas —
+        all in one clean place.
       </p>
 
       <div class="hero-buttons">
@@ -935,695 +1055,801 @@ footer{
 
     </div>
 
-    <div class="hero-circle"></div>
+    <div class="hero-decoration"></div>
 
-  </section>
+  </div>
 
+</section>
 
-  <!-- TRUST -->
+<!-- TRUST -->
 
-  <div class="trust">
+<section class="container trust">
 
-    <div class="trust-card">
-      <div class="trust-icon">🔎</div>
-      <div>
-        <strong>Easy Discovery</strong>
-        <small>Find products faster</small>
-      </div>
-    </div>
+  <div class="trust-card">
 
-    <div class="trust-card">
-      <div class="trust-icon">⭐</div>
-      <div>
-        <strong>Smart Picks</strong>
-        <small>Selected products</small>
-      </div>
-    </div>
+    <div class="trust-icon">🔎</div>
 
-    <div class="trust-card">
-      <div class="trust-icon">🛒</div>
-      <div>
-        <strong>Easy Shopping</strong>
-        <small>Visit the retailer</small>
-      </div>
+    <div>
+      <strong>Easy Discovery</strong>
+      <span>Find interesting products faster</span>
     </div>
 
   </div>
 
+  <div class="trust-card">
 
-  <!-- CATEGORIES -->
+    <div class="trust-icon">⭐</div>
 
-  <section id="categories" class="section">
+    <div>
+      <strong>Smart Picks</strong>
+      <span>Selected products for easy browsing</span>
+    </div>
 
-    <div class="section-title">
+  </div>
+
+  <div class="trust-card">
+
+    <div class="trust-icon">🛒</div>
+
+    <div>
+      <strong>Shop Easily</strong>
+      <span>Visit the retailer to shop</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CATEGORIES -->
+
+<section class="container section" id="categories">
+
+  <div class="section-header">
+
+    <div>
       <h2>Shop by Category</h2>
-      <p>Explore popular shopping categories.</p>
+      <p>Explore our most popular shopping categories.</p>
     </div>
 
-    <div class="categories">
+  </div>
 
-      <a class="category" href="#beauty">
-        <div class="category-image">
-          <img src="beauty-ordinary.png" alt="Beauty">
-        </div>
-        <div class="category-name">
-          <strong>💄 Beauty</strong>
-          <span>→</span>
-        </div>
-      </a>
+  <div class="categories">
 
-      <a class="category" href="#home-products">
-        <div class="category-image">
-          <img src="home-hangers.png" alt="Home">
-        </div>
-        <div class="category-name">
-          <strong>🏠 Home</strong>
-          <span>→</span>
-        </div>
-      </a>
+    <a href="#beauty" class="category">
 
-      <a class="category" href="#electronics">
-        <div class="category-image">
-          <img src="electronics-airpods.png" alt="Electronics">
-        </div>
-        <div class="category-name">
-          <strong>🎧 Electronics</strong>
-          <span>→</span>
-        </div>
-      </a>
+      <div class="category-image">
+        <img src="beauty-ordinary.png" alt="Beauty">
+      </div>
 
-      <a class="category" href="#fashion">
-        <div class="category-image">
-          <img src="fashion-new-balance.png" alt="Fashion">
-        </div>
-        <div class="category-name">
-          <strong>👟 Fashion</strong>
-          <span>→</span>
-        </div>
-      </a>
+      <div class="category-name">
+        <strong>💄 Beauty</strong>
+        <span>→</span>
+      </div>
 
-      <a class="category" href="#kitchen">
-        <div class="category-image">
-          <img src="kitchen-stanley.png" alt="Kitchen">
-        </div>
-        <div class="category-name">
-          <strong>🍳 Kitchen</strong>
-          <span>→</span>
-        </div>
-      </a>
+    </a>
 
-      <a class="category" href="#trending">
-        <div class="category-image">
-          <img src="trending-owala.png" alt="Trending">
-        </div>
-        <div class="category-name">
-          <strong>🔥 Trending</strong>
-          <span>→</span>
-        </div>
-      </a>
+    <a href="#home-products" class="category">
 
-    </div>
+      <div class="category-image">
+        <img src="home-hangers.png" alt="Home">
+      </div>
 
-  </section>
+      <div class="category-name">
+        <strong>🏠 Home</strong>
+        <span>→</span>
+      </div>
 
+    </a>
 
-  <!-- FEATURED -->
+    <a href="#electronics" class="category">
 
-  <section id="featured" class="section">
+      <div class="category-image">
+        <img src="electronics-airpods.png" alt="Electronics">
+      </div>
 
-    <div class="section-title">
+      <div class="category-name">
+        <strong>🎧 Electronics</strong>
+        <span>→</span>
+      </div>
+
+    </a>
+
+    <a href="#fashion" class="category">
+
+      <div class="category-image">
+        <img src="fashion-new-balance.png" alt="Fashion">
+      </div>
+
+      <div class="category-name">
+        <strong>👟 Fashion</strong>
+        <span>→</span>
+      </div>
+
+    </a>
+
+    <a href="#kitchen" class="category">
+
+      <div class="category-image">
+        <img src="kitchen-stanley.png" alt="Kitchen">
+      </div>
+
+      <div class="category-name">
+        <strong>🍳 Kitchen</strong>
+        <span>→</span>
+      </div>
+
+    </a>
+
+    <a href="#trending" class="category">
+
+      <div class="category-image">
+        <img src="trending-owala.png" alt="Trending">
+      </div>
+
+      <div class="category-name">
+        <strong>🔥 Trending</strong>
+        <span>→</span>
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FEATURED -->
+
+<section class="container section" id="featured">
+
+  <div class="section-header">
+
+    <div>
       <h2>Featured Shopping Pick</h2>
-      <p>Our featured product of the moment.</p>
+      <p>A product worth checking out.</p>
     </div>
 
-    <div class="featured">
+    <a href="#deals" class="section-link">
+      Today's Deals →
+    </a>
 
-      <div class="featured-image">
-        <img
-          src="ISDIN.png"
-          alt="ISDIN Uradin Podos Foot Care"
-        >
+  </div>
+
+  <div class="featured">
+
+    <div class="featured-image">
+
+      <div class="featured-label">
+        ASKTOSHOP PICK
       </div>
 
-      <div class="featured-info">
+      <img
+        src="ISDIN.png"
+        alt="ISDIN Uradin Podos Foot Care"
+      >
 
-        <div class="featured-label">
-          AskToShop Featured Pick
-        </div>
+    </div>
 
-        <h2>
-          ISDIN Uradin Podos Foot Care
-        </h2>
+    <div class="featured-info">
 
-        <div class="rating">
-          ★★★★★ <span>4.7 / 5</span>
-        </div>
-
-        <p>
-          A featured personal-care product selected by AskToShop
-          for shoppers looking for useful beauty and personal-care finds.
-        </p>
-
-        <ul class="featured-list">
-          <li>Featured AskToShop pick</li>
-          <li>Easy product discovery</li>
-          <li>Check retailer for latest price and availability</li>
-        </ul>
-
-        <div class="price">$39</div>
-
-        <a
-          href="https://amzn.to/46unnJG"
-          class="btn btn-red"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
+      <div class="featured-small">
+        Featured Beauty Pick
       </div>
 
-    </div>
+      <h2>
+        ISDIN Uradin Podos Foot Care
+      </h2>
 
-  </section>
-
-
-  <!-- POPULAR PRODUCTS -->
-
-  <section class="section">
-
-    <div class="section-title">
-      <h2>Popular Picks</h2>
-      <p>More products worth checking out.</p>
-    </div>
-
-    <div class="products">
-
-      <!-- CALDERA -->
-
-      <article class="product">
-
-        <span class="badge">NEW</span>
-
-        <div class="product-image">
-          <img
-            src="CalderaLab.png"
-            alt="Caldera + Lab The Eye Serum"
-          >
-        </div>
-
-        <div class="product-info">
-
-          <div class="tag">Beauty</div>
-
-          <h3>
-            Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
-          </h3>
-
-          <div class="rating">
-            ★★★★★ <span>4.8</span>
-          </div>
-
-          <div class="product-price">$153</div>
-
-          <a
-            href="https://amzn.to/45StPtV"
-            class="shop"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            SHOP NOW →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- OWALA -->
-
-      <article class="product">
-
-        <span class="badge">TRENDING</span>
-
-        <div class="product-image">
-          <img
-            src="trending-owala.png"
-            alt="Owala FreeSip Stainless Steel Water Bottle"
-          >
-        </div>
-
-        <div class="product-info">
-
-          <div class="tag">Trending</div>
-
-          <h3>
-            Owala FreeSip Stainless Steel Water Bottle
-          </h3>
-
-          <div class="rating">
-            ★★★★★ <span>Popular Pick</span>
-          </div>
-
-          <div class="product-price">$45.00</div>
-
-          <a
-            href="https://amzn.to/45VQTbc"
-            class="shop"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            SHOP NOW →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- AIRPODS -->
-
-      <article class="product">
-
-        <span class="badge">BEST SELLER</span>
-
-        <div class="product-image">
-          <img
-            src="electronics-airpods.png"
-            alt="Apple AirPods Pro"
-          >
-        </div>
-
-        <div class="product-info">
-
-          <div class="tag">Electronics</div>
-
-          <h3>
-            Apple AirPods Pro (3rd Generation) (Renewed)
-          </h3>
-
-          <div class="rating">
-            ★★★★★ <span>Popular Pick</span>
-          </div>
-
-          <div class="product-price">$199.99</div>
-
-          <a
-            href="https://amzn.to/4wZseNX"
-            class="shop"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            SHOP NOW →
-          </a>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- DEAL -->
-
-  <section id="deals" class="section">
-
-    <div class="deal">
-
-      <div>
-        <small>Smart Shopping</small>
-        <h2>Discover Today's Deals</h2>
-        <p>Find products worth checking out today.</p>
+      <div class="rating">
+        ★★★★★ <span>4.7 / 5</span>
       </div>
 
-      <a href="#featured" class="deal-button">
-        Explore Picks →
+      <p>
+        A featured personal-care product selected by AskToShop
+        for shoppers looking for useful beauty and everyday-care finds.
+      </p>
+
+      <ul class="feature-list">
+        <li>Featured AskToShop selection</li>
+        <li>Clean product presentation</li>
+        <li>Check retailer for current price and availability</li>
+      </ul>
+
+      <a
+        href="https://amzn.to/46unnJG"
+        class="btn btn-red"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
       </a>
 
     </div>
 
-  </section>
+  </div>
 
+</section>
 
-  <!-- BEAUTY -->
+<!-- FEATURED PRODUCTS -->
 
-  <section id="beauty" class="section">
+<section class="container section">
 
-    <div class="section-title">
+  <div class="section-header">
+
+    <div>
+      <h2>More Featured Picks</h2>
+      <p>Popular products from different categories.</p>
+    </div>
+
+  </div>
+
+  <div class="product-grid">
+
+    <!-- CALDERA -->
+
+    <div class="product">
+
+      <span class="badge">NEW</span>
+
+      <div class="product-image">
+        <img
+          src="CalderaLab.png"
+          alt="Caldera + Lab The Eye Serum"
+        >
+      </div>
+
+      <div class="product-category">
+        Beauty
+      </div>
+
+      <h3>
+        Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
+      </h3>
+
+      <div class="rating">
+        ★★★★★ <span>4.8</span>
+      </div>
+
+      <a
+        href="https://amzn.to/45StPtV"
+        class="shop-button"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
+
+    </div>
+
+    <!-- OWALA -->
+
+    <div class="product">
+
+      <span class="badge">TRENDING</span>
+
+      <div class="product-image">
+        <img
+          src="trending-owala.png"
+          alt="Owala FreeSip Stainless Steel Water Bottle"
+        >
+      </div>
+
+      <div class="product-category">
+        Trending
+      </div>
+
+      <h3>
+        Owala FreeSip Stainless Steel Water Bottle
+      </h3>
+
+      <div class="rating">
+        ★★★★★ <span>Popular Pick</span>
+      </div>
+
+      <a
+        href="https://amzn.to/45VQTbc"
+        class="shop-button"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
+
+    </div>
+
+    <!-- AIRPODS -->
+
+    <div class="product">
+
+      <span class="badge">BEST SELLER</span>
+
+      <div class="product-image">
+        <img
+          src="electronics-airpods.png"
+          alt="Apple AirPods Pro"
+        >
+      </div>
+
+      <div class="product-category">
+        Electronics
+      </div>
+
+      <h3>
+        Apple AirPods Pro (3rd Generation) (Renewed)
+      </h3>
+
+      <div class="rating">
+        ★★★★★ <span>Popular Pick</span>
+      </div>
+
+      <a
+        href="https://amzn.to/4wZseNX"
+        class="shop-button"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
+
+    </div>
+
+    <!-- ORDINARY -->
+
+    <div class="product">
+
+      <div class="product-image">
+        <img
+          src="beauty-ordinary.png"
+          alt="The Ordinary Niacinamide"
+        >
+      </div>
+
+      <div class="product-category">
+        Beauty
+      </div>
+
+      <h3>
+        The Ordinary Niacinamide 10% + Zinc 1% Smoothing Serum
+      </h3>
+
+      <div class="rating">
+        ★★★★★ <span>Popular Pick</span>
+      </div>
+
+      <a
+        href="https://amzn.to/3UHAZP5"
+        class="shop-button"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- DEAL -->
+
+<section class="container section" id="deals">
+
+  <div class="deal">
+
+    <div>
+
+      <small>Smart Shopping</small>
+
+      <h2>Discover Today's Deals</h2>
+
+      <p>
+        Find products worth checking out before you miss them.
+      </p>
+
+    </div>
+
+    <a href="#featured" class="deal-button">
+      Explore Picks →
+    </a>
+
+  </div>
+
+</section>
+
+<!-- BEAUTY -->
+
+<section class="container section" id="beauty">
+
+  <div class="section-header">
+
+    <div>
       <h2>💄 Beauty Picks</h2>
       <p>Beauty products selected for easy discovery.</p>
     </div>
 
-    <div class="products">
+    <a href="#categories" class="section-link">
+      Categories ↑
+    </a>
 
-      <article class="product">
+  </div>
 
-        <div class="product-image">
-          <img
-            src="beauty-ordinary.png"
-            alt="The Ordinary Niacinamide"
-          >
-        </div>
+  <div class="category-products">
 
-        <div class="product-info">
+    <div class="mini-product">
 
-          <div class="tag">Beauty</div>
+      <div class="mini-image">
+        <img
+          src="beauty-ordinary.png"
+          alt="The Ordinary Niacinamide"
+        >
+      </div>
 
-          <h3>
-            The Ordinary Niacinamide 10% + Zinc 1%, Smoothing Serum
-          </h3>
+      <div class="product-category">Beauty</div>
 
-          <div class="rating">★★★★★</div>
+      <h3>
+        The Ordinary Niacinamide 10% + Zinc 1%, Smoothing Serum
+      </h3>
 
-          <div class="product-price">$6.00</div>
+      <div class="rating">★★★★★</div>
 
-          <a
-            href="https://amzn.to/3UHAZP5"
-            class="shop"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            SHOP NOW →
-          </a>
-
-        </div>
-
-      </article>
+      <a
+        href="https://amzn.to/3UHAZP5"
+        class="shop-button"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
 
     </div>
 
-  </section>
+    <div class="mini-product">
 
+      <div class="mini-image">
+        <img
+          src="CalderaLab.png"
+          alt="Caldera + Lab Eye Serum"
+        >
+      </div>
 
-  <!-- HOME -->
+      <div class="product-category">Beauty</div>
 
-  <section id="home-products" class="section">
+      <h3>
+        Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
+      </h3>
 
-    <div class="section-title">
+      <div class="rating">★★★★★</div>
+
+      <a
+        href="https://amzn.to/45StPtV"
+        class="shop-button"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- HOME -->
+
+<section class="container section" id="home-products">
+
+  <div class="section-header">
+
+    <div>
       <h2>🏠 Home Picks</h2>
-      <p>Useful products for home and organization.</p>
+      <p>Useful products for your home.</p>
     </div>
 
-    <div class="products">
+    <a href="#categories" class="section-link">
+      Categories ↑
+    </a>
 
-      <article class="product">
+  </div>
 
-        <div class="product-image">
-          <img
-            src="home-hangers.png"
-            alt="Amazon Basics Velvet Non-Slip Hangers"
-          >
-        </div>
+  <div class="category-products">
 
-        <div class="product-info">
+    <div class="mini-product">
 
-          <div class="tag">Home</div>
+      <div class="mini-image">
+        <img
+          src="home-hangers.png"
+          alt="Amazon Basics Velvet Non-Slip Hangers"
+        >
+      </div>
 
-          <h3>
-            Amazon Basics Velvet Non-Slip Hangers – 100 Pack
-          </h3>
+      <div class="product-category">Home</div>
 
-          <div class="rating">★★★★★</div>
+      <h3>
+        Amazon Basics Velvet Non-Slip Hangers – 100 Pack
+      </h3>
 
-          <div class="product-price">$40.49</div>
+      <div class="rating">★★★★★</div>
 
-          <a
-            href="https://amzn.to/4xvhXKv"
-            class="shop"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            SHOP NOW →
-          </a>
-
-        </div>
-
-      </article>
+      <a
+        href="https://amzn.to/4xvhXKv"
+        class="shop-button"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
 
     </div>
 
-  </section>
+  </div>
 
+</section>
 
-  <!-- ELECTRONICS -->
+<!-- ELECTRONICS -->
 
-  <section id="electronics" class="section">
+<section class="container section" id="electronics">
 
-    <div class="section-title">
+  <div class="section-header">
+
+    <div>
       <h2>🎧 Electronics</h2>
-      <p>Popular technology and everyday gadgets.</p>
+      <p>Popular tech products and everyday gadgets.</p>
     </div>
 
-    <div class="products">
+    <a href="#categories" class="section-link">
+      Categories ↑
+    </a>
 
-      <article class="product">
+  </div>
 
-        <div class="product-image">
-          <img
-            src="electronics-airpods.png"
-            alt="Apple AirPods Pro"
-          >
-        </div>
+  <div class="category-products">
 
-        <div class="product-info">
+    <div class="mini-product">
 
-          <div class="tag">Electronics</div>
+      <div class="mini-image">
+        <img
+          src="electronics-airpods.png"
+          alt="Apple AirPods Pro"
+        >
+      </div>
 
-          <h3>
-            Apple AirPods Pro (3rd Generation) (Renewed)
-          </h3>
+      <div class="product-category">Electronics</div>
 
-          <div class="rating">★★★★★</div>
+      <h3>
+        Apple AirPods Pro (3rd Generation) (Renewed)
+      </h3>
 
-          <div class="product-price">$199.99</div>
+      <div class="rating">★★★★★</div>
 
-          <a
-            href="https://amzn.to/4wZseNX"
-            class="shop"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            SHOP NOW →
-          </a>
-
-        </div>
-
-      </article>
+      <a
+        href="https://amzn.to/4wZseNX"
+        class="shop-button"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
 
     </div>
 
-  </section>
+  </div>
 
+</section>
 
-  <!-- FASHION -->
+<!-- FASHION -->
 
-  <section id="fashion" class="section">
+<section class="container section" id="fashion">
 
-    <div class="section-title">
+  <div class="section-header">
+
+    <div>
       <h2>👟 Fashion Picks</h2>
       <p>Casual styles and everyday fashion finds.</p>
     </div>
 
-    <div class="products">
+    <a href="#categories" class="section-link">
+      Categories ↑
+    </a>
 
-      <article class="product">
+  </div>
 
-        <div class="product-image">
-          <img
-            src="fashion-new-balance.png"
-            alt="New Balance Women's 327"
-          >
-        </div>
+  <div class="category-products">
 
-        <div class="product-info">
+    <div class="mini-product">
 
-          <div class="tag">Fashion</div>
+      <div class="mini-image">
+        <img
+          src="fashion-new-balance.png"
+          alt="New Balance Women's 327"
+        >
+      </div>
 
-          <h3>
-            New Balance Women's 327 Casual Shoes
-          </h3>
+      <div class="product-category">Fashion</div>
 
-          <div class="rating">★★★★★</div>
+      <h3>
+        New Balance Women's 327 Casual Shoes
+      </h3>
 
-          <div class="product-price">$104.95</div>
+      <div class="rating">★★★★★</div>
 
-          <a
-            href="https://amzn.to/4r3WpCp"
-            class="shop"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            SHOP NOW →
-          </a>
-
-        </div>
-
-      </article>
+      <a
+        href="https://amzn.to/4r3WpCp"
+        class="shop-button"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
 
     </div>
 
-  </section>
+  </div>
 
+</section>
 
-  <!-- KITCHEN -->
+<!-- KITCHEN -->
 
-  <section id="kitchen" class="section">
+<section class="container section" id="kitchen">
 
-    <div class="section-title">
+  <div class="section-header">
+
+    <div>
       <h2>🍳 Kitchen Picks</h2>
       <p>Popular kitchen and drinkware finds.</p>
     </div>
 
-    <div class="products">
+    <a href="#categories" class="section-link">
+      Categories ↑
+    </a>
 
-      <article class="product">
+  </div>
 
-        <div class="product-image">
-          <img
-            src="kitchen-stanley.png"
-            alt="Stanley Quencher H2.0"
-          >
-        </div>
+  <div class="category-products">
 
-        <div class="product-info">
+    <div class="mini-product">
 
-          <div class="tag">Kitchen</div>
+      <div class="mini-image">
+        <img
+          src="kitchen-stanley.png"
+          alt="Stanley Quencher H2.0"
+        >
+      </div>
 
-          <h3>
-            Stanley Quencher H2.0 40 oz Tumbler
-          </h3>
+      <div class="product-category">Kitchen</div>
 
-          <div class="rating">★★★★★</div>
+      <h3>
+        Stanley Quencher H2.0 40 oz Tumbler
+      </h3>
 
-          <div class="product-price">$58.74</div>
+      <div class="rating">★★★★★</div>
 
-          <a
-            href="https://amzn.to/4x0KeHQ"
-            class="shop"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            SHOP NOW →
-          </a>
-
-        </div>
-
-      </article>
+      <a
+        href="https://amzn.to/4x0KeHQ"
+        class="shop-button"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
 
     </div>
 
-  </section>
+  </div>
 
+</section>
 
-  <!-- TRENDING -->
+<!-- TRENDING -->
 
-  <section id="trending" class="section">
+<section class="container section" id="trending">
 
-    <div class="section-title">
+  <div class="section-header">
+
+    <div>
       <h2>🔥 Trending Picks</h2>
       <p>Products getting attention right now.</p>
     </div>
 
-    <div class="products">
+    <a href="#categories" class="section-link">
+      Categories ↑
+    </a>
 
-      <article class="product">
+  </div>
 
-        <span class="badge">TRENDING</span>
+  <div class="category-products">
 
-        <div class="product-image">
-          <img
-            src="trending-owala.png"
-            alt="Owala FreeSip"
-          >
-        </div>
+    <div class="mini-product">
 
-        <div class="product-info">
+      <div class="mini-image">
+        <img
+          src="trending-owala.png"
+          alt="Owala FreeSip"
+        >
+      </div>
 
-          <div class="tag">Trending</div>
+      <div class="product-category">Trending</div>
 
-          <h3>
-            Owala FreeSip Stainless Steel Water Bottle
-          </h3>
+      <h3>
+        Owala FreeSip Stainless Steel Water Bottle
+      </h3>
 
-          <div class="rating">★★★★★</div>
+      <div class="rating">★★★★★</div>
 
-          <div class="product-price">$45.00</div>
-
-          <a
-            href="https://amzn.to/45VQTbc"
-            class="shop"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            SHOP NOW →
-          </a>
-
-        </div>
-
-      </article>
+      <a
+        href="https://amzn.to/45VQTbc"
+        class="shop-button"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+      >
+        SHOP NOW →
+      </a>
 
     </div>
 
-  </section>
+  </div>
 
+</section>
 
-  <!-- WHY ASK TO SHOP -->
+<!-- WHY ASK TO SHOP -->
 
-  <section class="section">
+<section class="container section">
 
-    <div class="section-title">
+  <div class="section-header">
+
+    <div>
       <h2>Why AskToShop?</h2>
       <p>Simple discovery. Better shopping.</p>
     </div>
 
+  </div>
+
+  <div class="why-grid">
+
     <div class="why">
 
-      <div class="why-card">
+      <div class="why-icon">🔎</div>
 
-        <div class="why-icon">🔎</div>
+      <h3>Easy Discovery</h3>
 
-        <h3>Easy Discovery</h3>
-
-        <p>
-          Find useful and interesting products without endless searching.
-        </p>
-
-      </div>
-
-      <div class="why-card">
-
-        <div class="why-icon">⭐</div>
-
-        <h3>Smart Picks</h3>
-
-        <p>
-          Browse selected products and shopping ideas in one place.
-        </p>
-
-      </div>
-
-      <div class="why-card">
-
-        <div class="why-icon">🛍️</div>
-
-        <h3>Shop Easily</h3>
-
-        <p>
-          Visit the retailer to check the latest price and availability.
-        </p>
-
-      </div>
+      <p>
+        Find useful and interesting products without endless searching.
+      </p>
 
     </div>
 
-  </section>
+    <div class="why">
 
-</div>
+      <div class="why-icon">⭐</div>
+
+      <h3>Smart Picks</h3>
+
+      <p>
+        Browse selected products and shopping ideas in one place.
+      </p>
+
+    </div>
+
+    <div class="why">
+
+      <div class="why-icon">🛍️</div>
+
+      <h3>Shop Easily</h3>
+
+      <p>
+        Visit the retailer to check the latest price and availability.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SEARCH MESSAGE -->
+
+<div class="container search-result" id="searchResult"></div>
 
 </main>
-
 
 <!-- FOOTER -->
 
@@ -1632,122 +1858,147 @@ footer{
   <div class="footer">
 
     <div>
-      <h2>AskTo<span>Shop</span></h2>
+
+      <h2>
+        AskTo<span>Shop</span>
+      </h2>
 
       <p>
         Discover products, trending finds and smart shopping ideas.
         AskToShop makes online product discovery simple and convenient.
       </p>
+
     </div>
 
     <div>
+
       <h3>Explore</h3>
+
       <a href="#featured">Featured Picks</a>
       <a href="#deals">Today's Deals</a>
       <a href="#categories">Categories</a>
+
     </div>
 
     <div>
+
       <h3>Categories</h3>
+
       <a href="#beauty">Beauty</a>
       <a href="#home-products">Home</a>
       <a href="#electronics">Electronics</a>
       <a href="#fashion">Fashion</a>
       <a href="#kitchen">Kitchen</a>
       <a href="#trending">Trending</a>
+
     </div>
 
     <div>
+
       <h3>Information</h3>
+
       <a href="#home">About AskToShop</a>
       <a href="#home">Privacy</a>
       <a href="#home">Affiliate Disclosure</a>
       <a href="#home">Contact</a>
+
     </div>
 
   </div>
 
-  <div class="copyright">
+  <div class="footer-bottom">
     © 2026 AskToShop. All rights reserved.
   </div>
 
 </footer>
 
-
 <script>
-
-/* SEARCH */
 
 const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
+const searchResult = document.getElementById("searchResult");
 
 const searchMap = {
   beauty:"#beauty",
   ordinary:"#beauty",
   niacinamide:"#beauty",
-  caldera:"#featured",
+  caldera:"#beauty",
+  "eye serum":"#beauty",
+
   home:"#home-products",
   hanger:"#home-products",
   hangers:"#home-products",
+
   electronics:"#electronics",
   airpods:"#electronics",
   apple:"#electronics",
+
   fashion:"#fashion",
   "new balance":"#fashion",
   shoes:"#fashion",
+
   kitchen:"#kitchen",
   stanley:"#kitchen",
   tumbler:"#kitchen",
+
   trending:"#trending",
   owala:"#trending",
   bottle:"#trending",
+
   deals:"#deals",
   featured:"#featured"
 };
 
-searchForm.addEventListener("submit",function(e){
+searchForm.addEventListener("submit", function(e){
 
   e.preventDefault();
 
-  const query =
-    searchInput.value.trim().toLowerCase();
+  const query = searchInput.value.trim().toLowerCase();
 
   if(!query){
     searchInput.focus();
     return;
   }
 
-  let target = null;
+  let targetId = null;
 
-  for(const key in searchMap){
+  for(const keyword in searchMap){
 
-    if(query.includes(key)){
-      target = searchMap[key];
+    if(query.includes(keyword)){
+      targetId = searchMap[keyword];
       break;
     }
 
   }
 
-  if(target){
+  if(targetId){
 
-    const element =
-      document.querySelector(target);
+    const target = document.querySelector(targetId);
 
-    if(element){
+    if(target){
 
-      element.scrollIntoView({
+      target.scrollIntoView({
         behavior:"smooth",
         block:"start"
       });
+
+      searchResult.style.display = "none";
 
       return;
     }
 
   }
 
-  alert(
-    "No exact match found. Try Beauty, Home, Electronics, Fashion, Kitchen, Trending, Owala, Stanley or AirPods."
-  );
+  searchResult.style.display = "block";
+
+  searchResult.innerHTML =
+    'No result found. Try <strong>Beauty, Home, Electronics, Fashion, Kitchen, Trending, Owala, Stanley, AirPods</strong> or <strong>New Balance</strong>.';
+
+});
+
+searchInput.addEventListener("input", function(){
+
+  searchResult.style.display = "none";
 
 });
 
