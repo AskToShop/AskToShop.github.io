@@ -1,5 +1,5 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -68,41 +68,42 @@ img{
 }
 
 /* =========================
-   TOP BAR
+   TOP BAR - COMPACT
 ========================= */
 
 .topbar{
-  min-height:34px;
+  height:26px;
+  min-height:26px;
   padding:0 5%;
   background:#080f1b;
   color:#cbd5e1;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  font-size:11px;
+  font-size:10px;
 }
 
 /* =========================
-   HEADER
+   HEADER - COMPACT
 ========================= */
 
 header{
   position:sticky;
   top:0;
   z-index:1000;
-  min-height:68px;
-  padding:10px 5%;
+  min-height:60px;
+  padding:8px 5%;
   background:rgba(13,21,36,.97);
   backdrop-filter:blur(14px);
   color:#fff;
   display:flex;
   align-items:center;
-  gap:20px;
+  gap:16px;
   box-shadow:0 5px 25px rgba(0,0,0,.14);
 }
 
 .logo{
-  font-size:28px;
+  font-size:26px;
   font-weight:950;
   letter-spacing:-1.4px;
   white-space:nowrap;
@@ -119,7 +120,7 @@ header{
 .search{
   flex:1;
   max-width:760px;
-  height:44px;
+  height:42px;
   display:flex;
   overflow:hidden;
   background:#fff;
@@ -137,7 +138,7 @@ header{
 }
 
 .search button{
-  width:56px;
+  width:54px;
   border:0;
   background:var(--orange);
   color:#111827;
@@ -162,7 +163,7 @@ header{
 nav{
   background:var(--navy2);
   color:#fff;
-  padding:10px 5%;
+  padding:9px 5%;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -300,6 +301,8 @@ main{
   transform:translateY(-2px);
 }
 
+/* hero decoration */
+
 .hero-art{
   position:absolute;
   right:4%;
@@ -340,7 +343,6 @@ main{
 
 /* =========================
    QUICK FEATURED PRODUCT
-   MADE A LITTLE SMALLER
 ========================= */
 
 .quick-feature{
@@ -351,19 +353,19 @@ main{
 
 .quick-card{
   display:grid;
-  grid-template-columns:200px 1fr auto;
+  grid-template-columns:230px 1fr auto;
   align-items:center;
-  gap:18px;
-  padding:11px;
+  gap:22px;
+  padding:13px;
   background:#fff;
   border:1px solid var(--border);
-  border-radius:16px;
+  border-radius:18px;
   box-shadow:var(--shadow);
 }
 
 .quick-image{
-  height:125px;
-  border-radius:11px;
+  height:145px;
+  border-radius:13px;
   overflow:hidden;
   background:linear-gradient(145deg,#f8f9fb,#eef1f5);
   display:flex;
@@ -385,25 +387,25 @@ main{
   letter-spacing:.8px;
   font-size:9px;
   font-weight:950;
-  margin-bottom:4px;
+  margin-bottom:5px;
 }
 
 .quick-info h2{
-  font-size:20px;
+  font-size:22px;
   line-height:1.2;
-  margin-bottom:5px;
+  margin-bottom:6px;
 }
 
 .quick-info p{
   color:var(--muted);
-  font-size:11px;
+  font-size:12px;
   max-width:650px;
-  margin-bottom:6px;
+  margin-bottom:7px;
 }
 
 .quick-rating{
   color:#f59e0b;
-  font-size:11px;
+  font-size:12px;
   font-weight:800;
 }
 
@@ -414,17 +416,13 @@ main{
 
 .quick-side{
   text-align:right;
-  min-width:125px;
+  min-width:145px;
 }
 
-/* PRICE HIDDEN */
-.quick-price,
-.price-row,
-.price,
-.price-note,
-.feature-price,
-.mini-price{
-  display:none !important;
+.quick-price{
+  font-size:24px;
+  font-weight:950;
+  margin-bottom:9px;
 }
 
 .shop-btn,
@@ -682,6 +680,23 @@ main{
   margin-left:3px;
 }
 
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.price{
+  font-size:19px;
+  font-weight:950;
+}
+
+.price-note{
+  color:#9aa2af;
+  font-size:9px;
+}
+
 /* =========================
    FEATURE PRODUCT
 ========================= */
@@ -760,6 +775,12 @@ main{
   font-size:13px;
   line-height:1.65;
   margin:12px 0;
+}
+
+.feature-price{
+  font-size:28px;
+  font-weight:950;
+  margin-bottom:14px;
 }
 
 .feature-list{
@@ -881,6 +902,12 @@ main{
   margin-bottom:7px;
   font-size:14px;
   line-height:1.4;
+}
+
+.mini-price{
+  font-size:19px;
+  font-weight:950;
+  margin-bottom:11px;
 }
 
 /* =========================
@@ -1049,7 +1076,7 @@ footer{
 }
 
 /* =========================
-   ADMIN
+   ADMIN / PRODUCT MANAGER
 ========================= */
 
 .admin-panel{
@@ -1276,7 +1303,7 @@ footer{
   }
 
   .quick-card{
-    grid-template-columns:150px 1fr;
+    grid-template-columns:170px 1fr;
   }
 
   .quick-side{
@@ -1316,7 +1343,7 @@ footer{
   }
 
   header{
-    padding:10px 5%;
+    padding:8px 5%;
   }
 
   .logo{
@@ -1367,17 +1394,17 @@ footer{
   }
 
   .quick-card{
-    grid-template-columns:95px 1fr;
-    gap:10px;
-    padding:9px;
+    grid-template-columns:105px 1fr;
+    gap:12px;
+    padding:10px;
   }
 
   .quick-image{
-    height:95px;
+    height:105px;
   }
 
   .quick-info h2{
-    font-size:14px;
+    font-size:15px;
   }
 
   .quick-info p{
@@ -1387,8 +1414,13 @@ footer{
   .quick-side{
     grid-column:1/-1;
     display:flex;
-    justify-content:flex-end;
+    justify-content:space-between;
     align-items:center;
+  }
+
+  .quick-price{
+    margin:0;
+    font-size:20px;
   }
 
   .categories{
@@ -1454,6 +1486,7 @@ footer{
   }
 }
 </style>
+
 </head>
 
 <body>
@@ -1500,35 +1533,41 @@ footer{
 
 <main id="home">
 
+<!-- HERO -->
+
 <div class="hero-wrap">
 
 <section class="hero">
 
   <div class="hero-content">
 
-    <div class="eyebrow">
-      ✦ Smart Shopping Starts Here
-    </div>
+```
+<div class="eyebrow">
+  ✦ Smart Shopping Starts Here
+</div>
 
-    <h1>
-      Discover Products<br>
-      You'll <span>Love.</span>
-    </h1>
+<h1>
+  Discover Products<br>
+  You'll <span>Love.</span>
+</h1>
 
-    <p>
-      Discover useful products, trending finds and smart shopping ideas —
-      all in one clean place.
-    </p>
+<p>
+  Discover useful products, trending finds and smart shopping ideas —
+  all in one clean place.
+</p>
 
-    <div class="hero-actions">
-      <a href="#featured" class="primary-btn">
-        Shop Featured →
-      </a>
+<div class="hero-actions">
 
-      <a href="#categories" class="secondary-btn">
-        Browse Categories
-      </a>
-    </div>
+  <a href="#featured" class="primary-btn">
+    Shop Featured →
+  </a>
+
+  <a href="#categories" class="secondary-btn">
+    Browse Categories
+  </a>
+
+</div>
+```
 
   </div>
 
@@ -1538,48 +1577,57 @@ footer{
 
 </div>
 
-<!-- QUICK FEATURED PRODUCT -->
+<!-- =====================================================
+     QUICK FEATURED PRODUCT
+     ISDIN STAYS HERE - BELOW HERO
+===================================================== -->
 
 <section class="quick-feature">
 
   <div class="quick-card">
 
-    <div class="quick-image">
-      <img
-        src="ISDIN.png"
-        alt="ISDIN Uradin Podos Foot Care"
-        onerror="imageError(this,'ISDIN Uradin Podos')"
-      >
-    </div>
+```
+<div class="quick-image">
 
-    <div class="quick-info">
+  <img
+    src="ISDIN.png"
+    alt="ISDIN Uradin Podos Foot Care"
+    onerror="imageError(this,'ISDIN Uradin Podos')"
+  >
 
-      <small>Featured Pick</small>
+</div>
 
-      <h2>ISDIN Uradin Podos Foot Care</h2>
+<div class="quick-info">
 
-      <p>
-        A featured personal-care pick selected by AskToShop.
-      </p>
+  <small>Featured Pick</small>
 
-      <div class="quick-rating">
-        ★★★★★ <span>4.7 / 5</span>
-      </div>
+  <h2>ISDIN Uradin Podos Foot Care</h2>
 
-    </div>
+  <p>
+    A featured personal-care pick selected by AskToShop.
+  </p>
 
-    <div class="quick-side">
+  <div class="quick-rating">
+    ★★★★★ <span>4.7 / 5</span>
+  </div>
 
-      <a
-        href="https://amzn.to/46unnJG"
-        class="shop-btn"
-        target="_blank"
-        rel="nofollow sponsored noopener"
-      >
-        SHOP NOW →
-      </a>
+</div>
 
-    </div>
+<div class="quick-side">
+
+  <div class="quick-price">$39</div>
+
+  <a
+    href="https://amzn.to/46unnJG"
+    class="shop-btn"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+  >
+    SHOP NOW →
+  </a>
+
+</div>
+```
 
   </div>
 
@@ -1628,71 +1676,97 @@ footer{
 
   <div class="categories">
 
-    <a class="category" href="#beauty">
-      <div class="category-img">
-        <img src="beauty-ordinary.png" alt="Beauty"
-             onerror="imageError(this,'Beauty')">
-      </div>
-      <div class="category-label">
-        <strong>💄 Beauty</strong>
-        <span>→</span>
-      </div>
-    </a>
+```
+<a class="category" href="#beauty">
+  <div class="category-img">
+    <img
+      src="beauty-ordinary.png"
+      alt="Beauty"
+      onerror="imageError(this,'Beauty')"
+    >
+  </div>
 
-    <a class="category" href="#home-products">
-      <div class="category-img">
-        <img src="home-hangers.png" alt="Home"
-             onerror="imageError(this,'Home')">
-      </div>
-      <div class="category-label">
-        <strong>🏠 Home</strong>
-        <span>→</span>
-      </div>
-    </a>
+  <div class="category-label">
+    <strong>💄 Beauty</strong>
+    <span>→</span>
+  </div>
+</a>
 
-    <a class="category" href="#electronics">
-      <div class="category-img">
-        <img src="electronics-airpods.png" alt="Electronics"
-             onerror="imageError(this,'Electronics')">
-      </div>
-      <div class="category-label">
-        <strong>🎧 Electronics</strong>
-        <span>→</span>
-      </div>
-    </a>
+<a class="category" href="#home-products">
+  <div class="category-img">
+    <img
+      src="home-hangers.png"
+      alt="Home"
+      onerror="imageError(this,'Home')"
+    >
+  </div>
 
-    <a class="category" href="#fashion">
-      <div class="category-img">
-        <img src="fashion-new-balance.png" alt="Fashion"
-             onerror="imageError(this,'Fashion')">
-      </div>
-      <div class="category-label">
-        <strong>👟 Fashion</strong>
-        <span>→</span>
-      </div>
-    </a>
+  <div class="category-label">
+    <strong>🏠 Home</strong>
+    <span>→</span>
+  </div>
+</a>
 
-    <a class="category" href="#kitchen">
-      <div class="category-img">
-        <img src="kitchen-stanley.png" alt="Kitchen"
-             onerror="imageError(this,'Kitchen')">
-      </div>
-      <div class="category-label">
-        <strong>🍳 Kitchen</strong>
-        <span>→</span>
-      </div>
-    </a>
+<a class="category" href="#electronics">
+  <div class="category-img">
+    <img
+      src="electronics-airpods.png"
+      alt="Electronics"
+      onerror="imageError(this,'Electronics')"
+    >
+  </div>
 
-    <a class="category" href="#trending">
-      <div class="category-img">
-        <img src="trending-owala.png" alt="Trending"
-             onerror="imageError(this,'Trending')">
-      </div>
-      <div class="category-label">
-        <strong>🔥 Trending</strong>
-        <span>→</span>
-      </div>
-    </a>
+  <div class="category-label">
+    <strong>🎧 Electronics</strong>
+    <span>→</span>
+  </div>
+</a>
+
+<a class="category" href="#fashion">
+  <div class="category-img">
+    <img
+      src="fashion-new-balance.png"
+      alt="Fashion"
+      onerror="imageError(this,'Fashion')"
+    >
+  </div>
+
+  <div class="category-label">
+    <strong>👟 Fashion</strong>
+    <span>→</span>
+  </div>
+</a>
+
+<a class="category" href="#kitchen">
+  <div class="category-img">
+    <img
+      src="kitchen-stanley.png"
+      alt="Kitchen"
+      onerror="imageError(this,'Kitchen')"
+    >
+  </div>
+
+  <div class="category-label">
+    <strong>🍳 Kitchen</strong>
+    <span>→</span>
+  </div>
+</a>
+
+<a class="category" href="#trending">
+  <div class="category-img">
+    <img
+      src="trending-owala.png"
+      alt="Trending"
+      onerror="imageError(this,'Trending')"
+    >
+  </div>
+
+  <div class="category-label">
+    <strong>🔥 Trending</strong>
+    <span>→</span>
+  </div>
+</a>
+```
 
   </div>
 
@@ -1703,178 +1777,214 @@ footer{
 <section class="section" id="featured">
 
   <div class="section-head">
-    <div>
-      <h2>Featured Shopping Picks</h2>
-      <p>A few products worth checking out today.</p>
-    </div>
 
-    <a href="#deals" class="section-link">
-      Today's Deals →
-    </a>
+```
+<div>
+  <h2>Featured Shopping Picks</h2>
+  <p>A few products worth checking out today.</p>
+</div>
+
+<a href="#deals" class="section-link">
+  Today's Deals →
+</a>
+```
+
   </div>
+
+  <!-- ISDIN FEATURE -->
 
   <div class="feature-product">
 
-    <div class="feature-product-image">
+```
+<div class="feature-product-image">
 
-      <img
-        src="ISDIN.png"
-        alt="ISDIN Uradin Podos Foot Care"
-        onerror="imageError(this,'ISDIN Uradin Podos')"
-      >
+  <img
+    src="ISDIN.png"
+    alt="ISDIN Uradin Podos Foot Care"
+    onerror="imageError(this,'ISDIN Uradin Podos')"
+  >
 
-    </div>
+</div>
 
-    <div class="feature-product-info">
+<div class="feature-product-info">
 
-      <div class="feature-small">
-        Featured Beauty Pick
-      </div>
+  <div class="feature-small">
+    Featured Beauty Pick
+  </div>
 
-      <h2>
-        ISDIN Uradin Podos Foot Care
-      </h2>
+  <h2>
+    ISDIN Uradin Podos Foot Care
+  </h2>
 
-      <div class="rating">
-        ★★★★★ <span>4.7 / 5</span>
-      </div>
+  <div class="rating">
+    ★★★★★ <span>4.7 / 5</span>
+  </div>
 
-      <p>
-        A featured foot-care product selected for shoppers looking
-        for useful beauty and personal-care finds.
-      </p>
+  <p>
+    A featured foot-care product selected for shoppers
+    looking for useful beauty and personal-care finds.
+  </p>
 
-      <ul class="feature-list">
-        <li>Featured AskToShop pick</li>
-        <li>Clean product presentation</li>
-        <li>Check latest Amazon price & availability</li>
-      </ul>
+  <ul class="feature-list">
+    <li>Featured AskToShop pick</li>
+    <li>Clean product presentation</li>
+    <li>Check latest Amazon price & availability</li>
+  </ul>
 
-      <a
-        href="https://amzn.to/46unnJG"
-        class="feature-shop"
-        target="_blank"
-        rel="nofollow sponsored noopener"
-      >
-        SHOP NOW →
-      </a>
+  <div class="feature-price">$39</div>
 
-    </div>
+  <a
+    href="https://amzn.to/46unnJG"
+    class="feature-shop"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+  >
+    SHOP NOW →
+  </a>
+
+</div>
+```
 
   </div>
 
   <div class="featured-grid">
 
-    <div class="product-card">
+```
+<!-- CALDERA -->
+<div class="product-card">
 
-      <span class="badge">NEW</span>
+  <span class="badge">NEW</span>
 
-      <div class="product-image">
-        <img
-          src="CalderaLab.png"
-          alt="Caldera + Lab The Eye Serum"
-          onerror="imageError(this,'Caldera + Lab')"
-        >
-      </div>
+  <div class="product-image">
 
-      <div class="product-info">
+    <img
+      src="CalderaLab.png"
+      alt="Caldera + Lab The Eye Serum"
+      onerror="imageError(this,'Caldera + Lab')"
+    >
 
-        <div class="category-tag">Beauty</div>
+  </div>
 
-        <h3>
-          Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
-        </h3>
+  <div class="product-info">
 
-        <div class="rating">
-          ★★★★★ <span>4.8</span>
-        </div>
+    <div class="category-tag">Beauty</div>
 
-        <a
-          href="https://amzn.to/45StPtV"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
+    <h3>
+      Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
+    </h3>
 
-      </div>
-
+    <div class="rating">
+      ★★★★★ <span>4.8</span>
     </div>
 
-    <div class="product-card">
-
-      <span class="badge">TRENDING</span>
-
-      <div class="product-image">
-        <img
-          src="trending-owala.png"
-          alt="Owala FreeSip Stainless Steel Water Bottle"
-          onerror="imageError(this,'Owala FreeSip')"
-        >
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-tag">Trending</div>
-
-        <h3>
-          Owala FreeSip Stainless Steel Water Bottle
-        </h3>
-
-        <div class="rating">
-          ★★★★★ <span>Popular Pick</span>
-        </div>
-
-        <a
-          href="https://amzn.to/45VQTbc"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
-
-      </div>
-
+    <div class="price-row">
+      <div class="price">$153</div>
+      <div class="price-note">Check price</div>
     </div>
 
-    <div class="product-card">
+    <a
+      href="https://amzn.to/45StPtV"
+      class="shop-btn"
+      target="_blank"
+      rel="nofollow sponsored noopener"
+    >
+      SHOP NOW →
+    </a>
 
-      <span class="badge">BEST SELLER</span>
+  </div>
 
-      <div class="product-image">
-        <img
-          src="electronics-airpods.png"
-          alt="Apple AirPods Pro 3rd Generation Renewed"
-          onerror="imageError(this,'Apple AirPods')"
-        >
-      </div>
+</div>
 
-      <div class="product-info">
+<!-- OWALA -->
+<div class="product-card">
 
-        <div class="category-tag">Electronics</div>
+  <span class="badge">TRENDING</span>
 
-        <h3>
-          Apple AirPods Pro (3rd Generation) (Renewed)
-        </h3>
+  <div class="product-image">
 
-        <div class="rating">
-          ★★★★★ <span>Popular Pick</span>
-        </div>
+    <img
+      src="trending-owala.png"
+      alt="Owala FreeSip Stainless Steel Water Bottle"
+      onerror="imageError(this,'Owala FreeSip')"
+    >
 
-        <a
-          href="https://amzn.to/4wZseNX"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
+  </div>
 
-      </div>
+  <div class="product-info">
 
+    <div class="category-tag">Trending</div>
+
+    <h3>
+      Owala FreeSip Stainless Steel Water Bottle
+    </h3>
+
+    <div class="rating">
+      ★★★★★ <span>Popular Pick</span>
     </div>
+
+    <div class="price-row">
+      <div class="price">$45.00</div>
+      <div class="price-note">Check price</div>
+    </div>
+
+    <a
+      href="https://amzn.to/45VQTbc"
+      class="shop-btn"
+      target="_blank"
+      rel="nofollow sponsored noopener"
+    >
+      SHOP NOW →
+    </a>
+
+  </div>
+
+</div>
+
+<!-- AIRPODS -->
+<div class="product-card">
+
+  <span class="badge">BEST SELLER</span>
+
+  <div class="product-image">
+
+    <img
+      src="electronics-airpods.png"
+      alt="Apple AirPods Pro 3rd Generation Renewed"
+      onerror="imageError(this,'Apple AirPods')"
+    >
+
+  </div>
+
+  <div class="product-info">
+
+    <div class="category-tag">Electronics</div>
+
+    <h3>
+      Apple AirPods Pro (3rd Generation) (Renewed)
+    </h3>
+
+    <div class="rating">
+      ★★★★★ <span>Popular Pick</span>
+    </div>
+
+    <div class="price-row">
+      <div class="price">$199.99</div>
+      <div class="price-note">Check price</div>
+    </div>
+
+    <a
+      href="https://amzn.to/4wZseNX"
+      class="shop-btn"
+      target="_blank"
+      rel="nofollow sponsored noopener"
+    >
+      SHOP NOW →
+    </a>
+
+  </div>
+
+</div>
+```
 
   </div>
 
@@ -1886,19 +1996,21 @@ footer{
 
   <div class="deal-banner">
 
-    <div>
-      <small>Smart Shopping</small>
+```
+<div>
+  <small>Smart Shopping</small>
 
-      <h2>Discover Today's Deals</h2>
+  <h2>Discover Today's Deals</h2>
 
-      <p>
-        Find products worth checking out before you miss them.
-      </p>
-    </div>
+  <p>
+    Find products worth checking out before you miss them.
+  </p>
+</div>
 
-    <a href="#featured" class="deal-button">
-      Explore Picks →
-    </a>
+<a href="#featured" class="deal-button">
+  Explore Picks →
+</a>
+```
 
   </div>
 
@@ -1909,83 +2021,97 @@ footer{
 <section class="section category-section" id="beauty">
 
   <div class="section-head">
-    <div>
-      <h2>💄 Beauty Picks</h2>
-      <p>Beauty products selected for easy discovery.</p>
-    </div>
 
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
+```
+<div>
+  <h2>💄 Beauty Picks</h2>
+  <p>Beauty products selected for easy discovery.</p>
+</div>
+
+<a href="#categories" class="section-link">
+  Categories ↑
+</a>
+```
+
   </div>
 
   <div class="category-product-grid">
 
-    <div class="mini-product">
+```
+<div class="mini-product">
 
-      <div class="mini-image">
-        <img
-          src="beauty-ordinary.png"
-          alt="The Ordinary Niacinamide 10% + Zinc 1%"
-          onerror="imageError(this,'The Ordinary')"
-        >
-      </div>
+  <div class="mini-image">
 
-      <div class="mini-info">
+    <img
+      src="beauty-ordinary.png"
+      alt="The Ordinary Niacinamide 10% + Zinc 1%"
+      onerror="imageError(this,'The Ordinary')"
+    >
 
-        <div class="category-tag">Beauty</div>
+  </div>
 
-        <h3>
-          The Ordinary Niacinamide 10% + Zinc 1%, Smoothing Serum
-        </h3>
+  <div class="mini-info">
 
-        <div class="rating">★★★★★</div>
+    <div class="category-tag">Beauty</div>
 
-        <a
-          href="https://amzn.to/3UHAZP5"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
+    <h3>
+      The Ordinary Niacinamide 10% + Zinc 1%, Smoothing Serum
+    </h3>
 
-      </div>
+    <div class="rating">★★★★★</div>
 
-    </div>
+    <div class="mini-price">$6.00</div>
 
-    <div class="mini-product">
+    <a
+      href="https://amzn.to/3UHAZP5"
+      class="shop-btn"
+      target="_blank"
+      rel="nofollow sponsored noopener"
+    >
+      SHOP NOW →
+    </a>
 
-      <div class="mini-image">
-        <img
-          src="CalderaLab.png"
-          alt="Caldera + Lab Eye Serum"
-          onerror="imageError(this,'Caldera + Lab')"
-        >
-      </div>
+  </div>
 
-      <div class="mini-info">
+</div>
 
-        <div class="category-tag">Beauty</div>
+<div class="mini-product">
 
-        <h3>
-          Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
-        </h3>
+  <div class="mini-image">
 
-        <div class="rating">★★★★★</div>
+    <img
+      src="CalderaLab.png"
+      alt="Caldera + Lab Eye Serum"
+      onerror="imageError(this,'Caldera + Lab')"
+    >
 
-        <a
-          href="https://amzn.to/45StPtV"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
+  </div>
 
-      </div>
+  <div class="mini-info">
 
-    </div>
+    <div class="category-tag">Beauty</div>
+
+    <h3>
+      Caldera + Lab The Eye Serum | Men's Anti-Aging Serum
+    </h3>
+
+    <div class="rating">★★★★★</div>
+
+    <div class="mini-price">$153</div>
+
+    <a
+      href="https://amzn.to/45StPtV"
+      class="shop-btn"
+      target="_blank"
+      rel="nofollow sponsored noopener"
+    >
+      SHOP NOW →
+    </a>
+
+  </div>
+
+</div>
+```
 
   </div>
 
@@ -1996,50 +2122,60 @@ footer{
 <section class="section category-section" id="home-products">
 
   <div class="section-head">
-    <div>
-      <h2>🏠 Home Picks</h2>
-      <p>Useful products for your home and everyday organization.</p>
-    </div>
 
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
+```
+<div>
+  <h2>🏠 Home Picks</h2>
+  <p>Useful products for your home and everyday organization.</p>
+</div>
+
+<a href="#categories" class="section-link">
+  Categories ↑
+</a>
+```
+
   </div>
 
   <div class="category-product-grid">
 
-    <div class="mini-product">
+```
+<div class="mini-product">
 
-      <div class="mini-image">
-        <img
-          src="home-hangers.png"
-          alt="Amazon Basics Velvet Non-Slip Hangers"
-          onerror="imageError(this,'Amazon Basics Hangers')"
-        >
-      </div>
+  <div class="mini-image">
 
-      <div class="mini-info">
+    <img
+      src="home-hangers.png"
+      alt="Amazon Basics Velvet Non-Slip Hangers"
+      onerror="imageError(this,'Amazon Basics Hangers')"
+    >
 
-        <div class="category-tag">Home</div>
+  </div>
 
-        <h3>
-          Amazon Basics Velvet Non-Slip Hangers – 100 Pack
-        </h3>
+  <div class="mini-info">
 
-        <div class="rating">★★★★★</div>
+    <div class="category-tag">Home</div>
 
-        <a
-          href="https://amzn.to/4xvhXKv"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
+    <h3>
+      Amazon Basics Velvet Non-Slip Hangers – 100 Pack
+    </h3>
 
-      </div>
+    <div class="rating">★★★★★</div>
 
-    </div>
+    <div class="mini-price">$40.49</div>
+
+    <a
+      href="https://amzn.to/4xvhXKv"
+      class="shop-btn"
+      target="_blank"
+      rel="nofollow sponsored noopener"
+    >
+      SHOP NOW →
+    </a>
+
+  </div>
+
+</div>
+```
 
   </div>
 
@@ -2050,50 +2186,60 @@ footer{
 <section class="section category-section" id="electronics">
 
   <div class="section-head">
-    <div>
-      <h2>🎧 Electronics</h2>
-      <p>Popular tech products and everyday gadgets.</p>
-    </div>
 
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
+```
+<div>
+  <h2>🎧 Electronics</h2>
+  <p>Popular tech products and everyday gadgets.</p>
+</div>
+
+<a href="#categories" class="section-link">
+  Categories ↑
+</a>
+```
+
   </div>
 
   <div class="category-product-grid">
 
-    <div class="mini-product">
+```
+<div class="mini-product">
 
-      <div class="mini-image">
-        <img
-          src="electronics-airpods.png"
-          alt="Apple AirPods Pro"
-          onerror="imageError(this,'Apple AirPods')"
-        >
-      </div>
+  <div class="mini-image">
 
-      <div class="mini-info">
+    <img
+      src="electronics-airpods.png"
+      alt="Apple AirPods Pro"
+      onerror="imageError(this,'Apple AirPods')"
+    >
 
-        <div class="category-tag">Electronics</div>
+  </div>
 
-        <h3>
-          Apple AirPods Pro (3rd Generation) (Renewed)
-        </h3>
+  <div class="mini-info">
 
-        <div class="rating">★★★★★</div>
+    <div class="category-tag">Electronics</div>
 
-        <a
-          href="https://amzn.to/4wZseNX"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
+    <h3>
+      Apple AirPods Pro (3rd Generation) (Renewed)
+    </h3>
 
-      </div>
+    <div class="rating">★★★★★</div>
 
-    </div>
+    <div class="mini-price">$199.99</div>
+
+    <a
+      href="https://amzn.to/4wZseNX"
+      class="shop-btn"
+      target="_blank"
+      rel="nofollow sponsored noopener"
+    >
+      SHOP NOW →
+    </a>
+
+  </div>
+
+</div>
+```
 
   </div>
 
@@ -2104,50 +2250,60 @@ footer{
 <section class="section category-section" id="fashion">
 
   <div class="section-head">
-    <div>
-      <h2>👟 Fashion Picks</h2>
-      <p>Casual styles and everyday fashion finds.</p>
-    </div>
 
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
+```
+<div>
+  <h2>👟 Fashion Picks</h2>
+  <p>Casual styles and everyday fashion finds.</p>
+</div>
+
+<a href="#categories" class="section-link">
+  Categories ↑
+</a>
+```
+
   </div>
 
   <div class="category-product-grid">
 
-    <div class="mini-product">
+```
+<div class="mini-product">
 
-      <div class="mini-image">
-        <img
-          src="fashion-new-balance.png"
-          alt="New Balance Women's 327"
-          onerror="imageError(this,'New Balance')"
-        >
-      </div>
+  <div class="mini-image">
 
-      <div class="mini-info">
+    <img
+      src="fashion-new-balance.png"
+      alt="New Balance Women's 327"
+      onerror="imageError(this,'New Balance')"
+    >
 
-        <div class="category-tag">Fashion</div>
+  </div>
 
-        <h3>
-          New Balance Women's 327 Casual Shoes
-        </h3>
+  <div class="mini-info">
 
-        <div class="rating">★★★★★</div>
+    <div class="category-tag">Fashion</div>
 
-        <a
-          href="https://amzn.to/4r3WpCp"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
+    <h3>
+      New Balance Women's 327 Casual Shoes
+    </h3>
 
-      </div>
+    <div class="rating">★★★★★</div>
 
-    </div>
+    <div class="mini-price">$104.95</div>
+
+    <a
+      href="https://amzn.to/4r3WpCp"
+      class="shop-btn"
+      target="_blank"
+      rel="nofollow sponsored noopener"
+    >
+      SHOP NOW →
+    </a>
+
+  </div>
+
+</div>
+```
 
   </div>
 
@@ -2158,50 +2314,60 @@ footer{
 <section class="section category-section" id="kitchen">
 
   <div class="section-head">
-    <div>
-      <h2>🍳 Kitchen Picks</h2>
-      <p>Popular kitchen and drinkware finds.</p>
-    </div>
 
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
+```
+<div>
+  <h2>🍳 Kitchen Picks</h2>
+  <p>Popular kitchen and drinkware finds.</p>
+</div>
+
+<a href="#categories" class="section-link">
+  Categories ↑
+</a>
+```
+
   </div>
 
   <div class="category-product-grid">
 
-    <div class="mini-product">
+```
+<div class="mini-product">
 
-      <div class="mini-image">
-        <img
-          src="kitchen-stanley.png"
-          alt="Stanley Quencher H2.0"
-          onerror="imageError(this,'Stanley Quencher')"
-        >
-      </div>
+  <div class="mini-image">
 
-      <div class="mini-info">
+    <img
+      src="kitchen-stanley.png"
+      alt="Stanley Quencher H2.0"
+      onerror="imageError(this,'Stanley Quencher')"
+    >
 
-        <div class="category-tag">Kitchen</div>
+  </div>
 
-        <h3>
-          Stanley Quencher H2.0 40 oz Tumbler
-        </h3>
+  <div class="mini-info">
 
-        <div class="rating">★★★★★</div>
+    <div class="category-tag">Kitchen</div>
 
-        <a
-          href="https://amzn.to/4x0KeHQ"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
+    <h3>
+      Stanley Quencher H2.0 40 oz Tumbler
+    </h3>
 
-      </div>
+    <div class="rating">★★★★★</div>
 
-    </div>
+    <div class="mini-price">$58.74</div>
+
+    <a
+      href="https://amzn.to/4x0KeHQ"
+      class="shop-btn"
+      target="_blank"
+      rel="nofollow sponsored noopener"
+    >
+      SHOP NOW →
+    </a>
+
+  </div>
+
+</div>
+```
 
   </div>
 
@@ -2212,50 +2378,60 @@ footer{
 <section class="section category-section" id="trending">
 
   <div class="section-head">
-    <div>
-      <h2>🔥 Trending Picks</h2>
-      <p>Products getting attention right now.</p>
-    </div>
 
-    <a href="#categories" class="section-link">
-      Categories ↑
-    </a>
+```
+<div>
+  <h2>🔥 Trending Picks</h2>
+  <p>Products getting attention right now.</p>
+</div>
+
+<a href="#categories" class="section-link">
+  Categories ↑
+</a>
+```
+
   </div>
 
   <div class="category-product-grid">
 
-    <div class="mini-product">
+```
+<div class="mini-product">
 
-      <div class="mini-image">
-        <img
-          src="trending-owala.png"
-          alt="Owala FreeSip"
-          onerror="imageError(this,'Owala FreeSip')"
-        >
-      </div>
+  <div class="mini-image">
 
-      <div class="mini-info">
+    <img
+      src="trending-owala.png"
+      alt="Owala FreeSip"
+      onerror="imageError(this,'Owala FreeSip')"
+    >
 
-        <div class="category-tag">Trending</div>
+  </div>
 
-        <h3>
-          Owala FreeSip Stainless Steel Water Bottle
-        </h3>
+  <div class="mini-info">
 
-        <div class="rating">★★★★★</div>
+    <div class="category-tag">Trending</div>
 
-        <a
-          href="https://amzn.to/45VQTbc"
-          class="shop-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-          SHOP NOW →
-        </a>
+    <h3>
+      Owala FreeSip Stainless Steel Water Bottle
+    </h3>
 
-      </div>
+    <div class="rating">★★★★★</div>
 
-    </div>
+    <div class="mini-price">$45.00</div>
+
+    <a
+      href="https://amzn.to/45VQTbc"
+      class="shop-btn"
+      target="_blank"
+      rel="nofollow sponsored noopener"
+    >
+      SHOP NOW →
+    </a>
+
+  </div>
+
+</div>
+```
 
   </div>
 
@@ -2267,20 +2443,22 @@ footer{
 
   <div class="holiday">
 
-    <div>
+```
+<div>
 
-      <h2>🎁 Amazon Holiday Picks</h2>
+  <h2>🎁 Amazon Holiday Picks</h2>
 
-      <p>
-        Discover gift ideas, seasonal finds and products worth
-        checking out for the holiday season.
-      </p>
+  <p>
+    Discover gift ideas, seasonal finds and products worth
+    checking out for the holiday season.
+  </p>
 
-    </div>
+</div>
 
-    <a href="#featured" class="holiday-btn">
-      Explore Picks →
-    </a>
+<a href="#featured" class="holiday-btn">
+  Explore Picks →
+</a>
+```
 
   </div>
 
@@ -2291,41 +2469,61 @@ footer{
 <section class="section">
 
   <div class="section-head">
-    <div>
-      <h2>Why AskToShop?</h2>
-      <p>Simple discovery. Better shopping.</p>
-    </div>
+
+```
+<div>
+  <h2>Why AskToShop?</h2>
+  <p>Simple discovery. Better shopping.</p>
+</div>
+```
+
   </div>
 
   <div class="why-grid">
 
-    <div class="why-card">
-      <div class="why-icon">🔎</div>
-      <h3>Easy Discovery</h3>
-      <p>
-        Find useful and interesting products without endless searching.
-      </p>
-    </div>
+```
+<div class="why-card">
 
-    <div class="why-card">
-      <div class="why-icon">⭐</div>
-      <h3>Smart Picks</h3>
-      <p>
-        Browse selected products and shopping ideas in one place.
-      </p>
-    </div>
+  <div class="why-icon">🔎</div>
 
-    <div class="why-card">
-      <div class="why-icon">🛍️</div>
-      <h3>Shop Easily</h3>
-      <p>
-        Visit the retailer to check the latest price and availability.
-      </p>
-    </div>
+  <h3>Easy Discovery</h3>
+
+  <p>
+    Find useful and interesting products without endless searching.
+  </p>
+
+</div>
+
+<div class="why-card">
+
+  <div class="why-icon">⭐</div>
+
+  <h3>Smart Picks</h3>
+
+  <p>
+    Browse selected products and shopping ideas in one place.
+  </p>
+
+</div>
+
+<div class="why-card">
+
+  <div class="why-icon">🛍️</div>
+
+  <h3>Shop Easily</h3>
+
+  <p>
+    Visit the retailer to check the latest price and availability.
+  </p>
+
+</div>
+```
 
   </div>
 
 </section>
+
+<!-- SEARCH MESSAGE -->
 
 <div class="search-message" id="searchMessage"></div>
 
@@ -2335,68 +2533,75 @@ footer{
 
   <div class="admin-title">
 
-    <div>
-      <h2>AskToShop Product Manager</h2>
-      <p style="color:#6b7280;font-size:11px;margin-top:4px;">
-        Manage products stored in this browser.
-      </p>
-    </div>
+```
+<div>
+  <h2>AskToShop Product Manager</h2>
 
-    <button
-      type="button"
-      class="admin-close"
-      onclick="closeAdmin()"
-    >
-      CLOSE
-    </button>
+  <p style="color:#6b7280;font-size:11px;margin-top:4px;">
+    Manage products stored in this browser.
+  </p>
+</div>
+
+<button
+  type="button"
+  class="admin-close"
+  onclick="closeAdmin()"
+>
+  CLOSE
+</button>
+```
 
   </div>
 
   <div class="admin-form">
 
-    <input id="adminName" placeholder="Product name">
+```
+<input id="adminName" placeholder="Product name">
 
-    <input id="adminCategory" placeholder="Category">
+<input id="adminCategory" placeholder="Category">
 
-    <input id="adminImage" placeholder="Image filename e.g. product.png">
+<input id="adminImage" placeholder="Image filename e.g. product.png">
 
-    <input id="adminLink" placeholder="Affiliate URL">
+<input id="adminPrice" placeholder="Price e.g. $29.99">
 
-    <input id="adminBadge" placeholder="Badge e.g. NEW">
+<input id="adminLink" placeholder="Affiliate URL">
 
-    <textarea
-      id="adminDescription"
-      class="admin-full"
-      placeholder="Short product description"
-    ></textarea>
+<input id="adminBadge" placeholder="Badge e.g. NEW">
 
-    <div class="admin-actions admin-full">
+<textarea
+  id="adminDescription"
+  class="admin-full"
+  placeholder="Short product description"
+></textarea>
 
-      <button
-        type="button"
-        class="admin-btn red"
-        onclick="saveAdminProduct()"
-      >
-        SAVE PRODUCT
-      </button>
+<div class="admin-actions admin-full">
 
-      <button
-        type="button"
-        class="admin-btn light"
-        onclick="clearAdminForm()"
-      >
-        CLEAR
-      </button>
+  <button
+    type="button"
+    class="admin-btn red"
+    onclick="saveAdminProduct()"
+  >
+    SAVE PRODUCT
+  </button>
 
-      <button
-        type="button"
-        class="admin-btn"
-        onclick="resetProducts()"
-      >
-        RESET PRODUCTS
-      </button>
+  <button
+    type="button"
+    class="admin-btn light"
+    onclick="clearAdminForm()"
+  >
+    CLEAR
+  </button>
 
-    </div>
+  <button
+    type="button"
+    class="admin-btn"
+    onclick="resetProducts()"
+  >
+    RESET PRODUCTS
+  </button>
+
+</div>
+```
 
   </div>
 
@@ -2406,48 +2611,61 @@ footer{
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
 
   <div class="footer-main">
 
-    <div class="footer-brand">
+```
+<div class="footer-brand">
 
-      <h2>
-        AskTo<span>Shop</span>
-      </h2>
+  <h2>
+    AskTo<span>Shop</span>
+  </h2>
 
-      <p>
-        Discover products, trending finds and smart shopping ideas.
-        AskToShop makes online product discovery simple and convenient.
-      </p>
+  <p>
+    Discover products, trending finds and smart shopping ideas.
+    AskToShop makes online product discovery simple and convenient.
+  </p>
 
-    </div>
+</div>
 
-    <div>
-      <h3>Explore</h3>
-      <a href="#featured">Featured Picks</a>
-      <a href="#deals">Today's Deals</a>
-      <a href="#holiday">Holiday Picks</a>
-      <a href="#categories">Categories</a>
-    </div>
+<div>
 
-    <div>
-      <h3>Categories</h3>
-      <a href="#beauty">Beauty</a>
-      <a href="#home-products">Home</a>
-      <a href="#electronics">Electronics</a>
-      <a href="#fashion">Fashion</a>
-      <a href="#kitchen">Kitchen</a>
-      <a href="#trending">Trending</a>
-    </div>
+  <h3>Explore</h3>
 
-    <div>
-      <h3>Information</h3>
-      <a href="#home">About AskToShop</a>
-      <a href="#home">Privacy</a>
-      <a href="#home">Affiliate Disclosure</a>
-      <a href="#home">Contact</a>
-    </div>
+  <a href="#featured">Featured Picks</a>
+  <a href="#deals">Today's Deals</a>
+  <a href="#holiday">Holiday Picks</a>
+  <a href="#categories">Categories</a>
+
+</div>
+
+<div>
+
+  <h3>Categories</h3>
+
+  <a href="#beauty">Beauty</a>
+  <a href="#home-products">Home</a>
+  <a href="#electronics">Electronics</a>
+  <a href="#fashion">Fashion</a>
+  <a href="#kitchen">Kitchen</a>
+  <a href="#trending">Trending</a>
+
+</div>
+
+<div>
+
+  <h3>Information</h3>
+
+  <a href="#home">About AskToShop</a>
+  <a href="#home">Privacy</a>
+  <a href="#home">Affiliate Disclosure</a>
+  <a href="#home">Contact</a>
+
+</div>
+```
 
   </div>
 
@@ -2465,7 +2683,7 @@ footer{
 
 function imageError(img,name){
 
-  if(img.dataset.failed === "1"){
+  if(!img || img.dataset.failed === "1"){
     return;
   }
 
@@ -2487,6 +2705,7 @@ const searchInput = document.getElementById("searchInput");
 const searchMessage = document.getElementById("searchMessage");
 
 const searchMap = {
+
   beauty:"#beauty",
   ordinary:"#beauty",
   niacinamide:"#beauty",
@@ -2519,6 +2738,7 @@ const searchMap = {
   deals:"#deals",
   featured:"#featured",
   holiday:"#holiday"
+
 };
 
 document
@@ -2527,7 +2747,8 @@ document
 
     event.preventDefault();
 
-    const search = searchInput.value.trim().toLowerCase();
+    const search =
+      searchInput.value.trim().toLowerCase();
 
     if(!search){
       searchInput.focus();
@@ -2547,7 +2768,8 @@ document
 
     if(destination){
 
-      const target = document.querySelector(destination);
+      const target =
+        document.querySelector(destination);
 
       if(target){
 
@@ -2557,6 +2779,7 @@ document
         });
 
         searchMessage.style.display = "none";
+
         return;
       }
 
@@ -2568,13 +2791,17 @@ document
       'No exact match found. Try <strong>Beauty, Home, Electronics, Fashion, Kitchen, Trending, Owala, Stanley, AirPods</strong> or <strong>New Balance</strong>.';
 
     setTimeout(function(){
+
       searchMessage.style.display = "none";
+
     },5000);
 
   });
 
 searchInput.addEventListener("input",function(){
+
   searchMessage.style.display = "none";
+
 });
 
 /* ==========================================================
@@ -2584,10 +2811,11 @@ searchInput.addEventListener("input",function(){
 const DEFAULT_PRODUCTS = [
 
   {
-    id:"isin-featured",
+    id:"isdin-featured",
     name:"ISDIN Uradin Podos Foot Care",
     category:"Beauty",
     image:"ISDIN.png",
+    price:"$39",
     link:"https://amzn.to/46unnJG",
     badge:"FEATURED",
     description:"Featured AskToShop beauty pick."
@@ -2598,6 +2826,7 @@ const DEFAULT_PRODUCTS = [
     name:"Caldera + Lab The Eye Serum | Men's Anti-Aging Serum",
     category:"Beauty",
     image:"CalderaLab.png",
+    price:"$153",
     link:"https://amzn.to/45StPtV",
     badge:"NEW",
     description:"Men's anti-aging eye serum."
@@ -2608,6 +2837,7 @@ const DEFAULT_PRODUCTS = [
     name:"Owala FreeSip Stainless Steel Water Bottle",
     category:"Trending",
     image:"trending-owala.png",
+    price:"$45.00",
     link:"https://amzn.to/45VQTbc",
     badge:"TRENDING",
     description:"Popular stainless steel water bottle."
@@ -2618,6 +2848,7 @@ const DEFAULT_PRODUCTS = [
     name:"Apple AirPods Pro (3rd Generation) (Renewed)",
     category:"Electronics",
     image:"electronics-airpods.png",
+    price:"$199.99",
     link:"https://amzn.to/4wZseNX",
     badge:"BEST SELLER",
     description:"Popular Apple audio pick."
@@ -2628,6 +2859,7 @@ const DEFAULT_PRODUCTS = [
     name:"The Ordinary Niacinamide 10% + Zinc 1%, Smoothing Serum",
     category:"Beauty",
     image:"beauty-ordinary.png",
+    price:"$6.00",
     link:"https://amzn.to/3UHAZP5",
     badge:"",
     description:"Beauty and skincare serum."
@@ -2638,6 +2870,7 @@ const DEFAULT_PRODUCTS = [
     name:"Amazon Basics Velvet Non-Slip Hangers – 100 Pack",
     category:"Home",
     image:"home-hangers.png",
+    price:"$40.49",
     link:"https://amzn.to/4xvhXKv",
     badge:"",
     description:"Home organization product."
@@ -2648,6 +2881,7 @@ const DEFAULT_PRODUCTS = [
     name:"New Balance Women's 327 Casual Shoes",
     category:"Fashion",
     image:"fashion-new-balance.png",
+    price:"$104.95",
     link:"https://amzn.to/4r3WpCp",
     badge:"",
     description:"Everyday fashion shoes."
@@ -2658,6 +2892,7 @@ const DEFAULT_PRODUCTS = [
     name:"Stanley Quencher H2.0 40 oz Tumbler",
     category:"Kitchen",
     image:"kitchen-stanley.png",
+    price:"$58.74",
     link:"https://amzn.to/4x0KeHQ",
     badge:"",
     description:"Popular drinkware pick."
@@ -2665,15 +2900,34 @@ const DEFAULT_PRODUCTS = [
 
 ];
 
-let adminProducts =
-  JSON.parse(localStorage.getItem("askToShopProducts")) ||
-  DEFAULT_PRODUCTS;
+let adminProducts;
+
+try{
+
+  adminProducts =
+    JSON.parse(
+      localStorage.getItem("askToShopProducts")
+    ) || JSON.parse(
+      JSON.stringify(DEFAULT_PRODUCTS)
+    );
+
+}catch(error){
+
+  adminProducts =
+    JSON.parse(
+      JSON.stringify(DEFAULT_PRODUCTS)
+    );
+
+}
 
 let editingProductId = null;
 
+/* Open admin */
+
 function openAdmin(){
 
-  const panel = document.getElementById("admin");
+  const panel =
+    document.getElementById("admin");
 
   if(!panel){
     return;
@@ -2687,20 +2941,33 @@ function openAdmin(){
   });
 
   renderAdminProducts();
+
 }
+
+/* Close admin */
 
 function closeAdmin(){
 
-  const panel = document.getElementById("admin");
+  const panel =
+    document.getElementById("admin");
 
   if(panel){
     panel.classList.remove("active");
   }
 
   if(location.hash === "#admin"){
-    history.replaceState(null,"",location.pathname + location.search);
+
+    history.replaceState(
+      null,
+      "",
+      location.pathname + location.search
+    );
+
   }
+
 }
+
+/* Save product */
 
 function saveAdminProduct(){
 
@@ -2713,6 +2980,9 @@ function saveAdminProduct(){
   const image =
     document.getElementById("adminImage").value.trim();
 
+  const price =
+    document.getElementById("adminPrice").value.trim();
+
   const link =
     document.getElementById("adminLink").value.trim();
 
@@ -2722,24 +2992,28 @@ function saveAdminProduct(){
   const description =
     document.getElementById("adminDescription").value.trim();
 
-  if(!name || !category || !image || !link){
+  if(!name || !category || !image || !price || !link){
 
-    alert("Please fill Product Name, Category, Image and Affiliate URL.");
+    alert(
+      "Please fill Product Name, Category, Image, Price and Affiliate URL."
+    );
 
     return;
   }
 
   if(editingProductId){
 
-    const product = adminProducts.find(
-      p => p.id === editingProductId
-    );
+    const product =
+      adminProducts.find(
+        p => p.id === editingProductId
+      );
 
     if(product){
 
       product.name = name;
       product.category = category;
       product.image = image;
+      product.price = price;
       product.link = link;
       product.badge = badge;
       product.description = description;
@@ -2754,12 +3028,13 @@ function saveAdminProduct(){
 
       id:"product-" + Date.now(),
 
-      name,
-      category,
-      image,
-      link,
-      badge,
-      description
+      name:name,
+      category:category,
+      image:image,
+      price:price,
+      link:link,
+      badge:badge,
+      description:description
 
     });
 
@@ -2771,32 +3046,42 @@ function saveAdminProduct(){
   );
 
   clearAdminForm();
+
   renderAdminProducts();
 
-  alert("Product saved successfully in this browser.");
+  alert(
+    "Product saved successfully in this browser."
+  );
 
 }
+
+/* Edit */
 
 function editAdminProduct(id){
 
   const product =
-    adminProducts.find(p => p.id === id);
+    adminProducts.find(
+      p => p.id === id
+    );
 
   if(!product){
     return;
   }
 
   document.getElementById("adminName").value =
-    product.name;
+    product.name || "";
 
   document.getElementById("adminCategory").value =
-    product.category;
+    product.category || "";
 
   document.getElementById("adminImage").value =
-    product.image;
+    product.image || "";
+
+  document.getElementById("adminPrice").value =
+    product.price || "";
 
   document.getElementById("adminLink").value =
-    product.link;
+    product.link || "";
 
   document.getElementById("adminBadge").value =
     product.badge || "";
@@ -2815,17 +3100,23 @@ function editAdminProduct(id){
 
 }
 
+/* Delete */
+
 function deleteAdminProduct(id){
 
   const ok =
-    confirm("Delete this product from the local Product Manager?");
+    confirm(
+      "Delete this product from the local Product Manager?"
+    );
 
   if(!ok){
     return;
   }
 
   adminProducts =
-    adminProducts.filter(p => p.id !== id);
+    adminProducts.filter(
+      p => p.id !== id
+    );
 
   localStorage.setItem(
     "askToShopProducts",
@@ -2833,19 +3124,26 @@ function deleteAdminProduct(id){
   );
 
   renderAdminProducts();
+
 }
+
+/* Clear */
 
 function clearAdminForm(){
 
   document.getElementById("adminName").value = "";
   document.getElementById("adminCategory").value = "";
   document.getElementById("adminImage").value = "";
+  document.getElementById("adminPrice").value = "";
   document.getElementById("adminLink").value = "";
   document.getElementById("adminBadge").value = "";
   document.getElementById("adminDescription").value = "";
 
   editingProductId = null;
+
 }
+
+/* Render admin list */
 
 function renderAdminProducts(){
 
@@ -2858,7 +3156,7 @@ function renderAdminProducts(){
 
   container.innerHTML = "";
 
-  adminProducts.forEach(product => {
+  adminProducts.forEach(function(product){
 
     const row =
       document.createElement("div");
@@ -2870,14 +3168,20 @@ function renderAdminProducts(){
       <img
         src="${escapeHtml(product.image)}"
         alt=""
-        onerror="imageError(this,'Product')"
       >
 
       <div>
-        <strong>${escapeHtml(product.name)}</strong>
+
+        <strong>
+          ${escapeHtml(product.name)}
+        </strong>
+
         <small>
           ${escapeHtml(product.category)}
+          •
+          ${escapeHtml(product.price)}
         </small>
+
       </div>
 
       <div class="admin-product-actions">
@@ -2885,7 +3189,7 @@ function renderAdminProducts(){
         <button
           class="edit-btn"
           type="button"
-          onclick="editAdminProduct('${product.id}')"
+          onclick="editAdminProduct('${escapeJs(product.id)}')"
         >
           EDIT
         </button>
@@ -2893,7 +3197,7 @@ function renderAdminProducts(){
         <button
           class="delete-btn"
           type="button"
-          onclick="deleteAdminProduct('${product.id}')"
+          onclick="deleteAdminProduct('${escapeJs(product.id)}')"
         >
           DELETE
         </button>
@@ -2902,11 +3206,26 @@ function renderAdminProducts(){
 
     `;
 
+    const image =
+      row.querySelector("img");
+
+    image.addEventListener(
+      "error",
+      function(){
+        imageError(
+          image,
+          "Product"
+        );
+      }
+    );
+
     container.appendChild(row);
 
   });
 
 }
+
+/* Escape HTML */
 
 function escapeHtml(value){
 
@@ -2919,17 +3238,33 @@ function escapeHtml(value){
 
 }
 
+/* Escape JavaScript string */
+
+function escapeJs(value){
+
+  return String(value)
+    .replaceAll("\\","\\\\")
+    .replaceAll("'","\\'");
+
+}
+
+/* Reset */
+
 function resetProducts(){
 
   const ok =
-    confirm("Reset Product Manager to the original AskToShop products?");
+    confirm(
+      "Reset Product Manager to the original AskToShop products?"
+    );
 
   if(!ok){
     return;
   }
 
   adminProducts =
-    JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+    JSON.parse(
+      JSON.stringify(DEFAULT_PRODUCTS)
+    );
 
   localStorage.setItem(
     "askToShopProducts",
@@ -2937,42 +3272,71 @@ function resetProducts(){
   );
 
   clearAdminForm();
+
   renderAdminProducts();
+
 }
+
+/* ==========================================================
+   ADMIN HASH
+========================================================== */
 
 function checkAdminHash(){
 
-  if(location.hash.toLowerCase() === "#admin"){
+  if(
+    location.hash.toLowerCase() === "#admin"
+  ){
+
     openAdmin();
+
   }
 
 }
 
-window.addEventListener("hashchange",checkAdminHash);
+window.addEventListener(
+  "hashchange",
+  checkAdminHash
+);
 
 checkAdminHash();
 
-document.addEventListener("keydown",function(event){
+/* ==========================================================
+   KEYBOARD SHORTCUT
+   Ctrl + Shift + A
+========================================================== */
 
-  if(
-    event.ctrlKey &&
-    event.shiftKey &&
-    event.key.toLowerCase() === "a"
-  ){
+document.addEventListener(
+  "keydown",
+  function(event){
 
-    event.preventDefault();
+    if(
+      event.ctrlKey &&
+      event.shiftKey &&
+      event.key.toLowerCase() === "a"
+    ){
 
-    openAdmin();
+      event.preventDefault();
+
+      openAdmin();
+
+    }
 
   }
+);
 
-});
+/* ==========================================================
+   CONSOLE INFO
+========================================================== */
 
-console.log("AskToShop loaded successfully.");
-console.log("Product Manager: use #admin or Ctrl + Shift + A");
+console.log(
+  "AskToShop loaded successfully."
+);
+
+console.log(
+  "Product Manager: use #admin or Ctrl + Shift + A"
+);
 
 </script>
 
 </body>
 </html>
-```
