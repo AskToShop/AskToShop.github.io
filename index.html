@@ -1054,6 +1054,27 @@ footer{
   }
 }
 </style>
+
+<style>
+/* Automatic exact-product links */
+.product-image-link, .mini-image-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.product-image-link img, .mini-image-link img {
+  display: block;
+  width: 100%;
+}
+.product-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+.product-title-link:hover h3, .product-title-link:focus h3 {
+  text-decoration: underline;
+}
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -2005,6 +2026,158 @@ window.addEventListener("hashchange", () => {
   const card = id ? document.getElementById(id) : null;
   if(card) setTimeout(() => highlightCard(card), 50);
 });
+
+
+/* ASKToShop: automatically create exact product links for every product card.
+   New products only need an image + product name + Amazon affiliate URL. */
+(function setupAutomaticProductLinks(){
+  function slugify(text){
+    return String(text || '')
+      .toLowerCase()
+      .replace(/&/g, ' and ')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 110);
+  }
+
+  document.querySelectorAll('.product, .mini-product').forEach(card => {
+    const titleEl = card.querySelector('h3');
+    const img = card.querySelector('img');
+    if(!titleEl || !img) return;
+
+    /* If a future product has no id, generate one automatically from its name. */
+    if(!card.id){
+      const base = slugify(titleEl.textContent.trim() || img.alt);
+      let id = base || ('product-' + Math.random().toString(36).slice(2,8));
+      let n = 2;
+      while(document.getElementById(id) && document.getElementById(id) !== card){
+        id = base + '-' + n++;
+      }
+      card.id = id;
+    }
+
+    const hash = '#' + encodeURIComponent(card.id);
+
+    /* Make the product image itself the exact-product link. */
+    const imageBox = img.closest('.product-image, .mini-image');
+    if(imageBox && !imageBox.closest('a')){
+      const a = document.createElement('a');
+      a.className = imageBox.classList.contains('mini-image') ? 'mini-image-link' : 'product-image-link';
+      a.href = hash;
+      a.setAttribute('aria-label', 'Open ' + titleEl.textContent.trim());
+      imageBox.parentNode.insertBefore(a, imageBox);
+      a.appendChild(imageBox);
+    }
+
+    /* Make the product name an exact-product link too. */
+    if(!titleEl.closest('a')){
+      const a = document.createElement('a');
+      a.className = 'product-title-link';
+      a.href = hash;
+      titleEl.parentNode.insertBefore(a, titleEl);
+      a.appendChild(titleEl);
+    }
+  });
+})();
 </script>
+
+<script>
+/* AskToShop: make every product card directly clickable.
+   - Existing product IDs are preserved.
+   - If a future product has no ID, one is generated automatically from its product name.
+   - Clicking a product card/image/title opens that exact product hash.
+   - Existing Amazon/affiliate buttons and other links keep working normally.
+*/
+(function () {
+  function makeSlug(text) {
+    return (text || '')
+      .toString()
+      .trim()
+      .toLowerCase()
+      .replace(/&/g, ' and ')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .replace(/-+/g, '-');
+  }
+
+  function setupProductLinks() {
+    const cards = document.querySelectorAll('.product, .mini-product');
+
+    cards.forEach(function (card) {
+      let id = card.id;
+
+      // Automatically create an exact product ID for any future card without one.
+      if (!id) {
+        const titleEl = card.querySelector('h3, h2, .product-title, img[alt]');
+        const sourceText = titleEl
+          ? (titleEl.tagName === 'IMG' ? titleEl.alt : titleEl.textContent)
+          : '';
+        id = makeSlug(sourceText);
+        if (id) {
+          let base = id;
+          let n = 2;
+          while (document.getElementById(id)) {
+            id = base + '-' + n++;
+          }
+          card.id = id;
+        }
+      }
+
+      if (!id || card.dataset.productLinkReady === '1') return;
+
+      card.dataset.productLinkReady = '1';
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'link');
+      card.style.cursor = 'pointer';
+
+      function openProduct() {
+        const url = window.location.pathname + window.location.search + '#' + id;
+        history.pushState(null, '', url);
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.querySelectorAll('.product, .mini-product').forEach(function (c) {
+          c.classList.remove('product-link-highlight');
+        });
+        card.classList.add('product-link-highlight');
+        setTimeout(function () {
+          card.classList.remove('product-link-highlight');
+        }, 1800);
+      }
+
+      card.addEventListener('click', function (event) {
+        // Do not hijack Amazon/affiliate buttons, normal links, form controls, etc.
+        if (event.target.closest('a, button, input, select, textarea, label')) return;
+        openProduct();
+      });
+
+      card.addEventListener('keydown', function (event) {
+        if ((event.key === 'Enter' || event.key === ' ') &&
+            !event.target.closest('a, button, input, select, textarea, label')) {
+          event.preventDefault();
+          openProduct();
+        }
+      });
+    });
+  }
+
+  const style = document.createElement('style');
+  style.textContent = `
+    .product-link-highlight {
+      outline: 3px solid #e11;
+      outline-offset: 4px;
+    }
+    .product[tabindex], .mini-product[tabindex] {
+      cursor: pointer;
+    }
+  `;
+  document.head.appendChild(style);
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupProductLinks);
+  } else {
+    setupProductLinks();
+  }
+})();
+</script>
+
 </body>
 </html>
